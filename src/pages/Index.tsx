@@ -10,8 +10,8 @@ import { Activity, Atom, ChartNoAxesCombined, FlaskConical, Network, ShieldCheck
 const focusAreas = [
   "Trial optimization",
   "Causal theory testing",
-  "Hidden subgroup discovery",
-  "Outcome reliability",
+  "Subgroup discovery",
+  "Outcome analysis",
 ];
 
 const platformCards = [
@@ -54,27 +54,27 @@ const Index = () => {
 
       <section className="relative min-h-screen flex items-center section-deep overflow-hidden pt-24">
         <CausalGraph />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_25%,hsl(var(--secondary)/0.16),transparent_30rem)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_25%,hsl(var(--secondary)/0.10),transparent_30rem)]" />
         <div className="relative z-10 container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
             <div className="max-w-4xl">
               <FadeIn>
                 <p className="eyebrow mb-5">Causal intelligence for BioPharma R&D</p>
-                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight text-foreground">
-                  Make scientific decisions with fewer blind spots.
+                <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight text-foreground">
+                  Causal intelligence for scientific and strategic decisions.
                 </h1>
               </FadeIn>
               <FadeIn delay={0.15}>
                 <p className="mt-7 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                   BOULAi helps clinical, translational, and strategy teams test causal theories against real data,
-                  explain surprising evidence, discover high-value subgroups, and reduce false positives before
-                  they become expensive decisions.
+                  explain surprising evidence, discover patient subgroups, and improve confidence in high-stakes
+                  R&D decisions.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
                 <div className="mt-8 flex flex-wrap gap-3">
                   {focusAreas.map((area) => (
-                    <span key={area} className="rounded-full border border-border/60 bg-card/50 px-4 py-2 text-xs font-semibold text-muted-foreground">
+                    <span key={area} className="rounded-full border border-border bg-white px-4 py-2 text-xs font-semibold text-muted-foreground shadow-sm">
                       {area}
                     </span>
                   ))}
@@ -82,8 +82,8 @@ const Index = () => {
               </FadeIn>
               <FadeIn delay={0.35}>
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <Button variant="gold" size="lg" asChild>
-                    <a href="#waitlist">Request BioPharma Pilot</a>
+                  <Button size="lg" asChild>
+                    <a href="#waitlist">Request Pilot</a>
                   </Button>
                   <Button variant="ghost-light" size="lg" asChild>
                     <Link to="/product">Explore the Platform</Link>
@@ -108,7 +108,7 @@ const Index = () => {
                     ["Stage 2", "Regime locality", "DAG stress map"],
                     ["Stage 3", "Scientific hypotheses", "Critic-guarded agents"],
                   ].map(([stage, title, meta]) => (
-                    <div key={stage} className="rounded-2xl border border-border/40 bg-background/35 p-4">
+                    <div key={stage} className="rounded-2xl border border-border bg-muted/35 p-4">
                       <div className="flex items-center justify-between gap-4">
                         <div>
                           <p className="text-xs font-semibold text-primary">{stage}</p>
@@ -130,8 +130,8 @@ const Index = () => {
           <FadeIn>
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Why BOULAi</p>
-              <h2 className="font-display text-4xl md:text-6xl leading-tight text-foreground">
-                BioPharma does not need another dashboard. It needs better scientific judgment.
+              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+                Cleaner evidence for high-stakes R&D decisions.
               </h2>
             </div>
           </FadeIn>
@@ -156,13 +156,13 @@ const Index = () => {
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
             <FadeIn>
               <p className="eyebrow mb-4">First solution</p>
-              <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">BouleDiscovery</h2>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground leading-tight">Boulai Discovery</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
                 A causal discovery and theory-testing workbench for teams analyzing trial, experimental, and
-                translational datasets. The product is one solution in the BOULAi platform - not the whole vision.
+                translational datasets. The product is one solution in the BOULAi platform, not the whole vision.
               </p>
-              <Button variant="gold" size="lg" className="mt-8" asChild>
-                <Link to="/product">See BouleDiscovery</Link>
+              <Button size="lg" className="mt-8" asChild>
+                <Link to="/product">See Boulai Discovery</Link>
               </Button>
             </FadeIn>
             <FadeIn delay={0.15}>
@@ -190,7 +190,7 @@ const Index = () => {
             <div className="premium-panel rounded-[2rem] p-8 md:p-12 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
               <div>
                 <ChartNoAxesCombined className="h-10 w-10 text-primary mb-5" />
-                <h2 className="font-display text-4xl md:text-5xl leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">
                   Designed for decisions, not just insight.
                 </h2>
               </div>
@@ -201,7 +201,7 @@ const Index = () => {
                   "Pressure-test endpoint assumptions",
                   "Identify subgroup hypotheses to validate",
                 ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-border/40 bg-background/35 p-4">
+                  <div key={item} className="rounded-2xl border border-border bg-muted/35 p-4">
                     <FlaskConical className="h-5 w-5 text-secondary mb-3" />
                     <p className="text-sm font-medium text-foreground">{item}</p>
                   </div>

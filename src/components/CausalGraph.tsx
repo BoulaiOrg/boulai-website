@@ -74,7 +74,7 @@ const CausalGraph = () => {
     <svg
       ref={svgRef}
       viewBox="0 0 1200 600"
-      className="absolute inset-0 w-full h-full opacity-40 pointer-events-none"
+      className="absolute inset-0 w-full h-full opacity-25 pointer-events-none"
       preserveAspectRatio="xMidYMid slice"
     />
   );

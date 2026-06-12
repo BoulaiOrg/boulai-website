@@ -38,7 +38,7 @@ const Research = () => (
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
         <FadeIn>
           <p className="eyebrow mb-5">Research frame</p>
-          <h1 className="font-display text-5xl md:text-7xl leading-[0.95] text-foreground mb-7">
+          <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
             Scientific AI should be testable, falsifiable, and inspectable.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
@@ -71,7 +71,7 @@ const Research = () => (
         <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
           <FadeIn>
             <BookOpen className="h-10 w-10 text-primary mb-6" />
-            <h2 className="font-display text-4xl md:text-6xl leading-tight text-foreground">
+            <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
               A methodological roadmap for decision-grade discovery.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
@@ -84,7 +84,7 @@ const Research = () => (
             <div className="premium-panel rounded-[2rem] p-6 md:p-8">
               <div className="grid sm:grid-cols-2 gap-4">
                 {methods.map((method) => (
-                  <div key={method} className="rounded-2xl border border-border/40 bg-background/35 p-4">
+                  <div key={method} className="rounded-2xl border border-border bg-muted/35 p-4">
                     <p className="text-sm font-medium text-foreground">{method}</p>
                   </div>
                 ))}

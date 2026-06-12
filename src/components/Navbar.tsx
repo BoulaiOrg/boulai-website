@@ -56,7 +56,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button variant="gold" size="sm" asChild>
+          <Button size="sm" asChild>
             <a href="#waitlist">Request Pilot</a>
           </Button>
         </div>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Button variant="gold" size="sm" asChild>
+            <Button size="sm" asChild>
               <a href="#waitlist">Request Pilot</a>
             </Button>
           </div>

@@ -75,7 +75,7 @@ const Product = () => (
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
           <FadeIn>
             <p className="eyebrow mb-5">BouleDiscovery</p>
-            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] text-foreground mb-7">
+            <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
               Causal analysis for trial and translational data.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -83,7 +83,7 @@ const Product = () => (
               treatment pathways, and hidden mechanism shifts with a workflow designed for scientific review.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              <Button variant="gold" size="lg" asChild>
+              <Button size="lg" asChild>
                 <a href="#waitlist">Request Demo</a>
               </Button>
               <Button variant="ghost-light" size="lg" asChild>
@@ -108,7 +108,7 @@ const Product = () => (
                   ["Output", "Anomalies, root explanation, locality"],
                   ["Interpretation", "Evidence-bound hypotheses"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-2xl bg-background/35 border border-border/40 p-4">
+                  <div key={label} className="rounded-2xl bg-muted/35 border border-border p-4">
                     <p className="text-xs font-semibold text-primary">{label}</p>
                     <p className="mt-1 text-sm text-foreground">{value}</p>
                   </div>
@@ -124,7 +124,7 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Workflow</p>
-          <h2 className="font-display text-4xl md:text-6xl text-foreground text-center mb-16">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
             From causal theory to auditable evidence.
           </h2>
         </FadeIn>
@@ -149,7 +149,7 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Engines</p>
-          <h2 className="font-display text-4xl md:text-6xl text-foreground text-center mb-16">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
             Built for the questions BioPharma teams actually ask.
           </h2>
         </FadeIn>
@@ -172,7 +172,7 @@ const Product = () => (
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
           <FadeIn>
             <Microscope className="h-10 w-10 text-primary mb-6" />
-            <h2 className="font-display text-4xl md:text-6xl leading-tight text-foreground">
+            <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
               Outputs your scientific team can interrogate.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed text-lg">

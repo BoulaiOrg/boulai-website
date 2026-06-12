@@ -43,7 +43,7 @@ const About = () => (
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
           <p className="eyebrow mb-5">Who we are</p>
-          <h1 className="font-display text-5xl md:text-7xl leading-[0.95] text-foreground mb-7">
+          <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
             We are building causal intelligence for scientific decisions.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -58,7 +58,7 @@ const About = () => (
     <section className="section-deep py-24">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
         <FadeIn>
-          <blockquote className="premium-panel rounded-[2rem] p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed italic text-left">
+          <blockquote className="premium-panel rounded-[2rem] p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed text-left">
             "Our goal is to make high-stakes scientific reasoning more inspectable: human expertise, causal
             models, statistical evidence, and AI agents working around the same table."
           </blockquote>
