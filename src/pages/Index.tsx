@@ -53,7 +53,7 @@ const Index = () => {
             <FadeIn>
               <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.04] tracking-tight text-foreground">
-                Accelerate scientific discovery with causal intelligence
+                Scientific AI for R&D decisions&nbsp;
               </h1>
             </FadeIn>
             <FadeIn delay={0.15}>
