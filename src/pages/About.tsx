@@ -35,11 +35,11 @@ const About = () => (
     <Navbar />
 
     {/* Hero */}
-    <section className="section-mid pt-32 pb-20">
+    <section className="section-mid pt-32 pb-20 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
           <p className="eyebrow mb-5">Who we are</p>
-          <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
+          <h1 className="font-display text-4xl md:text-7xl font-semibold leading-[0.99] tracking-[-0.055em] text-foreground mb-7">
             We are building scientific intelligence for better decisions.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -51,10 +51,10 @@ const About = () => (
     </section>
 
     {/* Vision */}
-    <section className="section-deep py-24">
+    <section className="section-deep py-24 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
         <FadeIn>
-          <blockquote className="premium-panel rounded-[2rem] p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed text-left">
+          <blockquote className="premium-panel p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed text-left">
             "Our goal is to make high-stakes scientific reasoning more inspectable: human expertise, causal
             models, statistical evidence, and AI systems working around the same table."
           </blockquote>
@@ -63,7 +63,7 @@ const About = () => (
     </section>
 
     {/* Team */}
-    <section className="section-mid py-24">
+    <section className="section-mid py-24 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">The team</h2>
@@ -71,8 +71,8 @@ const About = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {teamMembers.map((m, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="premium-panel rounded-3xl p-6 text-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
+              <div className="premium-panel p-6 text-center">
+                <div className="w-16 h-16 bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {m.name[0]}
                 </div>
                 <h3 className="text-base font-semibold text-foreground">{m.name}</h3>
@@ -90,8 +90,8 @@ const About = () => (
       <div className="container mx-auto px-4 lg:px-8 max-w-md">
         <FadeIn>
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">Scientific Advisory</p>
-          <div className="premium-panel rounded-3xl p-6 text-center">
-            <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
+          <div className="premium-panel p-6 text-center">
+            <div className="w-14 h-14 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
               {advisor.name[0]}
             </div>
             <h3 className="text-base font-semibold text-foreground">{advisor.name}</h3>

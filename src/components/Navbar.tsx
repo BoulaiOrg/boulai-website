@@ -26,12 +26,12 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border/50" : "bg-transparent"
+        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-background/90 border-b border-border"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="text-xl font-extrabold tracking-[-0.04em] text-foreground">
           BOULAI
         </Link>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:text-primary ${
                 location.pathname === link.href ? "text-foreground" : "text-muted-foreground"
               }`}
             >
@@ -70,7 +70,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
                   location.pathname === link.href ? "text-foreground" : "text-muted-foreground"
                 }`}
               >

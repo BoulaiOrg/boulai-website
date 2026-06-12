@@ -47,13 +47,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-deep pt-32 pb-24 md:pt-40 md:pb-32">
+      <section className="section-deep pt-32 pb-24 md:pt-44 md:pb-36 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl">
             <FadeIn>
               <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.04] tracking-tight text-foreground">
-                Scientific AI for R&D decisions&nbsp;
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.98] tracking-[-0.06em] text-foreground">
+                Scientific AI for R&D decisions.
               </h1>
             </FadeIn>
             <FadeIn delay={0.15}>
@@ -67,7 +67,7 @@ const Index = () => {
                 {focusAreas.map((area) => (
                   <span
                     key={area}
-                    className="rounded-full border border-border bg-white px-4 py-2 text-xs font-semibold text-muted-foreground shadow-sm"
+                    className="border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                   >
                     {area}
                   </span>
@@ -88,7 +88,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-mid py-24">
+      <section className="section-mid py-24 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl">
@@ -105,7 +105,7 @@ const Index = () => {
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {methodPillars.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
-                <div className="premium-panel rounded-3xl p-7 h-full">
+                <div className="premium-panel p-7 h-full">
                   <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                   <h3 className="text-xl font-semibold text-foreground mb-3">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
@@ -116,7 +116,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-deep py-24">
+      <section className="section-deep py-24 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
             <FadeIn>
@@ -132,7 +132,7 @@ const Index = () => {
             <FadeIn delay={0.15}>
               <div className="grid sm:grid-cols-3 gap-4">
                 {reviewPrinciples.map((item, i) => (
-                  <div key={item.title} className="premium-panel rounded-3xl p-6 h-full">
+                  <div key={item.title} className="premium-panel p-6 h-full">
                     <p className="text-xs font-semibold text-primary">0{i + 1}</p>
                     <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -147,7 +147,7 @@ const Index = () => {
       <section className="section-mid py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
-            <div className="premium-panel rounded-[2rem] p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
+            <div className="premium-panel p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">First solution</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">

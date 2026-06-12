@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    --background: 210 33% 98%;
-    --foreground: 222 30% 15%;
+    --background: 0 0% 97%;
+    --foreground: 222 24% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 30% 15%;
+    --card-foreground: 222 24% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 30% 15%;
+    --popover-foreground: 222 24% 8%;
 
-    --primary: 199 86% 34%;
+    --primary: 222 24% 8%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 186 56% 42%;
+    --secondary: 214 72% 36%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 214 28% 94%;
-    --muted-foreground: 218 13% 46%;
+    --muted: 220 12% 93%;
+    --muted-foreground: 220 8% 39%;
 
-    --accent: 199 70% 94%;
-    --accent-foreground: 199 80% 26%;
+    --accent: 220 12% 91%;
+    --accent-foreground: 222 24% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 26% 88%;
-    --input: 214 26% 88%;
-    --ring: 199 86% 34%;
+    --border: 220 10% 78%;
+    --input: 220 10% 78%;
+    --ring: 222 24% 8%;
 
-    --radius: 0.75rem;
+    --radius: 0.125rem;
 
     --surface-deep: 0 0% 100%;
-    --surface-mid: 210 33% 98%;
+    --surface-mid: 0 0% 97%;
     --surface-raised: 0 0% 100%;
 
-    --sidebar-background: 210 33% 98%;
-    --sidebar-foreground: 222 30% 15%;
-    --sidebar-primary: 199 86% 34%;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 222 24% 8%;
+    --sidebar-primary: 222 24% 8%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 199 70% 94%;
-    --sidebar-accent-foreground: 199 80% 26%;
-    --sidebar-border: 214 26% 88%;
-    --sidebar-ring: 199 86% 34%;
+    --sidebar-accent: 220 12% 91%;
+    --sidebar-accent-foreground: 222 24% 8%;
+    --sidebar-border: 220 10% 78%;
+    --sidebar-ring: 222 24% 8%;
   }
 }
 
@@ -63,18 +63,26 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Manrope', system-ui, -apple-system, sans-serif;
-    background: hsl(var(--background));
+    background:
+      linear-gradient(hsl(220 10% 78% / 0.32) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 10% 78% / 0.26) 1px, transparent 1px),
+      hsl(var(--background));
+    background-size: 72px 72px;
   }
 }
 
 @layer components {
   .section-deep {
     @apply bg-white;
+    background-image:
+      linear-gradient(hsl(220 10% 78% / 0.28) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 10% 78% / 0.22) 1px, transparent 1px);
+    background-size: 72px 72px;
   }
 
   .section-mid {
     background:
-      linear-gradient(180deg, hsl(210 33% 98%), hsl(0 0% 100%));
+      linear-gradient(180deg, hsl(0 0% 96%), hsl(0 0% 99%));
   }
 
   .section-raised {
@@ -82,9 +90,8 @@
   }
 
   .section-cta {
-    background:
-      linear-gradient(135deg, hsl(199 76% 96%), hsl(187 58% 94%));
-    color: hsl(var(--foreground));
+    background: hsl(222 24% 8%);
+    color: hsl(var(--primary-foreground));
   }
 
   .soft-brand-glow {
@@ -107,11 +114,12 @@
 
   .premium-panel {
     @apply border border-border bg-card;
-    box-shadow: 0 20px 50px -38px hsl(var(--primary) / 0.32);
+    border-radius: 2px !important;
+    box-shadow: none;
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-primary;
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground;
   }
 }
 

@@ -52,12 +52,12 @@ const Product = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
 
-    <section className="section-mid pt-32 pb-20">
+    <section className="section-mid pt-32 pb-20 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
           <FadeIn>
             <p className="eyebrow mb-5">BOULAI Discovery</p>
-            <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
+            <h1 className="font-display text-4xl md:text-7xl font-semibold leading-[0.99] tracking-[-0.055em] text-foreground mb-7">
               A workbench for scientific data, hypotheses, and decisions.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
@@ -75,7 +75,7 @@ const Product = () => (
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="premium-panel rounded-[2rem] p-7">
+            <div className="premium-panel p-7">
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Solution scope</p>
               <div className="mt-6 grid gap-4">
                 {[
@@ -84,7 +84,7 @@ const Product = () => (
                   ["Users", "Scientists, clinical teams, data teams, and R&D decision-makers"],
                   ["Goal", "Move from complex evidence to clearer next-step decisions"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-2xl bg-muted/35 border border-border p-4">
+                  <div key={label} className="bg-muted/35 border border-border p-4">
                     <p className="text-xs font-semibold text-primary">{label}</p>
                     <p className="mt-1 text-sm text-foreground">{value}</p>
                   </div>
@@ -96,7 +96,7 @@ const Product = () => (
       </div>
     </section>
 
-    <section className="section-deep py-24">
+    <section className="section-deep py-24 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Workflow</p>
@@ -107,7 +107,7 @@ const Product = () => (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {workflow.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.08}>
-              <div className="premium-panel rounded-3xl p-6 h-full">
+              <div className="premium-panel p-6 h-full">
                 <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
@@ -118,7 +118,7 @@ const Product = () => (
       </div>
     </section>
 
-    <section className="section-mid py-24">
+    <section className="section-mid py-24 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Capabilities</p>
@@ -129,7 +129,7 @@ const Product = () => (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {capabilities.map((capability, i) => (
             <FadeIn key={capability.title} delay={i * 0.1}>
-              <div className="premium-panel rounded-3xl p-8 h-full">
+              <div className="premium-panel p-8 h-full">
                 <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{capability.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{capability.desc}</p>
@@ -156,7 +156,7 @@ const Product = () => (
           <FadeIn delay={0.15}>
             <div className="grid sm:grid-cols-2 gap-4">
               {outputs.map((item) => (
-                <div key={item} className="premium-panel rounded-2xl p-5">
+                <div key={item} className="premium-panel p-5">
                   <p className="text-sm font-medium text-foreground">{item}</p>
                 </div>
               ))}
