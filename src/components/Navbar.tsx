@@ -32,8 +32,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-xl font-extrabold tracking-[-0.04em] text-foreground">
-          <img src={logoAsset.url} alt="BOULAI logo" className="h-8 w-8 object-contain" />
+        <Link to="/" className="flex items-center gap-3 text-2xl font-extrabold tracking-[-0.04em] text-foreground">
+          <img src={logoAsset.url} alt="BOULAI logo" className="h-10 w-10 object-contain" />
           BOULAI
         </Link>
 
