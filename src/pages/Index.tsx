@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroEvidenceGraph from "@/components/HeroEvidenceGraph";
 
 const focusAreas = [
   "Scientific evidence",
@@ -88,18 +89,7 @@ const Index = () => {
             </div>
 
             <FadeIn delay={0.2}>
-              <div className="premium-panel bg-foreground p-0 overflow-hidden">
-                <video
-                  className="aspect-[16/9] h-full w-full object-cover"
-                  src="/brand/boulai-logo-animation.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="BOULAI logo animation"
-                />
-              </div>
+              <HeroEvidenceGraph />
             </FadeIn>
           </div>
         </div>
