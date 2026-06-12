@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoAsset from "@/assets/boulai-wordmark.png.asset.json";
 
 const navLinks = [
   { label: "Platform", href: "/product" },
