@@ -49,39 +49,56 @@ const Index = () => {
 
       <section className="section-deep pt-32 pb-24 md:pt-44 md:pb-36 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-5xl">
-            <FadeIn>
-              <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.98] tracking-[-0.06em] text-foreground">
-                Scientific AI for R&D decisions.
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <p className="mt-7 max-w-3xl text-base md:text-xl text-muted-foreground leading-relaxed">
-                BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
-                decide what to test, validate, or deprioritize next.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.25}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {focusAreas.map((area) => (
-                  <span
-                    key={area}
-                    className="border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.35}>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button size="lg" asChild>
-                  <a href="#waitlist">Request Intro</a>
-                </Button>
-                <Button variant="ghost-light" size="lg" asChild>
-                  <Link to="/product">View BOULAI Discovery</Link>
-                </Button>
+          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_0.72fr]">
+            <div className="max-w-5xl">
+              <FadeIn>
+                <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
+                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.98] tracking-[-0.06em] text-foreground">
+                  Scientific AI for R&D decisions.
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <p className="mt-7 max-w-3xl text-base md:text-xl text-muted-foreground leading-relaxed">
+                  BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
+                  decide what to test, validate, or deprioritize next.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.25}>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {focusAreas.map((area) => (
+                    <span
+                      key={area}
+                      className="border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                    >
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.35}>
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" asChild>
+                    <a href="#waitlist">Request Intro</a>
+                  </Button>
+                  <Button variant="ghost-light" size="lg" asChild>
+                    <Link to="/product">View BOULAI Discovery</Link>
+                  </Button>
+                </div>
+              </FadeIn>
+            </div>
+
+            <FadeIn delay={0.2}>
+              <div className="premium-panel bg-foreground p-0 overflow-hidden">
+                <video
+                  className="aspect-[16/9] h-full w-full object-cover"
+                  src="/brand/boulai-logo-animation.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="BOULAI logo animation"
+                />
               </div>
             </FadeIn>
           </div>

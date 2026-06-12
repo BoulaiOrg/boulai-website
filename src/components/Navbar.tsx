@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/boulai-wordmark.png.asset.json";
 
 const navLinks = [
   { label: "Platform", href: "/product" },
@@ -32,8 +31,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center" aria-label="Boulai home">
-          <img src={logoAsset.url} alt="Boulai" className="h-12 w-auto object-contain invert" />
+        <Link to="/" className="flex items-center" aria-label="BOULAI home">
+          <img src="/brand/boulai-logo.png" alt="BOULAI" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav */}
