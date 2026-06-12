@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/boulai-logo.png.asset.json";
+import logoAsset from "@/assets/boulai-wordmark.png.asset.json";
 
 const navLinks = [
   { label: "Platform", href: "/product" },
@@ -32,9 +32,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 font-display text-3xl font-normal tracking-tight text-foreground">
-          <img src={logoAsset.url} alt="Boulai logo" className="h-14 w-14 object-contain" />
-          Boulai
+        <Link to="/" className="flex items-center" aria-label="Boulai home">
+          <img src={logoAsset.url} alt="Boulai" className="h-12 w-auto object-contain invert" />
         </Link>
 
         {/* Desktop nav */}
