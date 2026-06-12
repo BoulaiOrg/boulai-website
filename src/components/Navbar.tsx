@@ -30,11 +30,11 @@ const Navbar = () => {
         scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-background/90 border-b border-border"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 text-2xl font-extrabold tracking-[-0.04em] text-foreground">
-          <img src={logoAsset.url} alt="BOULAI logo" className="h-10 w-10 object-contain" />
-          BOULAI
+        <Link to="/" className="flex items-center gap-3 font-display text-3xl font-normal tracking-tight text-foreground">
+          <img src={logoAsset.url} alt="Boulai logo" className="h-14 w-14 object-contain" />
+          Boulai
         </Link>
 
         {/* Desktop nav */}
