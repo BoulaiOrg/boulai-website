@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center" aria-label="BOULAI home">
-          <img src="/brand/boulai-logo.png" alt="BOULAI" className="h-10 w-auto object-contain" />
+          <img src="/brand/boulai-logo-v2.svg?v=2" alt="BOULAI" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav */}
