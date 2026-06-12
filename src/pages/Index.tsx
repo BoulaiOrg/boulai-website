@@ -12,40 +12,33 @@ const focusAreas = [
   "R&D strategy",
 ];
 
-const platformPrinciples = [
+const methodPillars = [
   {
-    title: "Unify the evidence around a decision",
-    desc: "Bring together datasets, hypotheses, study context, and scientific assumptions before the analysis starts.",
+    title: "Inference",
+    desc: "Estimate what the evidence supports, where uncertainty remains, and which explanations are still plausible.",
   },
   {
-    title: "Interrogate mechanisms, not just correlations",
-    desc: "Use causal and statistical workflows to compare explanations, explore subgroups, and challenge fragile signals.",
+    title: "Machine learning",
+    desc: "Use models to discover patterns, heterogeneity, and predictive structure without mistaking every signal for science.",
   },
   {
-    title: "Keep scientific review in the loop",
-    desc: "Produce outputs that teams can inspect, discuss, and validate instead of treating AI as the final authority.",
+    title: "Reasoning",
+    desc: "Connect data, mechanisms, assumptions, and domain knowledge into arguments that experts can inspect.",
   },
 ];
 
-const solutionCapabilities = [
-  "Profile trial and translational datasets",
-  "Explore outcomes, drivers, and subgroups",
-  "Test causal hypotheses and assumptions",
-  "Prepare evidence for review and next-step decisions",
-];
-
-const decisionLayers = [
+const reviewPrinciples = [
   {
-    label: "Discovery",
-    value: "Which hypotheses are worth moving forward?",
+    title: "Explicit assumptions",
+    desc: "Scientific teams should be able to see which assumptions are being used before a model produces an answer.",
   },
   {
-    label: "Clinical development",
-    value: "Which patient segments, endpoints, or study choices deserve closer analysis?",
+    title: "Inspectable evidence",
+    desc: "Outputs should make uncertainty, robustness, and competing explanations easier to review, not harder.",
   },
   {
-    label: "Strategy",
-    value: "Which signals are strong enough to shape investment, validation, or trial design?",
+    title: "Human scientific judgment",
+    desc: "AI can help structure analysis and synthesis, but the decision remains accountable to expert review.",
   },
 ];
 
@@ -99,14 +92,18 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl">
-              <p className="eyebrow mb-4">Why BOULAI</p>
+              <p className="eyebrow mb-4">Method</p>
               <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                A decision layer for scientific teams working with complex evidence.
+                Scientific AI should make reasoning easier to inspect.
               </h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+                BOULAI combines inference, machine learning, and scientific reasoning so teams can organize evidence,
+                compare explanations, and decide what deserves validation.
+              </p>
             </div>
           </FadeIn>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {platformPrinciples.map((card, i) => (
+            {methodPillars.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
                 <div className="premium-panel rounded-3xl p-7 h-full">
                   <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
@@ -121,26 +118,24 @@ const Index = () => {
 
       <section className="section-deep py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
             <FadeIn>
-              <p className="eyebrow mb-4">First solution</p>
-              <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground leading-tight">
-                BOULAI Discovery
+              <p className="eyebrow mb-4">Scientific review</p>
+              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+                A methodological foundation for decision-grade discovery.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                Our first product helps teams analyze scientific datasets, explore causal hypotheses, and identify
-                patterns that deserve deeper validation. It is the first solution in the BOULAI platform.
+                The goal is not to replace expert judgment. It is to make the path from data to decision clearer,
+                more explicit, and easier to challenge.
               </p>
-              <Button size="lg" className="mt-8" asChild>
-                <Link to="/product">Explore the Solution</Link>
-              </Button>
             </FadeIn>
             <FadeIn delay={0.15}>
-              <div className="premium-panel rounded-[2rem] overflow-hidden">
-                {solutionCapabilities.map((item, i) => (
-                  <div key={item} className="grid md:grid-cols-[0.16fr_0.84fr] gap-4 border-b border-border/35 p-6 last:border-b-0">
+              <div className="grid sm:grid-cols-3 gap-4">
+                {reviewPrinciples.map((item, i) => (
+                  <div key={item.title} className="premium-panel rounded-3xl p-6 h-full">
                     <p className="text-xs font-semibold text-primary">0{i + 1}</p>
-                    <p className="text-sm font-medium text-foreground">{item}</p>
+                    <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -152,20 +147,21 @@ const Index = () => {
       <section className="section-mid py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
-            <div className="premium-panel rounded-[2rem] p-8 md:p-12">
+            <div className="premium-panel rounded-[2rem] p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
               <div className="max-w-3xl">
-                <p className="eyebrow mb-4">Where it helps</p>
+                <p className="eyebrow mb-4">First solution</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">
-                  Built for the moments when a scientific signal has to become a decision.
+                  BOULAI Discovery is the first product built on this approach.
                 </h2>
+                <p className="mt-5 text-muted-foreground leading-relaxed">
+                  It helps teams analyze scientific datasets, explore causal hypotheses, and identify patterns that
+                  deserve deeper validation.
+                </p>
               </div>
-              <div className="mt-10 grid md:grid-cols-3 gap-6">
-                {decisionLayers.map((row) => (
-                  <div key={row.label} className="rounded-2xl border border-border bg-muted/35 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{row.label}</p>
-                    <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{row.value}</p>
-                  </div>
-                ))}
+              <div className="flex lg:justify-end">
+                <Button size="lg" asChild>
+                  <Link to="/product">Explore BOULAI Discovery</Link>
+                </Button>
               </div>
             </div>
           </FadeIn>

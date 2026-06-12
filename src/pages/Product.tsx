@@ -69,7 +69,7 @@ const Product = () => (
                 <a href="#waitlist">Request Demo</a>
               </Button>
               <Button variant="ghost-light" size="lg" asChild>
-                <Link to="/research">Read the Method</Link>
+                <Link to="/">View the Approach</Link>
               </Button>
             </div>
           </FadeIn>
