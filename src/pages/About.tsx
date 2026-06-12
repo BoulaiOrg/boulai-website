@@ -2,14 +2,13 @@ import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Compass, Users, Rocket } from "lucide-react";
 
 const teamMembers = [
   { name: "Danilo", role: "Co-founder & co-CEO", bio: "Building the vision of rigorous AI for science." },
-  { name: "Andrea", role: "Co-founder & co-CEO", bio: "Strategy and partnerships at the science–AI frontier." },
+  { name: "Andrea", role: "Co-founder & co-CEO", bio: "Strategy and partnerships at the science-AI frontier." },
   { name: "Arianna", role: "Co-founder", bio: "Bridging domain expertise and product design." },
   { name: "Francesco", role: "Research", bio: "Advancing causal discovery methods." },
-  { name: "Giacomo", role: "Research", bio: "Working on explainable AI and anomaly detection." },
+  { name: "Giacomo", role: "Research", bio: "Working on explainable AI and scientific data analysis." },
   { name: "Marco", role: "Research", bio: "Statistical learning and hypothesis generation." },
   { name: "Filippo", role: "CTO", bio: "Architecture, infrastructure, and engineering leadership." },
 ];
@@ -18,19 +17,16 @@ const advisor = { name: "Francesco", role: "Scientific Advisory", bio: "Causal l
 
 const values = [
   {
-    icon: <Compass className="w-7 h-7 text-primary" />,
     title: "Evidence before narrative",
-    desc: "The system must expose the statistical and causal evidence before anyone turns it into a story.",
+    desc: "The system must expose the evidence before anyone turns it into a story.",
   },
   {
-    icon: <Users className="w-7 h-7 text-primary" />,
     title: "Built with scientific teams",
     desc: "We design for researchers, clinicians, data scientists, and decision-makers who need to challenge one another productively.",
   },
   {
-    icon: <Rocket className="w-7 h-7 text-primary" />,
     title: "Ambitious and practical",
-    desc: "We start where better evidence can change expensive decisions: BioPharma R&D, trials, and translational science.",
+    desc: "We start where better evidence can change expensive decisions: BioPharma R&D, clinical development, and translational science.",
   },
 ];
 
@@ -44,10 +40,10 @@ const About = () => (
         <FadeIn>
           <p className="eyebrow mb-5">Who we are</p>
           <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
-            We are building causal intelligence for scientific decisions.
+            We are building scientific intelligence for better decisions.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            BOULAi brings together causal inference, machine learning, product design, and scientific strategy
+            BOULAI brings together causal inference, machine learning, product design, and scientific strategy
             to help research organizations find stronger signals and avoid expensive false confidence.
           </p>
         </FadeIn>
@@ -60,7 +56,7 @@ const About = () => (
         <FadeIn>
           <blockquote className="premium-panel rounded-[2rem] p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed text-left">
             "Our goal is to make high-stakes scientific reasoning more inspectable: human expertise, causal
-            models, statistical evidence, and AI agents working around the same table."
+            models, statistical evidence, and AI systems working around the same table."
           </blockquote>
         </FadeIn>
       </div>
@@ -115,9 +111,7 @@ const About = () => (
           {values.map((v, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="text-center">
-                <div className="w-14 h-14 rounded-2xl bg-card flex items-center justify-center mx-auto mb-5 border border-border/30">
-                  {v.icon}
-                </div>
+                <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{v.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>

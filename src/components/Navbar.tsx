@@ -32,12 +32,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-0 text-2xl font-bold tracking-tight">
-          <span className="text-foreground">BOULA</span>
-          <span className="relative text-foreground">
-            i
-            <span className="absolute -top-[2px] left-[3px] w-[5px] h-[5px] rounded-full bg-primary" />
-          </span>
+        <Link to="/" className="text-2xl font-bold tracking-tight text-foreground">
+          BOULAI
         </Link>
 
         {/* Desktop nav */}
@@ -57,7 +53,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <Button size="sm" asChild>
-            <a href="#waitlist">Request Pilot</a>
+            <a href="#waitlist">Request Intro</a>
           </Button>
         </div>
 
@@ -83,7 +79,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button size="sm" asChild>
-              <a href="#waitlist">Request Pilot</a>
+              <a href="#waitlist">Request Intro</a>
             </Button>
           </div>
         </div>

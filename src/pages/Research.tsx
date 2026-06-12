@@ -1,33 +1,29 @@
 import FadeIn from "@/components/FadeIn";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { BookOpen, GitPullRequestArrow, Microscope, ShieldCheck } from "lucide-react";
 
 const principles = [
   {
-    icon: <GitPullRequestArrow className="w-7 h-7 text-primary" />,
-    title: "Causal structure first",
-    desc: "We treat a DAG as a scientific theory to be tested, not a decorative graph added after analysis.",
+    title: "Explicit assumptions",
+    desc: "Scientific teams should be able to see which assumptions are being used before a model produces an answer.",
   },
   {
-    icon: <ShieldCheck className="w-7 h-7 text-primary" />,
-    title: "No forced anomalies",
-    desc: "A clean deterministic dataset should return zero anomalies. This is a product rule and a scientific principle.",
+    title: "Inspectable evidence",
+    desc: "Outputs should make uncertainty, robustness, and competing explanations easier to review, not harder.",
   },
   {
-    icon: <Microscope className="w-7 h-7 text-primary" />,
-    title: "Evidence before language",
-    desc: "LLM agents operate after statistical diagnostics. They synthesize, challenge, and propose - they do not decide the facts.",
+    title: "Human scientific judgment",
+    desc: "AI can help structure analysis and synthesis, but the decision remains accountable to expert review.",
   },
 ];
 
 const methods = [
-  "SCM and DAG stress-testing",
-  "Baseline-relative surprising evidence",
-  "Budhathoki-style episodic attribution",
-  "Varici-style locality diagnostics",
-  "Posterior-ready mechanism learning roadmap",
-  "Critic-guarded scientific hypothesis generation",
+  "Causal inference and graphical models",
+  "Statistical learning for scientific datasets",
+  "Subgroup and heterogeneity analysis",
+  "Robustness and sensitivity workflows",
+  "Evidence synthesis and hypothesis generation",
+  "Governance-ready scientific review artifacts",
 ];
 
 const Research = () => (
@@ -37,14 +33,13 @@ const Research = () => (
     <section className="section-mid pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
         <FadeIn>
-          <p className="eyebrow mb-5">Research frame</p>
+          <p className="eyebrow mb-5">Method</p>
           <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
-            Scientific AI should be testable, falsifiable, and inspectable.
+            Scientific AI should make reasoning easier to inspect.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
-            BOULAi is built around a simple constraint: before AI proposes narratives, the system must expose
-            what the data says about the causal theory, where the evidence is surprising, and how reliable the
-            localization is.
+            BOULAI is built around a simple idea: AI should help teams organize evidence, test assumptions,
+            and compare explanations before high-stakes scientific decisions are made.
           </p>
         </FadeIn>
       </div>
@@ -56,7 +51,7 @@ const Research = () => (
           {principles.map((principle, i) => (
             <FadeIn key={principle.title} delay={i * 0.1}>
               <div className="premium-panel rounded-3xl p-8 h-full">
-                <div className="mb-6">{principle.icon}</div>
+                <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{principle.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{principle.desc}</p>
               </div>
@@ -70,14 +65,13 @@ const Research = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
           <FadeIn>
-            <BookOpen className="h-10 w-10 text-primary mb-6" />
+            <p className="eyebrow mb-4">Roadmap</p>
             <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-              A methodological roadmap for decision-grade discovery.
+              A methodological foundation for decision-grade discovery.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-              The current platform operationalizes causal stress-testing and anomaly explanation. The roadmap
-              extends this into richer Bayesian mechanism learning, protocol-aware trial analysis, and
-              governance-grade evidence packages.
+              The platform combines causal reasoning, statistical analysis, evidence synthesis, and review workflows
+              so scientific teams can move from complex data to clearer decisions.
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>

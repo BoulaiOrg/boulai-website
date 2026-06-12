@@ -4,66 +4,48 @@ import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {
-  Binary,
-  BrainCircuit,
-  FileCheck2,
-  GitBranch,
-  Microscope,
-  Network,
-  ScanSearch,
-  SplitSquareHorizontal,
-  Upload,
-} from "lucide-react";
 
 const workflow = [
   {
-    icon: <Upload className="w-6 h-6 text-primary" />,
-    title: "Bring data and theory",
-    desc: "Upload trial, experimental, or translational data. Add a DAG, reference dataset, target outcome, and scientific context when available.",
+    title: "Bring the dataset",
+    desc: "Start from trial, translational, experimental, or observational data with the context needed to interpret it responsibly.",
   },
   {
-    icon: <Binary className="w-6 h-6 text-primary" />,
-    title: "Estimate conditional mechanisms",
-    desc: "Learn local SCM mechanisms from D0 or use declared structural equations when the science is already specified.",
+    title: "Frame the scientific question",
+    desc: "Define outcomes, candidate drivers, covariates, groups, and hypotheses before asking the system to analyze the data.",
   },
   {
-    icon: <ScanSearch className="w-6 h-6 text-primary" />,
-    title: "Stress-test the theory",
-    desc: "Score D1 against the maintained causal model using tail probabilities rather than forced top-percentile outliers.",
+    title: "Run the analysis",
+    desc: "Use statistical and causal workflows to explore patterns, test assumptions, compare explanations, and surface subgroups.",
   },
   {
-    icon: <FileCheck2 className="w-6 h-6 text-primary" />,
-    title: "Review decision outputs",
-    desc: "Inspect anomalies, root explanations, locality diagnostics, subgroup hypotheses, and audit-ready artifacts.",
+    title: "Review the evidence",
+    desc: "Turn results into inspectable outputs that scientists, clinicians, and decision-makers can challenge together.",
   },
 ];
 
-const engines = [
+const capabilities = [
   {
-    icon: <Network className="w-8 h-8 text-primary" />,
-    title: "Causal theory stress testing",
-    desc: "Detect where a declared DAG/SCM stops explaining the observed data. Built for model criticism, not blind storytelling.",
+    title: "Dataset and outcome analysis",
+    desc: "Profile study data, inspect outcomes, compare cohorts, and identify signals that need deeper analysis.",
   },
   {
-    icon: <SplitSquareHorizontal className="w-8 h-8 text-primary" />,
-    title: "Subgroup and regime discovery",
-    desc: "Compare reference and stress regimes across treatment arms, sites, time windows, batches, or external validation cohorts.",
+    title: "Causal hypothesis testing",
+    desc: "Represent scientific assumptions explicitly and evaluate whether the observed data supports or challenges them.",
   },
   {
-    icon: <BrainCircuit className="w-8 h-8 text-primary" />,
-    title: "Guarded scientific agents",
-    desc: "LLM agents synthesize evidence after the statistical stages. They do not decide anomalies; they interpret auditable outputs.",
+    title: "Subgroup discovery",
+    desc: "Explore patient, site, biomarker, or response patterns that may point to meaningful heterogeneity.",
   },
 ];
 
 const outputs = [
-  "Row-level anomaly probabilities and severity",
-  "Learned local mechanism coefficients",
-  "Causal attribution for surprising evidence",
-  "DAG stress locality and reliability flags",
-  "Candidate subgroup and follow-up experiment hypotheses",
-  "Exportable artifacts for review and governance",
+  "Study and dataset readiness summaries",
+  "Outcome and subgroup analysis outputs",
+  "Causal hypothesis and assumption checks",
+  "Robustness and sensitivity notes",
+  "Candidate mechanisms for follow-up",
+  "Evidence packages for scientific review",
 ];
 
 const Product = () => (
@@ -72,41 +54,35 @@ const Product = () => (
 
     <section className="section-mid pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
           <FadeIn>
-            <p className="eyebrow mb-5">BouleDiscovery</p>
+            <p className="eyebrow mb-5">BOULAI Discovery</p>
             <h1 className="font-display text-4xl md:text-6xl font-semibold leading-[1.03] text-foreground mb-7">
-              Causal analysis for trial and translational data.
+              A workbench for scientific data, hypotheses, and decisions.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              BouleDiscovery helps teams interrogate outcomes, patient subgroups, endpoint assumptions,
-              treatment pathways, and hidden mechanism shifts with a workflow designed for scientific review.
+              BOULAI Discovery helps teams analyze datasets, explore hidden patterns, evaluate causal assumptions,
+              and prepare evidence for decisions across discovery, trials, and translational research.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <a href="#waitlist">Request Demo</a>
               </Button>
               <Button variant="ghost-light" size="lg" asChild>
-                <Link to="/research">Read the Research Frame</Link>
+                <Link to="/research">Read the Method</Link>
               </Button>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.15}>
             <div className="premium-panel rounded-[2rem] p-7">
-              <div className="flex items-center justify-between border-b border-border/40 pb-5">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Analysis run</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-foreground">SCM stress test</h2>
-                </div>
-                <GitBranch className="h-9 w-9 text-secondary" />
-              </div>
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Solution scope</p>
               <div className="mt-6 grid gap-4">
                 {[
-                  ["Input", "DAG + D0/D1 + target outcome"],
-                  ["Rule", "p_tail <= alpha, no forced anomalies"],
-                  ["Output", "Anomalies, root explanation, locality"],
-                  ["Interpretation", "Evidence-bound hypotheses"],
+                  ["Data", "Trial, translational, experimental, and observational datasets"],
+                  ["Questions", "Outcomes, drivers, hypotheses, subgroups, and robustness"],
+                  ["Users", "Scientists, clinical teams, data teams, and R&D decision-makers"],
+                  ["Goal", "Move from complex evidence to clearer next-step decisions"],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-2xl bg-muted/35 border border-border p-4">
                     <p className="text-xs font-semibold text-primary">{label}</p>
@@ -125,17 +101,14 @@ const Product = () => (
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Workflow</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
-            From causal theory to auditable evidence.
+            A cleaner path from data to scientific review.
           </h2>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {workflow.map((step, i) => (
             <FadeIn key={step.title} delay={i * 0.08}>
               <div className="premium-panel rounded-3xl p-6 h-full">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 mb-5">
-                  {step.icon}
-                </div>
-                <p className="text-xs font-semibold text-primary mb-2">Step {i + 1}</p>
+                <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
                 <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
@@ -148,18 +121,18 @@ const Product = () => (
     <section className="section-mid py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
-          <p className="eyebrow mb-4 text-center">Engines</p>
+          <p className="eyebrow mb-4 text-center">Capabilities</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
-            Built for the questions BioPharma teams actually ask.
+            Built for exploratory, causal, and decision-oriented analysis.
           </h2>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {engines.map((engine, i) => (
-            <FadeIn key={engine.title} delay={i * 0.1}>
+          {capabilities.map((capability, i) => (
+            <FadeIn key={capability.title} delay={i * 0.1}>
               <div className="premium-panel rounded-3xl p-8 h-full">
-                <div className="mb-6">{engine.icon}</div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{engine.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{engine.desc}</p>
+                <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{capability.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{capability.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -171,13 +144,13 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
           <FadeIn>
-            <Microscope className="h-10 w-10 text-primary mb-6" />
+            <p className="eyebrow mb-4">Outputs</p>
             <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-              Outputs your scientific team can interrogate.
+              Evidence your team can inspect before it acts.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-              Every run is designed to produce evidence objects - not just a generated paragraph.
-              Scientists can inspect rows, mechanisms, assumptions, and follow-up hypotheses.
+              The product is designed to support scientific judgment, not replace it. Outputs should help teams
+              see what is known, what is uncertain, and what deserves validation.
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>

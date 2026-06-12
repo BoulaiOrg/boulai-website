@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => (
   <footer className="section-deep border-t border-border/30 py-16">
@@ -8,10 +7,10 @@ const Footer = () => (
         {/* Logo & tagline */}
         <div>
           <Link to="/" className="text-xl font-bold text-foreground tracking-tight">
-            BOULA<span className="relative">i<span className="absolute -top-[2px] left-[3px] w-[4px] h-[4px] rounded-full bg-primary" /></span>
+            BOULAI
           </Link>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-            Causal intelligence for BioPharma R&D, trial optimization, and scientific decision-making.
+            Scientific intelligence for discovery, clinical development, and R&D strategy.
           </p>
         </div>
 
@@ -23,20 +22,18 @@ const Footer = () => (
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="mailto:hello@boulai.com" className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail size={20} />
-            </a>
-          </div>
+        <div className="flex flex-col gap-3">
+          <a href="mailto:hello@boulai.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Contact
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            LinkedIn
+          </a>
         </div>
       </div>
 
       <div className="mt-12 pt-8 border-t border-border/20 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} BOULAi. All rights reserved.
+        © {new Date().getFullYear()} BOULAI. All rights reserved.
       </div>
     </div>
   </footer>
