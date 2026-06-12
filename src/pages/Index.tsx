@@ -5,23 +5,45 @@ import CausalGraph from "@/components/CausalGraph";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { AlertTriangle, Brain, SearchX } from "lucide-react";
+import { Activity, Atom, ChartNoAxesCombined, FlaskConical, Network, ShieldCheck } from "lucide-react";
 
-const problemCards = [
+const focusAreas = [
+  "Trial optimization",
+  "Causal theory testing",
+  "Hidden subgroup discovery",
+  "Outcome reliability",
+];
+
+const platformCards = [
   {
-    icon: <Brain className="w-8 h-8 text-primary" />,
-    title: "LLMs can't replace scientific reasoning",
-    desc: "Text generation ≠ causal insight. Language models hallucinate structure where none exists.",
+    icon: <Network className="w-7 h-7 text-primary" />,
+    title: "Stress-test causal theories",
+    desc: "Turn a declared DAG into an auditable SCM stress test. See where observed data violates the mechanism you thought was true.",
   },
   {
-    icon: <AlertTriangle className="w-8 h-8 text-primary" />,
-    title: "False positives cost years and millions",
-    desc: "Life science R&D cycles are brutal. One bad hypothesis can derail an entire program.",
+    icon: <Activity className="w-7 h-7 text-primary" />,
+    title: "Reduce false signals",
+    desc: "Separate rare-but-valid patients from true surprising evidence, so teams do not overreact to noisy tails or miss meaningful deviations.",
   },
   {
-    icon: <SearchX className="w-8 h-8 text-primary" />,
-    title: "Discovery is still a rare skill",
-    desc: "Most teams rely on narrative, not disciplined evidence. Real discovery requires new tools.",
+    icon: <Atom className="w-7 h-7 text-primary" />,
+    title: "Find actionable subgroups",
+    desc: "Surface hidden response patterns, patient segments, and mechanism shifts that can inform trial design and translational strategy.",
+  },
+];
+
+const decisionRows = [
+  {
+    label: "Clinical development",
+    value: "Which patients, sites, and endpoints are putting the theory under stress?",
+  },
+  {
+    label: "Translational science",
+    value: "Which biomarkers or pathways explain surprising treatment response?",
+  },
+  {
+    label: "R&D governance",
+    value: "Which findings are robust enough to justify the next experiment?",
   },
 ];
 
@@ -30,50 +52,97 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center section-deep overflow-hidden">
+      <section className="relative min-h-screen flex items-center section-deep overflow-hidden pt-24">
         <CausalGraph />
-        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center max-w-4xl">
-          <FadeIn>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
-              From Data to Discovery.
-              <br />
-              <span className="text-gradient-gold">From Discovery to Breakthroughs.</span>
-            </h1>
-          </FadeIn>
-          <FadeIn delay={0.15}>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              BOULAi gives life science researchers the rigorous AI tools they need to turn complex experimental data into testable hypotheses, causal insights, and explainable anomalies. Not another LLM wrapper. Real discovery engines.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="gold" size="lg" asChild>
-                <Link to="/product">Discover BouleDiscovery</Link>
-              </Button>
-              <Button variant="ghost-light" size="lg" asChild>
-                <Link to="/about">Who We Are</Link>
-              </Button>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_25%,hsl(var(--secondary)/0.16),transparent_30rem)]" />
+        <div className="relative z-10 container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+            <div className="max-w-4xl">
+              <FadeIn>
+                <p className="eyebrow mb-5">Causal intelligence for BioPharma R&D</p>
+                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tight text-foreground">
+                  Make scientific decisions with fewer blind spots.
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.15}>
+                <p className="mt-7 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                  BOULAi helps clinical, translational, and strategy teams test causal theories against real data,
+                  explain surprising evidence, discover high-value subgroups, and reduce false positives before
+                  they become expensive decisions.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.25}>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {focusAreas.map((area) => (
+                    <span key={area} className="rounded-full border border-border/60 bg-card/50 px-4 py-2 text-xs font-semibold text-muted-foreground">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.35}>
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                  <Button variant="gold" size="lg" asChild>
+                    <a href="#waitlist">Request BioPharma Pilot</a>
+                  </Button>
+                  <Button variant="ghost-light" size="lg" asChild>
+                    <Link to="/product">Explore the Platform</Link>
+                  </Button>
+                </div>
+              </FadeIn>
             </div>
-          </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="premium-panel rounded-[2rem] p-6 md:p-8">
+                <div className="flex items-center justify-between border-b border-border/40 pb-5">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Evidence cockpit</p>
+                    <h2 className="mt-2 text-2xl font-semibold text-foreground">Theory under stress</h2>
+                  </div>
+                  <ShieldCheck className="h-9 w-9 text-secondary" />
+                </div>
+                <div className="mt-6 space-y-4">
+                  {[
+                    ["Stage 0", "Surprising evidence", "0 forced anomalies"],
+                    ["Stage 1", "Root explanation", "Causal attribution"],
+                    ["Stage 2", "Regime locality", "DAG stress map"],
+                    ["Stage 3", "Scientific hypotheses", "Critic-guarded agents"],
+                  ].map(([stage, title, meta]) => (
+                    <div key={stage} className="rounded-2xl border border-border/40 bg-background/35 p-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div>
+                          <p className="text-xs font-semibold text-primary">{stage}</p>
+                          <p className="mt-1 text-sm font-semibold text-foreground">{title}</p>
+                        </div>
+                        <p className="text-xs text-muted-foreground">{meta}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      {/* Problem */}
       <section className="section-mid py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">
-              AI is everywhere.<br />
-              <span className="text-muted-foreground">Rigorous discovery is rare.</span>
-            </h2>
+            <div className="max-w-3xl">
+              <p className="eyebrow mb-4">Why BOULAi</p>
+              <h2 className="font-display text-4xl md:text-6xl leading-tight text-foreground">
+                BioPharma does not need another dashboard. It needs better scientific judgment.
+              </h2>
+            </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {problemCards.map((card, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="bg-surface-raised rounded-xl p-8 h-full border border-border/30">
-                  <div className="mb-5">{card.icon}</div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">{card.title}</h3>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {platformCards.map((card, i) => (
+              <FadeIn key={card.title} delay={i * 0.1}>
+                <div className="premium-panel rounded-3xl p-7 h-full">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20">
+                    {card.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
                 </div>
               </FadeIn>
@@ -82,45 +151,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Product Teaser */}
       <section className="section-deep py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn>
-            <div className="max-w-2xl mx-auto bg-card rounded-2xl p-10 border border-border/40 gold-glow text-center">
-              <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary text-primary-foreground mb-6">
-                Now in Pilot
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">BouleDiscovery</h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Upload your experimental data. Get hypotheses, causal drivers, and anomaly explanations — navigable, explainable, and manager-ready.
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
+            <FadeIn>
+              <p className="eyebrow mb-4">First solution</p>
+              <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">BouleDiscovery</h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+                A causal discovery and theory-testing workbench for teams analyzing trial, experimental, and
+                translational datasets. The product is one solution in the BOULAi platform - not the whole vision.
               </p>
-              <Button variant="gold" size="lg" asChild>
-                <Link to="/product">Explore BouleDiscovery →</Link>
+              <Button variant="gold" size="lg" className="mt-8" asChild>
+                <Link to="/product">See BouleDiscovery</Link>
               </Button>
-            </div>
-          </FadeIn>
-
-          {/* Coming Soon cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto mt-10">
-            {[
-              { name: "BouleMagellan", desc: "Evaluate research novelty and commercialization potential" },
-              { name: "BouleFolio", desc: "R&D portfolio governance and fund/pause/kill decisions" },
-            ].map((p, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="rounded-xl p-6 border border-border/20 opacity-50 text-center">
-                  <span className="inline-block px-2 py-0.5 text-[10px] font-medium rounded-full border border-muted-foreground/30 text-muted-foreground mb-3">
-                    Coming Soon
-                  </span>
-                  <h4 className="text-sm font-semibold text-foreground mb-1">{p.name}</h4>
-                  <p className="text-xs text-muted-foreground">{p.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div className="premium-panel rounded-[2rem] overflow-hidden">
+                {decisionRows.map((row, i) => (
+                  <div key={row.label} className="grid md:grid-cols-[0.38fr_0.62fr] gap-4 border-b border-border/35 p-6 last:border-b-0">
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/10 text-xs font-bold text-secondary">
+                        0{i + 1}
+                      </span>
+                      <p className="text-sm font-semibold text-foreground">{row.label}</p>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{row.value}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Waitlist */}
+      <section className="section-mid py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <FadeIn>
+            <div className="premium-panel rounded-[2rem] p-8 md:p-12 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
+              <div>
+                <ChartNoAxesCombined className="h-10 w-10 text-primary mb-5" />
+                <h2 className="font-display text-4xl md:text-5xl leading-tight text-foreground">
+                  Designed for decisions, not just insight.
+                </h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  "Prioritize trial design changes",
+                  "Explain anomalous patient response",
+                  "Pressure-test endpoint assumptions",
+                  "Identify subgroup hypotheses to validate",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-border/40 bg-background/35 p-4">
+                    <FlaskConical className="h-5 w-5 text-secondary mb-3" />
+                    <p className="text-sm font-medium text-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       <WaitlistSection />
       <Footer />
     </div>

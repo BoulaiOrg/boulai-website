@@ -19,18 +19,18 @@ const advisor = { name: "Francesco", role: "Scientific Advisory", bio: "Causal l
 const values = [
   {
     icon: <Compass className="w-7 h-7 text-primary" />,
-    title: "Rigorous by design",
-    desc: "We build algorithms for scientists, not slides for stakeholders.",
+    title: "Evidence before narrative",
+    desc: "The system must expose the statistical and causal evidence before anyone turns it into a story.",
   },
   {
     icon: <Users className="w-7 h-7 text-primary" />,
-    title: "Open collaboration",
-    desc: "Healthy debate required. No fear culture, no intimidation.",
+    title: "Built with scientific teams",
+    desc: "We design for researchers, clinicians, data scientists, and decision-makers who need to challenge one another productively.",
   },
   {
     icon: <Rocket className="w-7 h-7 text-primary" />,
-    title: "Ambitious, pragmatic",
-    desc: "We'll win one industry at a time. Starting with the one that matters most to human life.",
+    title: "Ambitious and practical",
+    desc: "We start where better evidence can change expensive decisions: BioPharma R&D, trials, and translational science.",
   },
 ];
 
@@ -42,11 +42,13 @@ const About = () => (
     <section className="section-mid pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">
-            We are builders, researchers, and scientists who got tired of false positives.
+          <p className="eyebrow mb-5">Who we are</p>
+          <h1 className="font-display text-5xl md:text-7xl leading-[0.95] text-foreground mb-7">
+            We are building causal intelligence for scientific decisions.
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            BOULAi was founded to bring rigorous causal and explainable AI to the people who need it most — the researchers and innovators pushing the boundaries of life science and beyond.
+            BOULAi brings together causal inference, machine learning, product design, and scientific strategy
+            to help research organizations find stronger signals and avoid expensive false confidence.
           </p>
         </FadeIn>
       </div>
@@ -56,8 +58,9 @@ const About = () => (
     <section className="section-deep py-24">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl text-center">
         <FadeIn>
-          <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic border-l-4 border-primary pl-8 text-left">
-            "We aim to build a horizontal platform that brings the best minds — human and artificial — around the same table to tackle humanity's hardest problems. A modern Boule."
+          <blockquote className="premium-panel rounded-[2rem] p-8 text-xl md:text-2xl font-medium text-foreground leading-relaxed italic text-left">
+            "Our goal is to make high-stakes scientific reasoning more inspectable: human expertise, causal
+            models, statistical evidence, and AI agents working around the same table."
           </blockquote>
         </FadeIn>
       </div>
@@ -72,7 +75,7 @@ const About = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {teamMembers.map((m, i) => (
             <FadeIn key={i} delay={i * 0.05}>
-              <div className="bg-card rounded-xl p-6 border border-border/30 hover-gold-border text-center">
+              <div className="premium-panel rounded-3xl p-6 text-center">
                 <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {m.name[0]}
                 </div>
@@ -91,7 +94,7 @@ const About = () => (
       <div className="container mx-auto px-4 lg:px-8 max-w-md">
         <FadeIn>
           <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">Scientific Advisory</p>
-          <div className="bg-card rounded-xl p-6 border border-border/30 text-center">
+          <div className="premium-panel rounded-3xl p-6 text-center">
             <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
               {advisor.name[0]}
             </div>

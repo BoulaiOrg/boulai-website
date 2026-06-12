@@ -4,102 +4,139 @@ import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Network, Lightbulb, ShieldAlert, Upload, Cpu, FileText, Users, Briefcase } from "lucide-react";
+import {
+  Binary,
+  BrainCircuit,
+  FileCheck2,
+  GitBranch,
+  Microscope,
+  Network,
+  ScanSearch,
+  SplitSquareHorizontal,
+  Upload,
+} from "lucide-react";
 
-const steps = [
+const workflow = [
   {
-    icon: <Upload className="w-7 h-7 text-primary" />,
-    title: "Load your data",
-    desc: "Upload tabular experimental datasets; optionally add scientific context or an existing causal theory.",
+    icon: <Upload className="w-6 h-6 text-primary" />,
+    title: "Bring data and theory",
+    desc: "Upload trial, experimental, or translational data. Add a DAG, reference dataset, target outcome, and scientific context when available.",
   },
   {
-    icon: <Cpu className="w-7 h-7 text-primary" />,
-    title: "Run the engines",
-    desc: "Causal Discovery, Explainable AI (XAI), and Anomaly Detection work in concert.",
+    icon: <Binary className="w-6 h-6 text-primary" />,
+    title: "Estimate conditional mechanisms",
+    desc: "Learn local SCM mechanisms from D0 or use declared structural equations when the science is already specified.",
   },
   {
-    icon: <FileText className="w-7 h-7 text-primary" />,
-    title: "Get discovery-ready output",
-    desc: "Navigable causal graphs, ranked hypotheses, anomaly explanations, and manager-ready reports.",
+    icon: <ScanSearch className="w-6 h-6 text-primary" />,
+    title: "Stress-test the theory",
+    desc: "Score D1 against the maintained causal model using tail probabilities rather than forced top-percentile outliers.",
+  },
+  {
+    icon: <FileCheck2 className="w-6 h-6 text-primary" />,
+    title: "Review decision outputs",
+    desc: "Inspect anomalies, root explanations, locality diagnostics, subgroup hypotheses, and audit-ready artifacts.",
   },
 ];
 
 const engines = [
   {
     icon: <Network className="w-8 h-8 text-primary" />,
-    title: "Causal Discovery Engine",
-    desc: "Generates candidate causal structures and drivers from your data. Enables what-if simulations to prioritize next experiments.",
+    title: "Causal theory stress testing",
+    desc: "Detect where a declared DAG/SCM stops explaining the observed data. Built for model criticism, not blind storytelling.",
   },
   {
-    icon: <Lightbulb className="w-8 h-8 text-primary" />,
-    title: "Hypothesis Generator",
-    desc: "Surfaces surprising patterns and hypotheses. Uses a proprietary reasoning pipeline to translate signals into readable, testable narratives.",
+    icon: <SplitSquareHorizontal className="w-8 h-8 text-primary" />,
+    title: "Subgroup and regime discovery",
+    desc: "Compare reference and stress regimes across treatment arms, sites, time windows, batches, or external validation cohorts.",
   },
   {
-    icon: <ShieldAlert className="w-8 h-8 text-primary" />,
-    title: "Anomaly Explanation Engine",
-    desc: "Start from your existing causal theory (DAG) and detect where your data breaks it. For when you need to know: where does our model of the world fail?",
+    icon: <BrainCircuit className="w-8 h-8 text-primary" />,
+    title: "Guarded scientific agents",
+    desc: "LLM agents synthesize evidence after the statistical stages. They do not decide anomalies; they interpret auditable outputs.",
   },
 ];
 
-const audiences = [
-  {
-    icon: <Users className="w-7 h-7 text-primary" />,
-    title: "R&D Researchers in Life Sciences",
-    desc: "You run experiments, you have data, and you're drowning in analysis. BouleDiscovery finds what you didn't know to look for.",
-  },
-  {
-    icon: <Briefcase className="w-7 h-7 text-primary" />,
-    title: "Research Managers & Innovation Leaders",
-    desc: "You need to kill false positives early and fund the right projects. Get the same rigorous output, in a format you can present.",
-  },
+const outputs = [
+  "Row-level anomaly probabilities and severity",
+  "Learned local mechanism coefficients",
+  "Causal attribution for surprising evidence",
+  "DAG stress locality and reliability flags",
+  "Candidate subgroup and follow-up experiment hypotheses",
+  "Exportable artifacts for review and governance",
 ];
 
 const Product = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
 
-    {/* Hero */}
     <section className="section-mid pt-32 pb-20">
-      <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
-        <FadeIn>
-          <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary text-primary-foreground mb-6">
-            Now in Pilot — Life Sciences
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">BouleDiscovery</h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Your magnifier for scientific discovery. From tabular data to hypotheses, causal drivers, and anomaly explanations — fully navigable, fully explainable.
-          </p>
-        </FadeIn>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+          <FadeIn>
+            <p className="eyebrow mb-5">BouleDiscovery</p>
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] text-foreground mb-7">
+              Causal analysis for trial and translational data.
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              BouleDiscovery helps teams interrogate outcomes, patient subgroups, endpoint assumptions,
+              treatment pathways, and hidden mechanism shifts with a workflow designed for scientific review.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <Button variant="gold" size="lg" asChild>
+                <a href="#waitlist">Request Demo</a>
+              </Button>
+              <Button variant="ghost-light" size="lg" asChild>
+                <Link to="/research">Read the Research Frame</Link>
+              </Button>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15}>
+            <div className="premium-panel rounded-[2rem] p-7">
+              <div className="flex items-center justify-between border-b border-border/40 pb-5">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Analysis run</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-foreground">SCM stress test</h2>
+                </div>
+                <GitBranch className="h-9 w-9 text-secondary" />
+              </div>
+              <div className="mt-6 grid gap-4">
+                {[
+                  ["Input", "DAG + D0/D1 + target outcome"],
+                  ["Rule", "p_tail <= alpha, no forced anomalies"],
+                  ["Output", "Anomalies, root explanation, locality"],
+                  ["Interpretation", "Evidence-bound hypotheses"],
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-2xl bg-background/35 border border-border/40 p-4">
+                    <p className="text-xs font-semibold text-primary">{label}</p>
+                    <p className="mt-1 text-sm text-foreground">{value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
 
-    {/* Screenshot placeholder */}
-    <section className="section-deep py-16">
-      <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-        <FadeIn>
-          <div className="rounded-2xl border-2 border-dashed border-border/50 bg-card/50 flex items-center justify-center h-80 md:h-[28rem]">
-            <p className="text-muted-foreground text-sm">Product screenshot coming soon</p>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
-    {/* How it works */}
-    <section className="section-mid py-24">
+    <section className="section-deep py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">How it works</h2>
+          <p className="eyebrow mb-4 text-center">Workflow</p>
+          <h2 className="font-display text-4xl md:text-6xl text-foreground text-center mb-16">
+            From causal theory to auditable evidence.
+          </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="text-center">
-                <div className="w-14 h-14 rounded-2xl bg-card flex items-center justify-center mx-auto mb-5 border border-border/30">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+          {workflow.map((step, i) => (
+            <FadeIn key={step.title} delay={i * 0.08}>
+              <div className="premium-panel rounded-3xl p-6 h-full">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 mb-5">
                   {step.icon}
                 </div>
-                <div className="text-xs text-primary font-semibold mb-2">Step {i + 1}</div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                <p className="text-xs font-semibold text-primary mb-2">Step {i + 1}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </FadeIn>
@@ -108,39 +145,21 @@ const Product = () => (
       </div>
     </section>
 
-    {/* Three engines */}
-    <section className="section-deep py-24">
-      <div className="container mx-auto px-4 lg:px-8">
-        <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">Three engines, one platform</h2>
-        </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {engines.map((e, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card rounded-xl p-8 border border-border/30 h-full hover-gold-border">
-                <div className="mb-5">{e.icon}</div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{e.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Who is it for */}
     <section className="section-mid py-24">
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">Who is it for</h2>
+          <p className="eyebrow mb-4 text-center">Engines</p>
+          <h2 className="font-display text-4xl md:text-6xl text-foreground text-center mb-16">
+            Built for the questions BioPharma teams actually ask.
+          </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {audiences.map((a, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card rounded-xl p-8 border border-border/30">
-                <div className="mb-4">{a.icon}</div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{a.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {engines.map((engine, i) => (
+            <FadeIn key={engine.title} delay={i * 0.1}>
+              <div className="premium-panel rounded-3xl p-8 h-full">
+                <div className="mb-6">{engine.icon}</div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">{engine.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{engine.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -148,27 +167,28 @@ const Product = () => (
       </div>
     </section>
 
-    {/* Coming next */}
-    <section className="section-deep py-20">
-      <div className="container mx-auto px-4 lg:px-8 text-center">
-        <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-8">What's coming next</p>
-        </FadeIn>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
-          {[
-            { name: "BouleMagellan", desc: "Evaluate research novelty and commercialization potential" },
-            { name: "BouleFolio", desc: "R&D portfolio governance and fund/pause/kill decisions" },
-          ].map((p, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="rounded-xl p-6 border border-border/20 opacity-50 text-center">
-                <span className="inline-block px-2 py-0.5 text-[10px] font-medium rounded-full border border-muted-foreground/30 text-muted-foreground mb-3">
-                  Coming Soon
-                </span>
-                <h4 className="text-sm font-semibold text-foreground mb-1">{p.name}</h4>
-                <p className="text-xs text-muted-foreground">{p.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
+    <section className="section-deep py-24">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+          <FadeIn>
+            <Microscope className="h-10 w-10 text-primary mb-6" />
+            <h2 className="font-display text-4xl md:text-6xl leading-tight text-foreground">
+              Outputs your scientific team can interrogate.
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+              Every run is designed to produce evidence objects - not just a generated paragraph.
+              Scientists can inspect rows, mechanisms, assumptions, and follow-up hypotheses.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {outputs.map((item) => (
+                <div key={item} className="premium-panel rounded-2xl p-5">
+                  <p className="text-sm font-medium text-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

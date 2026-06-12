@@ -11,15 +11,15 @@ const Footer = () => (
             BOULA<span className="relative">i<span className="absolute -top-[2px] left-[3px] w-[4px] h-[4px] rounded-full bg-primary" /></span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-            A modern Boule — human minds and AI, around the same table.
+            Causal intelligence for BioPharma R&D, trial optimization, and scientific decision-making.
           </p>
         </div>
 
         {/* Nav */}
         <div className="flex flex-col gap-3">
-          <Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Product</Link>
-          <Link to="/research" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Research</Link>
-          <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Who We Are</Link>
+          <Link to="/product" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Platform</Link>
+          <Link to="/research" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Method</Link>
+          <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Company</Link>
         </div>
 
         {/* Contact */}

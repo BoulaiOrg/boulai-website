@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Product", href: "/product" },
-  { label: "Research", href: "/research" },
-  { label: "Who We Are", href: "/about" },
+  { label: "Platform", href: "/product" },
+  { label: "Method", href: "/research" },
+  { label: "Company", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -57,7 +57,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <Button variant="gold" size="sm" asChild>
-            <a href="#waitlist">Request Early Access</a>
+            <a href="#waitlist">Request Pilot</a>
           </Button>
         </div>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Button variant="gold" size="sm" asChild>
-              <a href="#waitlist">Request Early Access</a>
+              <a href="#waitlist">Request Pilot</a>
             </Button>
           </div>
         </div>
