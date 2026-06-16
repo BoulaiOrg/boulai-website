@@ -74,11 +74,11 @@
 @layer components {
   .section-hero {
     background:
-      radial-gradient(circle at 14% 24%, hsl(214 30% 21% / 0.4), transparent 24%),
-      radial-gradient(circle at 74% 18%, hsl(214 32% 24% / 0.24), transparent 22%),
-      linear-gradient(hsl(220 8% 22% / 0.12) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(220 8% 22% / 0.1) 1px, transparent 1px),
-      linear-gradient(180deg, hsl(220 18% 8%), hsl(220 16% 7%));
+      radial-gradient(circle at 15% 24%, hsl(214 28% 19% / 0.34), transparent 24%),
+      radial-gradient(circle at 76% 18%, hsl(214 30% 23% / 0.18), transparent 24%),
+      linear-gradient(hsl(220 8% 20% / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 8% 20% / 0.08) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(220 18% 8%), hsl(220 16% 6%));
     background-size: auto, auto, 88px 88px, 88px 88px, auto;
     color: hsl(0 0% 100%);
   }

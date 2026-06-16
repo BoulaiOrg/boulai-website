@@ -7,28 +7,27 @@ import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const heroLines = ["Scientific AI for", "R&D decisions."];
-const focusAreas = ["Scientific evidence", "Trial analysis", "Causal discovery", "R&D strategy"];
+const heroLines = ["Scientific AI ", "for R&D decisions."];
 
 const methodPillars = [
   {
-    title: "Inference",
-    desc: "Estimate what the evidence supports, where uncertainty remains, and which explanations are still plausible.",
+    title: "Scientific intelligence",
+    desc: "Organize data, evidence, assumptions, and domain context into a decision layer experts can inspect.",
   },
   {
-    title: "Machine learning",
-    desc: "Use models to discover patterns, heterogeneity, and predictive structure without mistaking every signal for science.",
+    title: "Causal reasoning",
+    desc: "Compare mechanisms, intervention pathways, and competing explanations instead of stopping at correlation.",
   },
   {
-    title: "Reasoning",
-    desc: "Connect data, mechanisms, assumptions, and domain knowledge into arguments that experts can inspect.",
+    title: "Machine learning + agents",
+    desc: "Use models and agentic workflows to surface structure, synthesize evidence, and accelerate scientific analysis.",
   },
 ];
 
 const methodOutcomes = [
-  "Organize scientific evidence around explicit questions, not disconnected dashboards.",
-  "Compare competing mechanisms before the team commits to a program, cohort, or endpoint.",
-  "Prioritize what deserves validation next, with assumptions and uncertainty kept visible.",
+  "Scientific intelligence for organizing evidence around explicit causal questions.",
+  "Causal reasoning for comparing mechanisms, pathways, and subgroup explanations.",
+  "Machine learning, statistics, and agents working together without removing human scientific judgment.",
 ];
 
 const reviewPrinciples = [
@@ -53,93 +52,63 @@ const Index = () => {
 
       <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-28 md:py-36 lg:grid-cols-[minmax(0,0.64fr)_minmax(340px,0.36fr)] lg:gap-4">
-            <div className="max-w-5xl">
+          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-24 md:py-32 lg:grid-cols-[minmax(0,0.55fr)_minmax(360px,0.45fr)] lg:gap-2">
+            <div className="max-w-[43rem] lg:pr-4">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="mb-8 h-px w-20 origin-left bg-white/16"
-                />
                 <motion.p
-                  initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  initial={{ opacity: 0, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.55, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-                  className="inverse-eyebrow mb-5"
+                  className="inverse-eyebrow mb-6"
                 >
-                  Scientific intelligence for BioPharma R&amp;D
+                  Explore BOULAI
                 </motion.p>
-                <h1 className="font-display max-w-5xl text-5xl font-normal leading-[0.94] tracking-[-0.038em] text-white sm:text-6xl md:text-7xl lg:text-[7rem]">
+                <motion.h1
+                  initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
+                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                  transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-display max-w-[42rem] text-[3.35rem] font-normal leading-[1.02] tracking-[-0.05em] text-white sm:text-[4.2rem] md:text-[4.95rem] lg:text-[5.35rem]"
+                >
                   {heroLines.map((line, index) => (
-                    <span key={line} className="block overflow-hidden pb-3">
-                      <motion.span
-                        initial={{ y: "108%", opacity: 0, filter: "blur(12px)" }}
-                        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                        transition={{ duration: 0.9, delay: 0.24 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                        className="block will-change-transform"
-                        style={{ fontKerning: "normal", fontVariantLigatures: "common-ligatures" }}
-                      >
-                        {line}
-                      </motion.span>
+                    <span
+                      key={line}
+                      className="block pb-2 will-change-transform"
+                      style={{ fontKerning: "normal", fontVariantLigatures: "common-ligatures" }}
+                    >
+                      {line}
                     </span>
                   ))}
-                </h1>
+                </motion.h1>
                 <motion.p
-                  initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  initial={{ opacity: 0, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-9 max-w-3xl text-base leading-relaxed text-white/68 md:text-[1.5rem]"
+                  className="mt-8 max-w-[29rem] text-[1rem] leading-[1.75] text-white/70 md:text-[1.12rem]"
                 >
-                  BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
-                  decide what to test, validate, or deprioritize next.
+                  BOULAI helps scientific teams turn large-scale data, model outputs, and evidence into clearer R&amp;D
+                  decisions.
                 </motion.p>
                 <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.55, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-11 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/42"
+                  initial={{ opacity: 0, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, filter: "blur(0px)" }}
+                  transition={{ duration: 0.55, delay: 0.76, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
                 >
-                  {focusAreas.map((area, index) => (
-                    <span key={area} className="inline-flex items-center gap-6">
-                      <span>{area}</span>
-                      {index < focusAreas.length - 1 ? <span className="hidden sm:inline-block text-white/18">/</span> : null}
-                    </span>
-                  ))}
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.55, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-14 flex flex-col gap-4 sm:flex-row"
-                >
-                  <Button size="lg" className="bg-white text-[#121419] hover:bg-white/92" asChild>
-                    <a href="#waitlist">Request Intro</a>
-                  </Button>
                   <Button
-                    size="lg"
-                    className="border border-white/14 bg-transparent text-white hover:bg-white hover:text-[#121419]"
+                    size="sm"
+                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#121419] hover:bg-white/92"
                     asChild
                   >
-                    <Link to="/product">View BOULAI Discovery</Link>
+                    <a href="#waitlist">Request Intro</a>
                   </Button>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.55, delay: 0.94, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-14 max-w-4xl border-t border-white/10 pt-6 text-sm leading-relaxed text-white/52"
-                >
-                  BOULAI combines inference, machine learning, and scientific reasoning to help teams move from
-                  fragmented evidence to decision-grade judgment.
                 </motion.div>
               </motion.div>
             </div>
-            <div className="relative hidden min-h-[560px] items-center justify-end lg:flex">
+            <div className="relative hidden min-h-[580px] items-center justify-center lg:flex">
               <HeroCausalAnimation />
             </div>
           </div>
@@ -151,17 +120,18 @@ const Index = () => {
           <FadeIn>
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
               <div className="max-w-3xl">
-                <p className="eyebrow mb-4">Method</p>
+                <p className="eyebrow mb-4">Methodological foundation</p>
                 <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                  Scientific AI should make reasoning easier to inspect.
+                  Scientific intelligence should make causal reasoning easier to inspect.
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                  BOULAI combines inference, machine learning, and scientific reasoning so teams can organize evidence,
-                  compare explanations, and decide what deserves validation.
+                  BOULAI combines machine learning, advanced statistics, causal reasoning, and agentic scientific
+                  workflows so teams can organize evidence, test competing explanations, and decide what deserves
+                  validation.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
-                <p className="eyebrow mb-6">What changes in practice</p>
+                <p className="eyebrow mb-6">What BOULAI integrates</p>
                 <div className="space-y-6">
                   {methodOutcomes.map((item, index) => (
                     <div key={item} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">

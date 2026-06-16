@@ -57,7 +57,11 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <Button size="sm" className="bg-white text-[#121419] hover:bg-white/92" asChild>
+          <Button
+            size="sm"
+            className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+            asChild
+          >
             <a href="#waitlist">Request Intro</a>
           </Button>
         </div>
@@ -83,7 +87,11 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" className="bg-white text-[#121419] hover:bg-white/92" asChild>
+            <Button
+              size="sm"
+              className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+              asChild
+            >
               <a href="#waitlist">Request Intro</a>
             </Button>
           </div>
