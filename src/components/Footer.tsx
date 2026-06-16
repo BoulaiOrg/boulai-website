@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BrandLockup from "@/components/BrandLockup";
 
 const Footer = () => (
   <footer className="border-t border-white/10 bg-[#121419] py-16 text-white">
@@ -7,7 +8,10 @@ const Footer = () => (
         {/* Logo & tagline */}
         <div>
           <Link to="/" className="inline-flex items-center" aria-label="Boulai home">
-            <span className="brand-wordmark text-[1.7rem]">Boulai</span>
+            <BrandLockup
+              iconClassName="h-7 w-7"
+              wordmarkClassName="text-[1.7rem]"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/58">
             Scientific intelligence for discovery, clinical development, and R&D strategy.
