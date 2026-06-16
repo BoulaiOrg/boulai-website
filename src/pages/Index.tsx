@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const heroLines = ["Scientific AI for", "R&D decisions."];
 const focusAreas = ["Scientific evidence", "Trial analysis", "Causal discovery", "R&D strategy"];
 
 const methodPillars = [
@@ -52,44 +54,84 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex min-h-[calc(100vh-5rem)] items-center py-28 md:py-36">
             <div className="max-w-6xl">
-              <FadeIn>
-                <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
-                <h1 className="font-display max-w-5xl text-5xl sm:text-6xl md:text-7xl lg:text-[7.75rem] font-semibold leading-[0.9] tracking-[-0.075em] text-foreground">
-                  Scientific AI for R&D decisions.
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+              >
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="mb-8 h-px w-20 origin-left bg-foreground/18"
+                />
+                <motion.p
+                  initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.55, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+                  className="eyebrow mb-5"
+                >
+                  Scientific intelligence for BioPharma R&amp;D
+                </motion.p>
+                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.86] tracking-[-0.085em] text-foreground sm:text-6xl md:text-7xl lg:text-[7.5rem]">
+                  {heroLines.map((line, index) => (
+                    <span key={line} className="block overflow-hidden pb-2">
+                      <motion.span
+                        initial={{ y: "108%", opacity: 0, filter: "blur(12px)" }}
+                        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                        transition={{ duration: 0.9, delay: 0.24 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                        className="block will-change-transform"
+                      >
+                        {line}
+                      </motion.span>
+                    </span>
+                  ))}
                 </h1>
-              </FadeIn>
-              <FadeIn delay={0.15}>
-                <p className="mt-8 max-w-3xl text-base md:text-2xl text-muted-foreground leading-relaxed">
+                <motion.p
+                  initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-2xl"
+                >
                   BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
                   decide what to test, validate, or deprioritize next.
-                </p>
-              </FadeIn>
-              <FadeIn delay={0.25}>
-                <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+                >
                   {focusAreas.map((area, index) => (
                     <span key={area} className="inline-flex items-center gap-6">
                       <span>{area}</span>
                       {index < focusAreas.length - 1 ? <span className="hidden sm:inline-block text-border">/</span> : null}
                     </span>
                   ))}
-                </div>
-              </FadeIn>
-              <FadeIn delay={0.35}>
-                <div className="mt-12 flex flex-col sm:flex-row gap-4">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-12 flex flex-col gap-4 sm:flex-row"
+                >
                   <Button size="lg" asChild>
                     <a href="#waitlist">Request Intro</a>
                   </Button>
                   <Button variant="ghost-light" size="lg" asChild>
                     <Link to="/product">View BOULAI Discovery</Link>
                   </Button>
-                </div>
-              </FadeIn>
-              <FadeIn delay={0.45}>
-                <div className="mt-14 max-w-4xl border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.94, ease: [0.22, 1, 0.36, 1] }}
+                  className="mt-14 max-w-4xl border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground"
+                >
                   BOULAI combines inference, machine learning, and scientific reasoning to help teams move from
                   fragmented evidence to decision-grade judgment.
-                </div>
-              </FadeIn>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>

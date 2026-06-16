@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import Product from "./pages/Product";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import IntroSplash from "./components/IntroSplash";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +15,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <IntroSplash />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
