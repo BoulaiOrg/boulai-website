@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import BrandLockup from "@/components/BrandLockup";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -35,7 +34,11 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center" aria-label="Boulai home">
-          <BrandLockup wordmarkClassName="text-[1.9rem]" />
+          <img
+            src="/brand/boulai-logo-v2.svg?v=7"
+            alt="Boulai"
+            className="h-9 w-auto object-contain brightness-0 invert"
+          />
         </Link>
 
         {/* Desktop nav */}
