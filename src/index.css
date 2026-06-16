@@ -74,11 +74,11 @@
 @layer components {
   .section-hero {
     background:
-      radial-gradient(circle at 14% 24%, hsl(213 24% 23% / 0.55), transparent 26%),
-      radial-gradient(circle at 76% 10%, hsl(217 18% 18% / 0.38), transparent 22%),
-      linear-gradient(hsl(220 8% 24% / 0.14) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(220 8% 24% / 0.12) 1px, transparent 1px),
-      linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 10%));
+      radial-gradient(circle at 14% 24%, hsl(214 30% 21% / 0.4), transparent 24%),
+      radial-gradient(circle at 74% 18%, hsl(214 32% 24% / 0.24), transparent 22%),
+      linear-gradient(hsl(220 8% 22% / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 8% 22% / 0.1) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(220 18% 8%), hsl(220 16% 7%));
     background-size: auto, auto, 88px 88px, 88px 88px, auto;
     color: hsl(0 0% 100%);
   }
@@ -149,10 +149,71 @@
 }
 
 @layer utilities {
+  .causal-flow-path {
+    stroke-dashoffset: 0;
+    animation: causal-flow-dash 14s linear infinite;
+  }
+
+  .causal-flow-path-slow {
+    animation-duration: 18s;
+  }
+
+  .causal-node-soft {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: causal-node-pulse 4.8s ease-in-out infinite;
+  }
+
+  .causal-ring-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: causal-ring-pulse 5.8s ease-in-out infinite;
+  }
+
+  .causal-ring-pulse-delayed {
+    animation-delay: 1.6s;
+  }
+
   .hover-brand-border {
     @apply border border-transparent transition-colors duration-300;
   }
   .hover-brand-border:hover {
     border-color: hsl(var(--primary) / 0.35);
+  }
+}
+
+@keyframes causal-flow-dash {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+@keyframes causal-node-pulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.16);
+  }
+}
+
+@keyframes causal-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.38;
+    transform: scale(1.04);
   }
 }

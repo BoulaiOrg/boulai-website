@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
+import HeroCausalAnimation from "@/components/HeroCausalAnimation";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,8 +53,8 @@ const Index = () => {
 
       <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex min-h-[calc(100vh-5rem)] items-center py-28 md:py-36">
-            <div className="max-w-6xl">
+          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-28 md:py-36 lg:grid-cols-[minmax(0,0.64fr)_minmax(340px,0.36fr)] lg:gap-4">
+            <div className="max-w-5xl">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -137,6 +138,9 @@ const Index = () => {
                   fragmented evidence to decision-grade judgment.
                 </motion.div>
               </motion.div>
+            </div>
+            <div className="relative hidden min-h-[560px] items-center justify-end lg:flex">
+              <HeroCausalAnimation />
             </div>
           </div>
         </div>
