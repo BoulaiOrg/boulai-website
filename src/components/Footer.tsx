@@ -6,8 +6,8 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         {/* Logo & tagline */}
         <div>
-          <Link to="/" className="inline-flex items-center" aria-label="BOULAI home">
-            <span className="brand-wordmark text-[1.7rem]">BoulAI</span>
+          <Link to="/" className="inline-flex items-center" aria-label="Boulai home">
+            <span className="brand-wordmark text-[1.7rem]">Boulai</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/58">
             Scientific intelligence for discovery, clinical development, and R&D strategy.
@@ -32,7 +32,7 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/42">
-        © {new Date().getFullYear()} BOULAI. All rights reserved.
+        © {new Date().getFullYear()} Boulai. All rights reserved.
       </div>
     </div>
   </footer>

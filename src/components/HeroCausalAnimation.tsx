@@ -42,6 +42,45 @@ const orbitDots = [
   { cx: 228, cy: 86, r: 2, opacity: "0.2", duration: 4.7 },
 ];
 
+const travelingSignals = [
+  {
+    id: "signal-1",
+    duration: 8.8,
+    delay: 0.4,
+    radius: 3.4,
+    points: [
+      { x: 84, y: 124 },
+      { x: 256, y: 156 },
+      { x: 354, y: 278 },
+      { x: 526, y: 242 },
+    ],
+  },
+  {
+    id: "signal-2",
+    duration: 9.6,
+    delay: 1.2,
+    radius: 3,
+    points: [
+      { x: 112, y: 212 },
+      { x: 302, y: 236 },
+      { x: 526, y: 242 },
+      { x: 506, y: 352 },
+    ],
+  },
+  {
+    id: "signal-3",
+    duration: 10.8,
+    delay: 2.1,
+    radius: 2.8,
+    points: [
+      { x: 146, y: 408 },
+      { x: 282, y: 338 },
+      { x: 354, y: 278 },
+      { x: 496, y: 140 },
+    ],
+  },
+];
+
 const HeroCausalAnimation = () => (
   <motion.div
     initial={{ opacity: 0, x: 24 }}
@@ -77,29 +116,77 @@ const HeroCausalAnimation = () => (
 
       <ellipse cx="526" cy="242" rx="118" ry="108" fill="url(#hub-glow)" />
 
-      {structurePaths.map((path) => (
-        <path
-          key={`base-${path}`}
-          d={path}
-          stroke="url(#causal-base)"
-          strokeWidth="1"
-          strokeLinecap="round"
-          opacity="0.72"
-        />
-      ))}
+      <motion.g
+        animate={{ x: [0, 3, 0], y: [0, -4, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      >
+        {structurePaths.map((path) => (
+          <path
+            key={`base-${path}`}
+            d={path}
+            stroke="url(#causal-base)"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.72"
+          />
+        ))}
 
-      {structurePaths.map((path, index) => (
-        <path
-          key={`flow-${path}`}
-          d={path}
-          stroke="url(#causal-flow)"
-          strokeWidth={index === 6 || index === 7 ? "1.4" : "1.15"}
-          strokeLinecap="round"
-          strokeDasharray="7 16"
-          className={index % 2 === 0 ? "causal-flow-path" : "causal-flow-path causal-flow-path-slow"}
-          opacity="0.9"
-        />
-      ))}
+        {structurePaths.map((path, index) => (
+          <path
+            key={`flow-${path}`}
+            d={path}
+            stroke="url(#causal-flow)"
+            strokeWidth={index === 6 || index === 7 ? "1.4" : "1.15"}
+            strokeLinecap="round"
+            strokeDasharray="7 16"
+            className={index % 2 === 0 ? "causal-flow-path" : "causal-flow-path causal-flow-path-slow"}
+            opacity="0.9"
+          />
+        ))}
+
+        {travelingSignals.map((signal) => {
+          const times = signal.points.map((_, index) => index / (signal.points.length - 1));
+
+          return (
+            <g key={signal.id}>
+              <motion.circle
+                r={signal.radius + 5}
+                fill="rgba(130, 176, 255, 0.18)"
+                animate={{
+                  cx: signal.points.map((point) => point.x),
+                  cy: signal.points.map((point) => point.y),
+                  opacity: [0, 0.34, 0.22, 0],
+                  scale: [0.72, 1.12, 1, 0.86],
+                }}
+                transition={{
+                  duration: signal.duration,
+                  repeat: Infinity,
+                  delay: signal.delay,
+                  ease: "linear",
+                  times,
+                }}
+              />
+              <motion.circle
+                r={signal.radius}
+                fill="rgba(255,255,255,0.96)"
+                animate={{
+                  cx: signal.points.map((point) => point.x),
+                  cy: signal.points.map((point) => point.y),
+                  opacity: [0, 1, 0.84, 0],
+                  scale: [0.8, 1.08, 1, 0.84],
+                }}
+                transition={{
+                  duration: signal.duration,
+                  repeat: Infinity,
+                  delay: signal.delay,
+                  ease: "linear",
+                  times,
+                }}
+              />
+            </g>
+          );
+        })}
+      </motion.g>
 
       {Object.values(nodeGroups)
         .flat()

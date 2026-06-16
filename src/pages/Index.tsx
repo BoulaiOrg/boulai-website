@@ -74,7 +74,7 @@ const Index = () => {
                 >
                   Scientific intelligence for BioPharma R&amp;D
                 </motion.p>
-                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[7rem]">
+                <h1 className="font-display max-w-5xl text-5xl font-normal leading-[0.94] tracking-[-0.038em] text-white sm:text-6xl md:text-7xl lg:text-[7rem]">
                   {heroLines.map((line, index) => (
                     <span key={line} className="block overflow-hidden pb-3">
                       <motion.span
