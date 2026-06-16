@@ -86,10 +86,6 @@ const Index = () => {
                 </div>
               </FadeIn>
             </div>
-
-            <FadeIn delay={0.2}>
-              <HeroEvidenceGraph />
-            </FadeIn>
           </div>
         </div>
       </section>
