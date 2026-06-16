@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoAsset from "@/assets/boulai-wordmark.png.asset.json";
 
 const Footer = () => (
   <footer className="section-deep border-t border-border/30 py-16">
