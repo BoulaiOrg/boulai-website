@@ -5,12 +5,7 @@ import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const focusAreas = [
-  "Scientific evidence",
-  "Trial analysis",
-  "Causal discovery",
-  "R&D strategy",
-];
+const focusAreas = ["Scientific evidence", "Trial analysis", "Causal discovery", "R&D strategy"];
 
 const methodPillars = [
   {
@@ -47,42 +42,46 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-deep pt-32 pb-24 md:pt-44 md:pb-36 border-b border-border">
+      <section className="section-deep min-h-[calc(100vh-5rem)] border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_0.72fr]">
-            <div className="max-w-5xl">
+          <div className="flex min-h-[calc(100vh-5rem)] items-center py-28 md:py-36">
+            <div className="max-w-6xl">
               <FadeIn>
                 <p className="eyebrow mb-5">Scientific intelligence for BioPharma R&D</p>
-                <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.98] tracking-[-0.06em] text-foreground">
+                <h1 className="font-display max-w-5xl text-5xl sm:text-6xl md:text-7xl lg:text-[7.75rem] font-semibold leading-[0.9] tracking-[-0.075em] text-foreground">
                   Scientific AI for R&D decisions.
                 </h1>
               </FadeIn>
               <FadeIn delay={0.15}>
-                <p className="mt-7 max-w-3xl text-base md:text-xl text-muted-foreground leading-relaxed">
+                <p className="mt-8 max-w-3xl text-base md:text-2xl text-muted-foreground leading-relaxed">
                   BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
                   decide what to test, validate, or deprioritize next.
                 </p>
               </FadeIn>
               <FadeIn delay={0.25}>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {focusAreas.map((area) => (
-                    <span
-                      key={area}
-                      className="border border-border bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
-                    >
-                      {area}
+                <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  {focusAreas.map((area, index) => (
+                    <span key={area} className="inline-flex items-center gap-6">
+                      <span>{area}</span>
+                      {index < focusAreas.length - 1 ? <span className="hidden sm:inline-block text-border">/</span> : null}
                     </span>
                   ))}
                 </div>
               </FadeIn>
               <FadeIn delay={0.35}>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <div className="mt-12 flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild>
                     <a href="#waitlist">Request Intro</a>
                   </Button>
                   <Button variant="ghost-light" size="lg" asChild>
                     <Link to="/product">View BOULAI Discovery</Link>
                   </Button>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.45}>
+                <div className="mt-14 max-w-4xl border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
+                  BOULAI combines inference, machine learning, and scientific reasoning to help teams move from
+                  fragmented evidence to decision-grade judgment.
                 </div>
               </FadeIn>
             </div>
@@ -93,15 +92,29 @@ const Index = () => {
       <section className="section-mid py-24 border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
-            <div className="max-w-3xl">
-              <p className="eyebrow mb-4">Method</p>
-              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                Scientific AI should make reasoning easier to inspect.
-              </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                BOULAI combines inference, machine learning, and scientific reasoning so teams can organize evidence,
-                compare explanations, and decide what deserves validation.
-              </p>
+            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+              <div className="max-w-3xl">
+                <p className="eyebrow mb-4">Method</p>
+                <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+                  Scientific AI should make reasoning easier to inspect.
+                </h2>
+                <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
+                  BOULAI combines inference, machine learning, and scientific reasoning so teams can organize evidence,
+                  compare explanations, and decide what deserves validation.
+                </p>
+              </div>
+              <div className="premium-panel bg-foreground p-0 overflow-hidden">
+                <video
+                  className="aspect-[16/9] h-full w-full object-cover"
+                  src="/brand/boulai-logo-animation.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="BOULAI logo animation"
+                />
+              </div>
             </div>
           </FadeIn>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
