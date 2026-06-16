@@ -12,7 +12,7 @@ const HeroCausalAnimation = () => (
     <img
       src="/brand/boulai-enterprise-causal-field.svg?v=1"
       alt=""
-      className="relative h-full w-full max-w-[56rem] object-contain opacity-[0.92]"
+      className="relative h-full w-full max-w-[72rem] object-contain opacity-[0.92]"
       draggable={false}
     />
   </motion.div>
