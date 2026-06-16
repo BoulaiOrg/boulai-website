@@ -52,8 +52,8 @@ const Index = () => {
 
       <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-10 py-24 md:py-32 lg:grid-cols-[minmax(0,0.55fr)_minmax(360px,0.45fr)] lg:gap-2">
-            <div className="max-w-[43rem] lg:pr-4">
+          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-8 py-24 md:py-32 lg:grid-cols-[minmax(0,0.44fr)_minmax(540px,0.56fr)] lg:gap-0">
+            <div className="max-w-[39rem] lg:pr-6">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -108,7 +108,7 @@ const Index = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="relative hidden min-h-[640px] items-center justify-center lg:flex">
+            <div className="relative hidden min-h-[760px] items-center justify-end lg:flex">
               <HeroCausalAnimation />
             </div>
           </div>
