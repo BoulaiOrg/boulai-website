@@ -35,7 +35,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center" aria-label="Boulai home">
           <img
-            src="/brand/boulai-logo-v2.svg?v=7"
+            src="/brand/boulai-logo.png?v=8"
             alt="Boulai"
             className="h-9 w-auto object-contain brightness-0 invert"
           />
