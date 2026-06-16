@@ -50,7 +50,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-deep min-h-[calc(100vh-5rem)] border-b border-border">
+      <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex min-h-[calc(100vh-5rem)] items-center py-28 md:py-36">
             <div className="max-w-6xl">
@@ -63,17 +63,17 @@ const Index = () => {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="mb-8 h-px w-20 origin-left bg-foreground/18"
+                  className="mb-8 h-px w-20 origin-left bg-white/16"
                 />
                 <motion.p
                   initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.55, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-                  className="eyebrow mb-5"
+                  className="inverse-eyebrow mb-5"
                 >
                   Scientific intelligence for BioPharma R&amp;D
                 </motion.p>
-                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.86] tracking-[-0.085em] text-foreground sm:text-6xl md:text-7xl lg:text-[7.5rem]">
+                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.86] tracking-[-0.09em] text-white sm:text-6xl md:text-7xl lg:text-[7.5rem]">
                   {heroLines.map((line, index) => (
                     <span key={line} className="block overflow-hidden pb-2">
                       <motion.span
@@ -91,7 +91,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-2xl"
+                  className="mt-8 max-w-3xl text-base leading-relaxed text-white/66 md:text-2xl"
                 >
                   BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
                   decide what to test, validate, or deprioritize next.
@@ -100,12 +100,12 @@ const Index = () => {
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground"
+                  className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/44"
                 >
                   {focusAreas.map((area, index) => (
                     <span key={area} className="inline-flex items-center gap-6">
                       <span>{area}</span>
-                      {index < focusAreas.length - 1 ? <span className="hidden sm:inline-block text-border">/</span> : null}
+                      {index < focusAreas.length - 1 ? <span className="hidden sm:inline-block text-white/18">/</span> : null}
                     </span>
                   ))}
                 </motion.div>
@@ -115,10 +115,14 @@ const Index = () => {
                   transition={{ duration: 0.55, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
                   className="mt-12 flex flex-col gap-4 sm:flex-row"
                 >
-                  <Button size="lg" asChild>
+                  <Button size="lg" className="bg-white text-[#121419] hover:bg-white/92" asChild>
                     <a href="#waitlist">Request Intro</a>
                   </Button>
-                  <Button variant="ghost-light" size="lg" asChild>
+                  <Button
+                    size="lg"
+                    className="border border-white/14 bg-transparent text-white hover:bg-white hover:text-[#121419]"
+                    asChild
+                  >
                     <Link to="/product">View BOULAI Discovery</Link>
                   </Button>
                 </motion.div>
@@ -126,7 +130,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: 0.94, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-14 max-w-4xl border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground"
+                  className="mt-14 max-w-4xl border-t border-white/10 pt-6 text-sm leading-relaxed text-white/52"
                 >
                   BOULAI combines inference, machine learning, and scientific reasoning to help teams move from
                   fragmented evidence to decision-grade judgment.
@@ -137,7 +141,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-mid py-24 border-b border-border">
+      <section className="section-mid border-b border-border py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">

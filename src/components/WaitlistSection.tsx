@@ -2,28 +2,28 @@ import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 
 const WaitlistSection = () => (
-  <section id="waitlist" className="section-cta py-24 border-y border-foreground">
+  <section id="waitlist" className="section-cta border-y border-white/10 py-24">
     <div className="container mx-auto px-4 lg:px-8 text-center">
       <FadeIn>
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55 mb-4">
+        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/52">
           Work with BOULAI
         </p>
-        <h2 className="text-3xl md:text-5xl font-semibold tracking-[-0.03em] text-white mb-4">
+        <h2 className="mb-4 text-3xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
           Bring us a scientific decision workflow.
         </h2>
-        <p className="max-w-2xl mx-auto text-sm md:text-base text-white/68 leading-relaxed">
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/62 md:text-base">
           We work with teams on discovery, translational analysis, clinical development, and evidence-driven R&D strategy.
         </p>
         <form
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto"
+          className="mx-auto mt-8 flex max-w-lg flex-col items-center justify-center gap-3 sm:flex-row"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
             type="email"
             placeholder="your@email.com"
-            className="w-full sm:flex-1 h-12 px-4 rounded-none bg-white text-foreground placeholder:text-muted-foreground border border-white/20 outline-none focus:ring-2 focus:ring-white/40 text-sm"
+            className="h-12 w-full border border-white/16 bg-transparent px-4 text-sm text-white placeholder:text-white/36 outline-none focus:ring-2 focus:ring-white/20 sm:flex-1"
           />
-          <Button size="lg" className="bg-white text-foreground hover:bg-white/90">
+          <Button size="lg" className="bg-white text-[#121419] hover:bg-white/92">
             Request Intro
           </Button>
         </form>

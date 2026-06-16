@@ -52,31 +52,31 @@ const Product = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
 
-    <section className="section-mid pt-32 pb-20 border-b border-border">
+    <section className="section-hero border-b border-white/10 pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
           <FadeIn>
-            <p className="eyebrow mb-5">BOULAI Discovery</p>
-            <h1 className="font-display text-4xl md:text-7xl font-semibold leading-[0.99] tracking-[-0.055em] text-foreground mb-7">
+            <p className="inverse-eyebrow mb-5">BOULAI Discovery</p>
+            <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
               A workbench for scientific data, hypotheses, and decisions.
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="max-w-2xl text-lg leading-relaxed text-white/66">
               BOULAI Discovery helps teams analyze datasets, explore hidden patterns, evaluate causal assumptions,
               and prepare evidence for decisions across discovery, trials, and translational research.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild>
+              <Button size="lg" className="bg-white text-[#121419] hover:bg-white/92" asChild>
                 <a href="#waitlist">Request Demo</a>
               </Button>
-              <Button variant="ghost-light" size="lg" asChild>
+              <Button className="border border-white/14 bg-transparent text-white hover:bg-white hover:text-[#121419]" size="lg" asChild>
                 <Link to="/">View the Approach</Link>
               </Button>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="premium-panel p-7">
-              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Solution scope</p>
+            <div className="premium-panel border-white/12 bg-white/[0.03] p-7">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/44">Solution scope</p>
               <div className="mt-6 grid gap-4">
                 {[
                   ["Data", "Trial, translational, experimental, and observational datasets"],
@@ -84,9 +84,9 @@ const Product = () => (
                   ["Users", "Scientists, clinical teams, data teams, and R&D decision-makers"],
                   ["Goal", "Move from complex evidence to clearer next-step decisions"],
                 ].map(([label, value]) => (
-                  <div key={label} className="bg-muted/35 border border-border p-4">
-                    <p className="text-xs font-semibold text-primary">{label}</p>
-                    <p className="mt-1 text-sm text-foreground">{value}</p>
+                  <div key={label} className="border border-white/10 bg-white/[0.02] p-4">
+                    <p className="text-xs font-semibold text-white/54">{label}</p>
+                    <p className="mt-1 text-sm text-white/84">{value}</p>
                   </div>
                 ))}
               </div>

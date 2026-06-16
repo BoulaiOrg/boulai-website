@@ -35,14 +35,14 @@ const About = () => (
     <Navbar />
 
     {/* Hero */}
-    <section className="section-mid pt-32 pb-20 border-b border-border">
+    <section className="section-hero border-b border-white/10 pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
-          <p className="eyebrow mb-5">Who we are</p>
-          <h1 className="font-display text-4xl md:text-7xl font-semibold leading-[0.99] tracking-[-0.055em] text-foreground mb-7">
+          <p className="inverse-eyebrow mb-5">Who we are</p>
+          <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
             We are building scientific intelligence for better decisions.
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg leading-relaxed text-white/66">
             BOULAI brings together causal inference, machine learning, product design, and scientific strategy
             to help research organizations find stronger signals and avoid expensive false confidence.
           </p>

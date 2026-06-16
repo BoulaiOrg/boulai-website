@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Manrope', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Manrope', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Inter Tight', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Inter Tight', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
