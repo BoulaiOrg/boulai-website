@@ -22,6 +22,12 @@ const methodPillars = [
   },
 ];
 
+const methodOutcomes = [
+  "Organize scientific evidence around explicit questions, not disconnected dashboards.",
+  "Compare competing mechanisms before the team commits to a program, cohort, or endpoint.",
+  "Prioritize what deserves validation next, with assumptions and uncertainty kept visible.",
+];
+
 const reviewPrinciples = [
   {
     title: "Explicit assumptions",
@@ -103,17 +109,18 @@ const Index = () => {
                   compare explanations, and decide what deserves validation.
                 </p>
               </div>
-              <div className="premium-panel bg-foreground p-0 overflow-hidden">
-                <video
-                  className="aspect-[16/9] h-full w-full object-cover"
-                  src="/brand/boulai-logo-animation.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="BOULAI logo animation"
-                />
+              <div className="premium-panel p-8 md:p-10">
+                <p className="eyebrow mb-6">What changes in practice</p>
+                <div className="space-y-6">
+                  {methodOutcomes.map((item, index) => (
+                    <div key={item} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                        0{index + 1}
+                      </p>
+                      <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/84">{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeIn>
