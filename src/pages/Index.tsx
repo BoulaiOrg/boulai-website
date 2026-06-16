@@ -108,7 +108,7 @@ const Index = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="relative hidden min-h-[580px] items-center justify-center lg:flex">
+            <div className="relative hidden min-h-[640px] items-center justify-center lg:flex">
               <HeroCausalAnimation />
             </div>
           </div>
