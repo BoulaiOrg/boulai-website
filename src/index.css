@@ -74,10 +74,12 @@
 @layer components {
   .section-hero {
     background:
-      linear-gradient(hsl(220 8% 24% / 0.24) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(220 8% 24% / 0.2) 1px, transparent 1px),
+      radial-gradient(circle at 14% 24%, hsl(213 24% 23% / 0.55), transparent 26%),
+      radial-gradient(circle at 76% 10%, hsl(217 18% 18% / 0.38), transparent 22%),
+      linear-gradient(hsl(220 8% 24% / 0.14) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 8% 24% / 0.12) 1px, transparent 1px),
       linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 10%));
-    background-size: 88px 88px, 88px 88px, auto;
+    background-size: auto, auto, 88px 88px, 88px 88px, auto;
     color: hsl(0 0% 100%);
   }
 
@@ -137,6 +139,12 @@
   .inverse-eyebrow {
     @apply text-[11px] font-semibold uppercase tracking-[0.26em];
     color: hsl(0 0% 100% / 0.52);
+  }
+
+  .brand-wordmark {
+    @apply text-[2rem] font-medium tracking-[-0.055em] text-white;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
   }
 }
 

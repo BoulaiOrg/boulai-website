@@ -7,7 +7,7 @@ const Footer = () => (
         {/* Logo & tagline */}
         <div>
           <Link to="/" className="inline-flex items-center" aria-label="BOULAI home">
-            <img src="/brand/boulai-logo-v2.svg?v=3" alt="BOULAI" className="h-8 w-auto object-contain brightness-0 invert" />
+            <span className="brand-wordmark text-[1.7rem]">BOULAI</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/58">
             Scientific intelligence for discovery, clinical development, and R&D strategy.

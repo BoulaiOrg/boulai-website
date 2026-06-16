@@ -73,14 +73,15 @@ const Index = () => {
                 >
                   Scientific intelligence for BioPharma R&amp;D
                 </motion.p>
-                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.86] tracking-[-0.09em] text-white sm:text-6xl md:text-7xl lg:text-[7.5rem]">
+                <h1 className="font-display max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[7rem]">
                   {heroLines.map((line, index) => (
-                    <span key={line} className="block overflow-hidden pb-2">
+                    <span key={line} className="block overflow-hidden pb-3">
                       <motion.span
                         initial={{ y: "108%", opacity: 0, filter: "blur(12px)" }}
                         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                         transition={{ duration: 0.9, delay: 0.24 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
                         className="block will-change-transform"
+                        style={{ fontKerning: "normal", fontVariantLigatures: "common-ligatures" }}
                       >
                         {line}
                       </motion.span>
@@ -91,7 +92,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-3xl text-base leading-relaxed text-white/66 md:text-2xl"
+                  className="mt-9 max-w-3xl text-base leading-relaxed text-white/68 md:text-[1.5rem]"
                 >
                   BOULAI helps research teams reason across data, hypotheses, mechanisms, and evidence so they can
                   decide what to test, validate, or deprioritize next.
@@ -100,7 +101,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/44"
+                  className="mt-11 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/42"
                 >
                   {focusAreas.map((area, index) => (
                     <span key={area} className="inline-flex items-center gap-6">
@@ -113,7 +114,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, delay: 0.82, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-12 flex flex-col gap-4 sm:flex-row"
+                  className="mt-14 flex flex-col gap-4 sm:flex-row"
                 >
                   <Button size="lg" className="bg-white text-[#121419] hover:bg-white/92" asChild>
                     <a href="#waitlist">Request Intro</a>

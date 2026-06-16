@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center" aria-label="Boulai home">
-          <img src="/brand/boulai-logo-v2.svg?v=3" alt="BOULAI" className="h-10 w-auto object-contain brightness-0 invert" />
+          <span className="brand-wordmark">BOULAI</span>
         </Link>
 
         {/* Desktop nav */}
@@ -43,7 +43,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors hover:text-white ${
+              className={`text-[11px] font-medium uppercase tracking-[0.24em] transition-colors hover:text-white ${
                 location.pathname === link.href ? "text-white" : "text-white/56"
               }`}
             >
