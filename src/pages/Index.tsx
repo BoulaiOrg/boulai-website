@@ -4,7 +4,6 @@ import FadeIn from "@/components/FadeIn";
 import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroEvidenceGraph from "@/components/HeroEvidenceGraph";
 
 const focusAreas = [
   "Scientific evidence",
