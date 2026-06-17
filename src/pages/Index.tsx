@@ -30,6 +30,21 @@ const methodOutcomes = [
   "Machine learning, statistics, and agents working together without removing human scientific judgment.",
 ];
 
+const visionPrinciples = [
+  {
+    title: "Human judgment + machine reasoning",
+    desc: "BOULAI is built around the idea that better discovery happens when domain expertise and machine intelligence work around the same evidence.",
+  },
+  {
+    title: "Research-grade methods",
+    desc: "We go beyond pattern-matching by combining causal reasoning, exploratory AI, and explainable statistical workflows teams can challenge and inspect.",
+  },
+  {
+    title: "Discovery first",
+    desc: "BOULAI Discovery is the first system built on this vision, turning complex data into hypotheses, anomalies, and decision-grade causal evidence.",
+  },
+];
+
 const reviewPrinciples = [
   {
     title: "Explicit assumptions",
@@ -111,6 +126,48 @@ const Index = () => {
             <div className="pointer-events-none absolute right-[-6%] top-1/2 hidden w-[58%] -translate-y-1/2 items-center justify-end opacity-[0.98] lg:flex xl:right-[-4%] xl:w-[56%]">
               <HeroCausalAnimation />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision" className="section-deep border-b border-border py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <FadeIn>
+              <div className="max-w-3xl">
+                <p className="eyebrow mb-4">Vision</p>
+                <h2 className="font-display text-3xl font-semibold leading-tight text-foreground md:text-5xl">
+                  A modern Boule for clinical discovery.
+                </h2>
+                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                  BOULAI takes its name from the ancient Greek <em>boule</em>: a place where collective judgment was
+                  formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
+                  intelligence around the same evidence.
+                </p>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/78">
+                  BOULAI Discovery is the first platform built on that vision. It helps teams turn clinical and
+                  real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
+                  before committing to expensive decisions.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.12}>
+              <div className="premium-panel p-8 md:p-10">
+                <p className="eyebrow mb-6">What this means in practice</p>
+                <div className="space-y-6">
+                  {visionPrinciples.map((item, index) => (
+                    <div key={item.title} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                        0{index + 1}
+                      </p>
+                      <h3 className="mt-2 text-lg font-semibold text-foreground">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
