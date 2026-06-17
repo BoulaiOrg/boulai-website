@@ -7,7 +7,7 @@ import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const heroLines = ["Scientific AI ", "for R&D decisions."];
+const heroLines = ["Scientific AI for ", "clinical decisions."];
 
 const methodPillars = [
   {
@@ -52,8 +52,8 @@ const Index = () => {
 
       <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid min-h-[calc(100vh-5rem)] items-center gap-8 py-24 md:py-32 lg:grid-cols-[minmax(0,0.44fr)_minmax(540px,0.56fr)] lg:gap-0">
-            <div className="max-w-[39rem] lg:pr-6">
+          <div className="relative flex min-h-[calc(100vh-5rem)] items-center py-24 md:py-32">
+            <div className="relative z-10 max-w-none lg:w-[68%] lg:pr-[12rem] xl:w-[65%] xl:pr-[15rem]">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -71,12 +71,12 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
                   animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
                   transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-display max-w-[42rem] text-[3.35rem] font-normal leading-[1.02] tracking-[-0.05em] text-white sm:text-[4.2rem] md:text-[4.95rem] lg:text-[5.35rem]"
+                  className="font-display max-w-[60rem] text-[3.15rem] font-normal leading-[0.94] tracking-[-0.055em] text-white sm:text-[3.9rem] md:text-[4.45rem] lg:text-[4.7rem] xl:text-[5.05rem]"
                 >
-                  {heroLines.map((line, index) => (
+                  {heroLines.map((line) => (
                     <span
                       key={line}
-                      className="block pb-2 will-change-transform"
+                      className="block pb-2 will-change-transform md:whitespace-nowrap"
                       style={{ fontKerning: "normal", fontVariantLigatures: "common-ligatures" }}
                     >
                       {line}
@@ -87,10 +87,10 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-[29rem] text-[1rem] leading-[1.75] text-white/70 md:text-[1.12rem]"
+                  className="mt-8 max-w-[40rem] text-[0.98rem] leading-[1.9] text-white/70 md:text-[1.08rem]"
                 >
-                  BOULAI helps scientific teams turn large-scale data, model outputs, and evidence into clearer R&amp;D
-                  decisions.
+                  BOULAI turns clinical and real-world data into decision-grade causal evidence, from patient-level
+                  effects to hidden structure and clinical hypothesis testing.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -108,7 +108,7 @@ const Index = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="relative hidden min-h-[760px] items-center justify-end lg:flex">
+            <div className="pointer-events-none absolute right-[-6%] top-1/2 hidden w-[58%] -translate-y-1/2 items-center justify-end opacity-[0.98] lg:flex xl:right-[-4%] xl:w-[56%]">
               <HeroCausalAnimation />
             </div>
           </div>
