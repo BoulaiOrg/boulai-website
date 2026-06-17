@@ -120,6 +120,12 @@ const Index = () => {
                   >
                     <a href="#waitlist">Request Intro</a>
                   </Button>
+                  <a
+                    href="#vision"
+                    className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
+                  >
+                    View Vision
+                  </a>
                 </motion.div>
               </motion.div>
             </div>

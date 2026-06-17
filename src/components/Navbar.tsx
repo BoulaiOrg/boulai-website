@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "Vision", href: "/#vision", kind: "anchor" as const },
   { label: "Platform", href: "/product" },
   { label: "Company", href: "/about" },
 ];
@@ -44,15 +45,25 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`text-[11px] font-medium uppercase tracking-[0.24em] transition-colors hover:text-white ${
-                location.pathname === link.href ? "text-white" : "text-white/56"
-              }`}
-            >
-              {link.label}
-            </Link>
+            link.kind === "anchor" ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/56 transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`text-[11px] font-medium uppercase tracking-[0.24em] transition-colors hover:text-white ${
+                  location.pathname === link.href ? "text-white" : "text-white/56"
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
@@ -77,15 +88,25 @@ const Navbar = () => {
         <div className="border-b border-white/10 bg-[#121419]/98 px-4 pb-6 backdrop-blur-lg md:hidden">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
-                  location.pathname === link.href ? "text-white" : "text-white/56"
-                }`}
-              >
-                {link.label}
-              </Link>
+              link.kind === "anchor" ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
+                    location.pathname === link.href ? "text-white" : "text-white/56"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Button
               size="sm"
