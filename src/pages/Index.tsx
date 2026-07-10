@@ -7,7 +7,7 @@ import WaitlistSection from "@/components/WaitlistSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const heroLines = ["Scientific AI for ", "clinical decisions."];
+const heroLines = ["Enterprise Causal", "Intelligence for Biopharma R&D decisions"];
 
 const methodPillars = [
   {
@@ -65,9 +65,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
+      <section className="section-hero min-h-[100svh] border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="relative flex min-h-[calc(100vh-5rem)] items-center py-24 md:py-32">
+          <div className="relative flex min-h-[100svh] items-center py-24 md:py-32">
             <div className="relative z-10 max-w-none lg:w-[68%] lg:pr-[12rem] xl:w-[65%] xl:pr-[15rem]">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
                   animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
                   transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-display max-w-[60rem] text-[3.15rem] font-normal leading-[0.94] tracking-[-0.055em] text-white sm:text-[3.9rem] md:text-[4.45rem] lg:text-[4.7rem] xl:text-[5.05rem]"
+                className="font-display max-w-[58rem] text-[2.85rem] font-normal leading-[0.98] tracking-[-0.052em] text-white sm:text-[3.35rem] md:text-[3.85rem] lg:text-[4.1rem] xl:text-[4.35rem]"
                 >
                   {heroLines.map((line) => (
                     <span
@@ -111,7 +111,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.55, delay: 0.76, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+                  className="mt-10 flex items-center"
                 >
                   <Button
                     size="sm"
@@ -120,12 +120,6 @@ const Index = () => {
                   >
                     <a href="#waitlist">Request Intro</a>
                   </Button>
-                  <a
-                    href="#vision"
-                    className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
-                  >
-                    View Vision
-                  </a>
                 </motion.div>
               </motion.div>
             </div>
@@ -136,7 +130,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="vision" className="section-deep border-b border-border py-24">
+      <section id="vision" className="section-deep scroll-mt-28 border-b border-border py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <FadeIn>
@@ -150,7 +144,7 @@ const Index = () => {
                   formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
                   intelligence around the same evidence.
                 </p>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/78">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/80">
                   BOULAI Discovery is the first platform built on that vision. It helps teams turn clinical and
                   real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
                   before committing to expensive decisions.

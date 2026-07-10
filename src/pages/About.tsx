@@ -4,16 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const teamMembers = [
-  { name: "Danilo", role: "Co-founder & co-CEO", bio: "Building the vision of rigorous AI for science." },
-  { name: "Andrea", role: "Co-founder & co-CEO", bio: "Strategy and partnerships at the science-AI frontier." },
-  { name: "Arianna", role: "Co-founder", bio: "Bridging domain expertise and product design." },
-  { name: "Francesco", role: "Research", bio: "Advancing causal discovery methods." },
-  { name: "Giacomo", role: "Research", bio: "Working on explainable AI and scientific data analysis." },
-  { name: "Marco", role: "Research", bio: "Statistical learning and hypothesis generation." },
-  { name: "Filippo", role: "CTO", bio: "Architecture, infrastructure, and engineering leadership." },
+  { name: "Danilo", bio: "Building the vision of rigorous AI for science." },
+  { name: "Andrea", bio: "Strategy and partnerships at the science-AI frontier." },
+  { name: "Giacomo", bio: "Working on explainable AI and scientific data analysis." },
+  { name: "Filippo", bio: "Architecture, infrastructure, and engineering leadership." },
 ];
-
-const advisor = { name: "Francesco", role: "Scientific Advisory", bio: "Causal learning lab leadership." };
 
 const values = [
   {
@@ -76,28 +71,11 @@ const About = () => (
                   {m.name[0]}
                 </div>
                 <h3 className="text-base font-semibold text-foreground">{m.name}</h3>
-                <p className="text-xs text-primary font-medium mt-1">{m.role}</p>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.bio}</p>
               </div>
             </FadeIn>
           ))}
         </div>
-      </div>
-    </section>
-
-    {/* Advisor */}
-    <section className="section-deep py-16">
-      <div className="container mx-auto px-4 lg:px-8 max-w-md">
-        <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">Scientific Advisory</p>
-          <div className="premium-panel p-6 text-center">
-            <div className="w-14 h-14 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
-              {advisor.name[0]}
-            </div>
-            <h3 className="text-base font-semibold text-foreground">{advisor.name}</h3>
-            <p className="text-sm text-muted-foreground mt-2">{advisor.bio}</p>
-          </div>
-        </FadeIn>
       </div>
     </section>
 

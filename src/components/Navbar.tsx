@@ -5,8 +5,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Vision", href: "/#vision", kind: "anchor" as const },
-  { label: "Platform", href: "/product" },
-  { label: "Company", href: "/about" },
+  { label: "Solutions", href: "/product" },
+  { label: "About", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -35,36 +35,33 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center" aria-label="Boulai home">
-          <img
-            src="/brand/boulai-logo.png?v=8"
-            alt="Boulai"
-            className="h-9 w-auto object-contain brightness-0 invert"
-          />
+            <img
+              src="/brand/boulai-logo.png?v=20260709"
+              alt="Boulai"
+              className="h-9 w-auto object-contain invert"
+            />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            link.kind === "anchor" ? (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/56 transition-colors hover:text-white"
-              >
-                {link.label}
-              </a>
-            ) : (
+        <div className="hidden md:flex items-center gap-10 rounded-full border border-white/8 bg-white/[0.02] px-5 py-2 backdrop-blur-sm">
+          {navLinks.map((link) => {
+            const isActive = link.kind === "anchor"
+              ? location.pathname === "/" && location.hash === "#vision"
+              : location.pathname === link.href;
+
+            return (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-[11px] font-medium uppercase tracking-[0.24em] transition-colors hover:text-white ${
-                  location.pathname === link.href ? "text-white" : "text-white/56"
+                className={`navbar-link text-[11px] font-medium uppercase tracking-[0.24em] transition-colors ${
+                  isActive ? "navbar-link-active" : ""
                 }`}
+                style={{ color: isActive ? "#ffffff" : "rgba(255,255,255,0.82)" }}
               >
                 {link.label}
               </Link>
-            )
-          ))}
+            );
+          })}
         </div>
 
         <div className="hidden md:block">
@@ -73,7 +70,7 @@ const Navbar = () => {
             className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
             asChild
           >
-            <a href="#waitlist">Request Intro</a>
+            <Link to="/#waitlist">Request Intro</Link>
           </Button>
         </div>
 
@@ -87,33 +84,30 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="border-b border-white/10 bg-[#121419]/98 px-4 pb-6 backdrop-blur-lg md:hidden">
           <div className="flex flex-col gap-4 pt-4">
-            {navLinks.map((link) => (
-              link.kind === "anchor" ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </a>
-              ) : (
+            {navLinks.map((link) => {
+              const isActive = link.kind === "anchor"
+                ? location.pathname === "/" && location.hash === "#vision"
+                : location.pathname === link.href;
+
+              return (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
-                    location.pathname === link.href ? "text-white" : "text-white/56"
+                  className={`navbar-link text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
+                    isActive ? "navbar-link-active" : ""
                   }`}
+                  style={{ color: isActive ? "#ffffff" : "rgba(255,255,255,0.82)" }}
                 >
                   {link.label}
                 </Link>
-              )
-            ))}
+              );
+            })}
             <Button
               size="sm"
               className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
               asChild
             >
-              <a href="#waitlist">Request Intro</a>
+              <Link to="/#waitlist">Request Intro</Link>
             </Button>
           </div>
         </div>

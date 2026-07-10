@@ -146,6 +146,15 @@
     font-kerning: normal;
     font-variant-ligatures: common-ligatures;
   }
+
+  .navbar-link {
+    color: hsl(0 0% 100% / 0.82) !important;
+  }
+
+  .navbar-link:hover,
+  .navbar-link-active {
+    color: hsl(0 0% 100%) !important;
+  }
 }
 
 @layer utilities {

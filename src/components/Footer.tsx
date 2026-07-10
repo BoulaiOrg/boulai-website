@@ -8,9 +8,9 @@ const Footer = () => (
         <div>
           <Link to="/" className="inline-flex items-center" aria-label="Boulai home">
             <img
-              src="/brand/boulai-logo.png?v=8"
+              src="/brand/boulai-logo.png?v=20260709"
               alt="Boulai"
-              className="h-8 w-auto object-contain brightness-0 invert"
+              className="h-8 w-auto object-contain invert"
             />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/58">
