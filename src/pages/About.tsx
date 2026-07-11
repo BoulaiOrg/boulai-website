@@ -1,19 +1,19 @@
 import FadeIn from "@/components/FadeIn";
-import WaitlistSection from "@/components/WaitlistSection";
+import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const teamMembers = [
-  { name: "Danilo", role: "Co-founder & co-CEO", bio: "Building the vision of rigorous AI for science." },
-  { name: "Andrea", role: "Co-founder & co-CEO", bio: "Strategy and partnerships at the science-AI frontier." },
-  { name: "Arianna", role: "Co-founder", bio: "Bridging domain expertise and product design." },
-  { name: "Francesco", role: "Research", bio: "Advancing causal discovery methods." },
-  { name: "Giacomo", role: "Research", bio: "Working on explainable AI and scientific data analysis." },
-  { name: "Marco", role: "Research", bio: "Statistical learning and hypothesis generation." },
-  { name: "Filippo", role: "CTO", bio: "Architecture, infrastructure, and engineering leadership." },
+  { name: "Danilo", bio: "Building the vision of rigorous AI for science." },
+  { name: "Andrea", bio: "Strategy and partnerships at the science-AI frontier." },
+  { name: "Arianna", bio: "Bridging domain expertise and product design." },
+  { name: "Francesco", bio: "Advancing causal discovery methods." },
+  { name: "Giacomo", bio: "Working on explainable AI and scientific data analysis." },
+  { name: "Marco", bio: "Statistical learning and hypothesis generation." },
+  { name: "Filippo", bio: "Architecture, infrastructure, and engineering leadership." },
 ];
 
-const advisor = { name: "Francesco", role: "Scientific Advisory", bio: "Causal learning lab leadership." };
+const advisor = { name: "Francesco", bio: "Causal learning lab leadership." };
 
 const values = [
   {
@@ -26,7 +26,7 @@ const values = [
   },
   {
     title: "Ambitious and practical",
-    desc: "We start where better evidence can change expensive decisions: BioPharma R&D, clinical development, and translational science.",
+    desc: "We start where better evidence can change expensive decisions — BioPharma R&D, clinical development, and translational science — powered by the proprietary engines behind Boulai Discovery.",
   },
 ];
 
@@ -42,9 +42,10 @@ const About = () => (
           <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
             We are building scientific intelligence for better decisions.
           </h1>
-          <p className="text-lg leading-relaxed text-white/66">
-            BOULAI brings together causal inference, machine learning, product design, and scientific strategy
-            to help research organizations find stronger signals and avoid expensive false confidence.
+          <p className="text-lg leading-relaxed text-white/[66%]">
+            Boulai is a research-and-product startup: we bring together causal inference, machine learning, product
+            design, and scientific strategy to build the proprietary models that help research organizations find
+            stronger signals and avoid expensive false confidence.
           </p>
         </FadeIn>
       </div>
@@ -70,13 +71,12 @@ const About = () => (
         </FadeIn>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {teamMembers.map((m, i) => (
-            <FadeIn key={i} delay={i * 0.05}>
-              <div className="premium-panel p-6 text-center">
+            <FadeIn key={i} delay={i * 0.05} className="h-full">
+              <div className="premium-panel p-6 text-center h-full">
                 <div className="w-16 h-16 bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {m.name[0]}
                 </div>
                 <h3 className="text-base font-semibold text-foreground">{m.name}</h3>
-                <p className="text-xs text-primary font-medium mt-1">{m.role}</p>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.bio}</p>
               </div>
             </FadeIn>
@@ -121,7 +121,7 @@ const About = () => (
       </div>
     </section>
 
-    <WaitlistSection />
+    <ContactCTA />
     <Footer />
   </div>
 );

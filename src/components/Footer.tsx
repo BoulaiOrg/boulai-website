@@ -13,29 +13,26 @@ const Footer = () => (
               className="h-8 w-auto object-contain brightness-0 invert"
             />
           </Link>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/58">
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/[58%]">
             Scientific intelligence for discovery, clinical development, and R&D strategy.
           </p>
         </div>
 
         {/* Nav */}
         <div className="flex flex-col gap-3">
-          <Link to="/product" className="text-sm text-white/58 hover:text-white transition-colors">Platform</Link>
-          <Link to="/about" className="text-sm text-white/58 hover:text-white transition-colors">Company</Link>
+          <Link to="/product" className="text-sm text-white/[58%] hover:text-white transition-colors">Platform</Link>
+          <Link to="/about" className="text-sm text-white/[58%] hover:text-white transition-colors">Who We Are</Link>
         </div>
 
         {/* Contact */}
         <div className="flex flex-col gap-3">
-          <a href="mailto:hello@boulai.com" className="text-sm text-white/58 hover:text-white transition-colors">
+          <Link to="/contact" className="text-sm text-white/[58%] hover:text-white transition-colors">
             Contact
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/58 hover:text-white transition-colors">
-            LinkedIn
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/42">
+      <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/[42%]">
         © {new Date().getFullYear()} Boulai. All rights reserved.
       </div>
     </div>

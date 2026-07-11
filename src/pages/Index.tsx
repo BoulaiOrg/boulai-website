@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import HeroCausalAnimation from "@/components/HeroCausalAnimation";
-import WaitlistSection from "@/components/WaitlistSection";
+import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -11,16 +11,16 @@ const heroLines = ["Scientific AI for ", "clinical decisions."];
 
 const methodPillars = [
   {
-    title: "Scientific intelligence",
-    desc: "Organize data, evidence, assumptions, and domain context into a decision layer experts can inspect.",
+    title: "Atlas",
+    desc: "Statistics and econometrics for exploring and understanding your data.",
   },
   {
-    title: "Causal reasoning",
-    desc: "Compare mechanisms, intervention pathways, and competing explanations instead of stopping at correlation.",
+    title: "Icarus",
+    desc: "Uncovers hidden structure and subgroups with heterogeneous responses, opening the door to new discoveries.",
   },
   {
-    title: "Machine learning + agents",
-    desc: "Use models and agentic workflows to surface structure, synthesize evidence, and accelerate scientific analysis.",
+    title: "Locus",
+    desc: "Tests a scientist's causal hypotheses against the data and suggests where to look next.",
   },
 ];
 
@@ -33,7 +33,7 @@ const methodOutcomes = [
 const visionPrinciples = [
   {
     title: "Human judgment + machine reasoning",
-    desc: "BOULAI is built around the idea that better discovery happens when domain expertise and machine intelligence work around the same evidence.",
+    desc: "Boulai is built around the idea that better discovery happens when domain expertise and machine intelligence work around the same evidence.",
   },
   {
     title: "Research-grade methods",
@@ -41,22 +41,22 @@ const visionPrinciples = [
   },
   {
     title: "Discovery first",
-    desc: "BOULAI Discovery is the first system built on this vision, turning complex data into hypotheses, anomalies, and decision-grade causal evidence.",
+    desc: "Boulai Discovery is the first system built on this vision, turning complex data into hypotheses, anomalies, and decision-grade causal evidence.",
   },
 ];
 
-const reviewPrinciples = [
+const industries = [
   {
-    title: "Explicit assumptions",
-    desc: "Scientific teams should be able to see which assumptions are being used before a model produces an answer.",
+    title: "Pharma",
+    desc: "Clinical development and R&D decisions where evidence quality determines which programs move forward.",
   },
   {
-    title: "Inspectable evidence",
-    desc: "Outputs should make uncertainty, robustness, and competing explanations easier to review, not harder.",
+    title: "Biotech",
+    desc: "Translational and discovery-stage research, where early signals must hold up before they shape a pipeline.",
   },
   {
-    title: "Human scientific judgment",
-    desc: "AI can help structure analysis and synthesis, but the decision remains accountable to expert review.",
+    title: "MedTech",
+    desc: "Device and diagnostic development, where causal evidence separates a real effect from noise.",
   },
 ];
 
@@ -80,7 +80,7 @@ const Index = () => {
                   transition={{ duration: 0.55, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
                   className="inverse-eyebrow mb-6"
                 >
-                  Explore BOULAI
+                  Explore Boulai
                 </motion.p>
                 <motion.h1
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
@@ -104,8 +104,9 @@ const Index = () => {
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
                   className="mt-8 max-w-[40rem] text-[0.98rem] leading-[1.9] text-white/70 md:text-[1.08rem]"
                 >
-                  BOULAI turns clinical and real-world data into decision-grade causal evidence, from patient-level
-                  effects to hidden structure and clinical hypothesis testing.
+                  Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
+                  into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
+                  testing.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -115,14 +116,14 @@ const Index = () => {
                 >
                   <Button
                     size="sm"
-                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#121419] hover:bg-white/92"
+                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#121419] hover:bg-white/[92%]"
                     asChild
                   >
-                    <a href="#waitlist">Request Intro</a>
+                    <Link to="/contact">Contact Us</Link>
                   </Button>
                   <a
                     href="#vision"
-                    className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
+                    className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[56%] transition-colors hover:text-white"
                   >
                     View Vision
                   </a>
@@ -146,12 +147,12 @@ const Index = () => {
                   A modern Boule for clinical discovery.
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  BOULAI takes its name from the ancient Greek <em>boule</em>: a place where collective judgment was
+                  Boulai takes its name from the ancient Greek <em>boule</em>: a place where collective judgment was
                   formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
                   intelligence around the same evidence.
                 </p>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/78">
-                  BOULAI Discovery is the first platform built on that vision. It helps teams turn clinical and
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/[78%]">
+                  Boulai Discovery is the first platform built on that vision. It helps teams turn clinical and
                   real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
                   before committing to expensive decisions.
                 </p>
@@ -185,23 +186,23 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Methodological foundation</p>
                 <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                  Scientific intelligence should make causal reasoning easier to inspect.
+                  Three proprietary engines, built from our research.
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                  BOULAI combines machine learning, advanced statistics, causal reasoning, and agentic scientific
-                  workflows so teams can organize evidence, test competing explanations, and decide what deserves
-                  validation.
+                  Boulai Discovery is powered by Atlas, Icarus, and Locus — proprietary models developed with our
+                  research partners so teams can organize evidence, test competing explanations, and decide what
+                  deserves validation.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
-                <p className="eyebrow mb-6">What BOULAI integrates</p>
+                <p className="eyebrow mb-6">What Boulai integrates</p>
                 <div className="space-y-6">
                   {methodOutcomes.map((item, index) => (
                     <div key={item} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                         0{index + 1}
                       </p>
-                      <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/84">{item}</p>
+                      <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/[84%]">{item}</p>
                     </div>
                   ))}
                 </div>
@@ -226,18 +227,18 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
             <FadeIn>
-              <p className="eyebrow mb-4">Scientific review</p>
+              <p className="eyebrow mb-4">Where we work</p>
               <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                A methodological foundation for decision-grade discovery.
+                Built for the industries where wrong answers are expensive.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                The goal is not to replace expert judgment. It is to make the path from data to decision clearer,
-                more explicit, and easier to challenge.
+                In Pharma, Biotech, and MedTech, a false positive wastes years and budget chasing a dead end, and a
+                false negative means missing the signal that mattered. Boulai is built to reduce both risks.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="grid sm:grid-cols-3 gap-4">
-                {reviewPrinciples.map((item, i) => (
+                {industries.map((item, i) => (
                   <div key={item.title} className="premium-panel p-6 h-full">
                     <p className="text-xs font-semibold text-primary">0{i + 1}</p>
                     <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
@@ -257,7 +258,7 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">First solution</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">
-                  BOULAI Discovery is the first product built on this approach.
+                  Boulai Discovery is the first product built on this approach.
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">
                   It helps teams analyze scientific datasets, explore causal hypotheses, and identify patterns that
@@ -266,7 +267,7 @@ const Index = () => {
               </div>
               <div className="flex lg:justify-end">
                 <Button size="lg" asChild>
-                  <Link to="/product">Explore BOULAI Discovery</Link>
+                  <Link to="/product">Explore Boulai Discovery</Link>
                 </Button>
               </div>
             </div>
@@ -274,7 +275,7 @@ const Index = () => {
         </div>
       </section>
 
-      <WaitlistSection />
+      <ContactCTA />
       <Footer />
     </div>
   );

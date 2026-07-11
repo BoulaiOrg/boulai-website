@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Vision", href: "/#vision", kind: "anchor" as const },
   { label: "Platform", href: "/product" },
-  { label: "Company", href: "/about" },
+  { label: "Who We Are", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -29,7 +29,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "border-b border-white/10 bg-[#121419]/95 backdrop-blur-md"
-          : "border-b border-white/10 bg-[#121419]/92"
+          : "border-b border-white/10 bg-[#121419]/[92%]"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
@@ -49,7 +49,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/56 transition-colors hover:text-white"
+                className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/[56%] transition-colors hover:text-white"
               >
                 {link.label}
               </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
                 key={link.href}
                 to={link.href}
                 className={`text-[11px] font-medium uppercase tracking-[0.24em] transition-colors hover:text-white ${
-                  location.pathname === link.href ? "text-white" : "text-white/56"
+                  location.pathname === link.href ? "text-white" : "text-white/[56%]"
                 }`}
               >
                 {link.label}
@@ -70,10 +70,10 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button
             size="sm"
-            className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+            className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
             asChild
           >
-            <a href="#waitlist">Request Intro</a>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
 
@@ -85,14 +85,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-b border-white/10 bg-[#121419]/98 px-4 pb-6 backdrop-blur-lg md:hidden">
+        <div className="border-b border-white/10 bg-[#121419]/[98%] px-4 pb-6 backdrop-blur-lg md:hidden">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               link.kind === "anchor" ? (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/56 transition-colors hover:text-white"
+                  className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[56%] transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   key={link.href}
                   to={link.href}
                   className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors ${
-                    location.pathname === link.href ? "text-white" : "text-white/56"
+                    location.pathname === link.href ? "text-white" : "text-white/[56%]"
                   }`}
                 >
                   {link.label}
@@ -110,10 +110,10 @@ const Navbar = () => {
             ))}
             <Button
               size="sm"
-              className="h-10 border border-white/14 bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+              className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
               asChild
             >
-              <a href="#waitlist">Request Intro</a>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
