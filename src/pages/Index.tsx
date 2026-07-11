@@ -11,16 +11,16 @@ const heroLines = ["Scientific AI for ", "clinical decisions."];
 
 const methodPillars = [
   {
-    title: "Atlas",
-    desc: "Statistics and econometrics for exploring and understanding your data.",
+    title: "State-of-the-art research",
+    desc: "We build on peer-reviewed causal inference, statistics, and machine learning — not off-the-shelf tooling.",
   },
   {
-    title: "Icarus",
-    desc: "Uncovers hidden structure and subgroups with heterogeneous responses, opening the door to new discoveries.",
+    title: "Proprietary models",
+    desc: "That research becomes proprietary models embedded directly in our products, not a thin wrapper over generic AI.",
   },
   {
-    title: "Locus",
-    desc: "Tests a scientist's causal hypotheses against the data and suggests where to look next.",
+    title: "Built with partners",
+    desc: "We develop and validate our methods together with academic and industry research partners.",
   },
 ];
 
@@ -186,12 +186,12 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Methodological foundation</p>
                 <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
-                  Three proprietary engines, built from our research.
+                  Research becomes proprietary product.
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                  Boulai Discovery is powered by Atlas, Icarus, and Locus — proprietary models developed with our
-                  research partners so teams can organize evidence, test competing explanations, and decide what
-                  deserves validation.
+                  Boulai is a research-and-product startup. We work with academic and scientific partners to bring
+                  state-of-the-art causal inference, statistics, and machine learning into proprietary models — the
+                  ones that power our products today, and what comes next.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
