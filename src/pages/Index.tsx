@@ -151,11 +151,6 @@ const Index = () => {
                   formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
                   intelligence around the same evidence.
                 </p>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/[78%]">
-                  Boulai Discovery is the first product built on that vision. It helps teams turn clinical and
-                  real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
-                  before committing to expensive decisions.
-                </p>
                 <figure className="mt-10 max-w-[680px]">
                   <img
                     src="/brand/vision-boule-line-instrument.png"
@@ -203,6 +198,11 @@ const Index = () => {
                   Boulai is a research-and-product startup. We work with academic and scientific partners to bring
                   state-of-the-art causal inference, statistics, and machine learning into proprietary models — the
                   ones that power our products today, and what comes next.
+                </p>
+                <p className="mt-5 text-base leading-relaxed text-foreground/[78%]">
+                  Boulai Discovery is the first product built on that vision. It helps teams turn clinical and
+                  real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
+                  before committing to expensive decisions.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
