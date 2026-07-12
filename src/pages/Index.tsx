@@ -162,7 +162,7 @@ const Index = () => {
                     height={554}
                     loading="lazy"
                     decoding="async"
-                    className="w-full select-none opacity-[0.88] mix-blend-multiply saturate-[0.78] contrast-[1.1] [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)] sm:opacity-[0.76] sm:saturate-[0.72] sm:[mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)]"
+                    className="w-full select-none opacity-[0.96] mix-blend-multiply saturate-[0.9] contrast-[1.24] [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)] sm:opacity-[0.88] sm:saturate-[0.82] sm:contrast-[1.18] sm:[mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)]"
                   />
                 </figure>
               </div>
