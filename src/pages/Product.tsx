@@ -40,8 +40,7 @@ const Product = () => (
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-white/[66%]">
-            The instrumentation layer for translational, clinical, and discovery research. Turn high-dimensional data
-            into causal clarity your team can defend.
+            The instrumentation layer for translational, clinical, and discovery research.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
