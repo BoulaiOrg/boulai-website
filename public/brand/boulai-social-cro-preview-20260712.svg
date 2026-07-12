@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Boulai causal AI for CROs social preview">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Boulai scientific AI for clinical decisions social preview">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
       <stop stop-color="#101217"/>
@@ -43,8 +43,8 @@
   <text x="116" y="100" fill="#f4f6f8" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="-0.03em">Boulai</text>
 
   <text x="56" y="174" fill="#9da4ae" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="0.32em">BUILT FOR CRO DECISION WORKFLOWS</text>
-  <text x="56" y="264" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">Causal AI for</text>
-  <text x="56" y="346" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">clinical evidence.</text>
+  <text x="56" y="264" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">Scientific AI for</text>
+  <text x="56" y="346" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">clinical decisions.</text>
   <text x="58" y="414" fill="#b1b6bd" font-family="Arial, Helvetica, sans-serif" font-size="22">
     <tspan x="58" dy="0">Turn clinical and real-world data into decision-grade</tspan>
     <tspan x="58" dy="34">causal evidence before costly trial and portfolio decisions.</tspan>
