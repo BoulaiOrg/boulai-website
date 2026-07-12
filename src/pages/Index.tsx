@@ -158,13 +158,13 @@ const Index = () => {
                 </p>
                 <figure className="mt-10 max-w-[680px]">
                   <img
-                    src="/brand/vision-boule-instrument.png"
+                    src="/brand/vision-boule-line-instrument.png"
                     alt="A modern research boule with a causal reasoning instrument at its center."
                     width={1180}
-                    height={498}
+                    height={554}
                     loading="lazy"
                     decoding="async"
-                    className="w-full select-none opacity-[0.9] saturate-[0.74] contrast-[1.04]"
+                    className="w-full select-none opacity-[0.92] mix-blend-multiply saturate-[0.88] contrast-[1.16]"
                   />
                 </figure>
               </div>
