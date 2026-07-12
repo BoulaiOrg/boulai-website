@@ -20,23 +20,21 @@ const inquiryTypes = [
 ] as const;
 
 const contactSchema = z.object({
-  firstName: z.string().min(1, "Required"),
-  lastName: z.string().min(1, "Required"),
+  firstName: z.string().trim().min(1, "Required"),
+  lastName: z.string().trim().min(1, "Required"),
   email: z.string().email("Enter a valid email"),
-  company: z.string().min(1, "Required"),
+  company: z.string().trim().min(1, "Required"),
   inquiryType: z.enum(["demo", "general", "partnership", "careers"], {
     required_error: "Select an inquiry type",
   }),
-  message: z.string().min(1, "Required"),
+  message: z.string().trim().min(1, "Required"),
 });
 
 type ContactValues = z.infer<typeof contactSchema>;
 
-// Set once the Microsoft-side flow exists (e.g. a Power Automate HTTP-triggered flow) that
-// accepts POST { firstName, lastName, email, company, inquiryType, message }, sends a
-// confirmation from hello@boulai.org, and logs the request. Until then, submissions fall back
-// to a mailto: to hello@boulai.org.
-const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_WEBHOOK_URL as string | undefined;
+const CONTACT_ENDPOINT =
+  (import.meta.env.VITE_CONTACT_WEBHOOK_URL as string | undefined) ??
+  "https://formsubmit.co/ajax/hello@boulai.org";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -47,28 +45,25 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: ContactValues) => {
-    if (!CONTACT_ENDPOINT) {
-      const inquiryLabel = inquiryTypes.find((t) => t.value === values.inquiryType)?.label ?? values.inquiryType;
-      const body = [
-        `Name: ${values.firstName} ${values.lastName}`,
-        `Email: ${values.email}`,
-        `Company: ${values.company}`,
-        `Inquiry type: ${inquiryLabel}`,
-        "",
-        values.message,
-      ].join("\n");
-      window.location.href = `mailto:hello@boulai.org?subject=${encodeURIComponent(
-        `${inquiryLabel} — ${values.firstName} ${values.lastName}`
-      )}&body=${encodeURIComponent(body)}`;
-      return;
-    }
-
+    const inquiryLabel = inquiryTypes.find((t) => t.value === values.inquiryType)?.label ?? values.inquiryType;
     setSubmitting(true);
     try {
       const res = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `Boulai contact: ${inquiryLabel} — ${values.firstName} ${values.lastName}`,
+          _template: "table",
+          _captcha: "false",
+          name: `${values.firstName} ${values.lastName}`,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          _replyto: values.email,
+          company: values.company,
+          inquiryType: inquiryLabel,
+          message: values.message,
+        }),
       });
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
       toast({ title: "Thanks!", description: "We've received your message and will be in touch." });
@@ -97,9 +92,9 @@ const Contact = () => {
             </h1>
             <p className="text-lg leading-relaxed text-white/[66%]">
               Tell us about your team and what you're trying to solve. Prefer to write directly? Reach us at{" "}
-              <a href="mailto:hello@boulai.org" className="text-white underline underline-offset-4">
+              <span className="text-white">
                 hello@boulai.org
-              </a>
+              </span>
               .
             </p>
           </FadeIn>
@@ -119,7 +114,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>First name</FormLabel>
                         <FormControl>
-                          <Input {...field} />
+                          <Input required autoComplete="given-name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -132,7 +127,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Last name</FormLabel>
                         <FormControl>
-                          <Input {...field} />
+                          <Input required autoComplete="family-name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -148,7 +143,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input type="email" {...field} />
+                          <Input required type="email" autoComplete="email" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -161,7 +156,7 @@ const Contact = () => {
                       <FormItem>
                         <FormLabel>Company</FormLabel>
                         <FormControl>
-                          <Input {...field} />
+                          <Input required autoComplete="organization" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -175,6 +170,7 @@ const Contact = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Inquiry type</FormLabel>
+                      <input className="sr-only" tabIndex={-1} required value={field.value ?? ""} readOnly />
                       <Select onValueChange={field.onChange} value={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -201,7 +197,7 @@ const Contact = () => {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea rows={5} {...field} />
+                        <Textarea required rows={5} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
