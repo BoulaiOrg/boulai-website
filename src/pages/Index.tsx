@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
-import HeroCausalAnimation from "@/components/HeroCausalAnimation";
+import HeroDotWave from "@/components/HeroDotWave";
 import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -65,10 +65,11 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero min-h-screen overflow-hidden border-b border-white/10">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="relative flex min-h-screen items-center py-24 md:py-32">
-            <div className="relative z-10 max-w-none lg:w-[68%] lg:pr-[12rem] xl:w-[65%] xl:pr-[15rem]">
+      <section className="section-hero relative min-h-screen overflow-hidden border-b border-white/10">
+        <HeroDotWave />
+        <div className="container relative z-10 mx-auto px-4 lg:px-8">
+          <div className="relative flex min-h-screen items-center justify-center pt-32 pb-44 md:pt-36 md:pb-52">
+            <div className="relative z-10 mx-auto max-w-4xl text-center">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -86,7 +87,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
                   animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
                   transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="page-title max-w-[56rem]"
+                  className="page-title mx-auto max-w-[56rem]"
                 >
                   {heroLines.map((line) => (
                     <span
@@ -102,7 +103,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-[40rem] text-[0.94rem] leading-[1.9] text-white/70 md:text-[1.02rem]"
+                  className="mx-auto mt-8 max-w-[43rem] text-[0.94rem] leading-[1.9] text-white/70 md:text-[1.02rem]"
                 >
                   Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
                   into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
@@ -112,7 +113,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.55, delay: 0.76, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+                  className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
                 >
                   <Button
                     size="sm"
@@ -129,9 +130,6 @@ const Index = () => {
                   </a>
                 </motion.div>
               </motion.div>
-            </div>
-            <div className="pointer-events-none absolute right-[-10%] top-1/2 hidden w-[54%] -translate-y-1/2 items-center justify-end opacity-[0.72] lg:flex xl:right-[-8%] xl:w-[52%]">
-              <HeroCausalAnimation />
             </div>
           </div>
         </div>

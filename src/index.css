@@ -212,6 +212,11 @@
   .hover-brand-border:hover {
     border-color: hsl(var(--primary) / 0.35);
   }
+
+  .hero-dot-wave {
+    animation: hero-dot-wave-drift 22s ease-in-out infinite;
+    filter: drop-shadow(0 0 14px rgb(112 205 255 / 0.34));
+  }
 }
 
 @keyframes causal-flow-dash {
@@ -247,6 +252,17 @@
   50% {
     opacity: 0.38;
     transform: scale(1.04);
+  }
+}
+
+@keyframes hero-dot-wave-drift {
+  0%,
+  100% {
+    transform: translate3d(-1.2%, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(1.2%, -1.5%, 0) scale(1.015);
   }
 }
 
