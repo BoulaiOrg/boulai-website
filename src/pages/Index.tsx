@@ -65,9 +65,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero min-h-[calc(100vh-5rem)] border-b border-white/10">
+      <section className="section-hero min-h-screen border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="relative flex min-h-[calc(100vh-5rem)] items-center py-24 md:py-32">
+          <div className="relative flex min-h-screen items-center py-24 md:py-32">
             <div className="relative z-10 max-w-none lg:w-[68%] lg:pr-[12rem] xl:w-[65%] xl:pr-[15rem]">
               <motion.div
                 initial={{ opacity: 0 }}
