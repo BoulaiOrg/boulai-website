@@ -16,14 +16,14 @@ const engines = [
     name: "Icarus",
     role: "Causal Discovery",
     description:
-      "Uncovers hidden drivers and subgroups with heterogeneous responses that classical models miss.",
+      "Discovers candidate causal structures, hidden drivers, and heterogeneous-response subgroups, while AI agents turn causal outputs into testable hypotheses for scientists to review.",
   },
   {
     code: "E-03",
     name: "Locus",
     role: "Causal DAG Stress-Testing",
     description:
-      "Confronts a scientist-authored causal DAG with data to surface anomalies, violations, and root causes.",
+      "Stress-tests scientist-authored DAGs against data; AI agents surface violations, compare alternative mechanisms, and generate new hypotheses grounded in the causal model.",
   },
 ];
 
