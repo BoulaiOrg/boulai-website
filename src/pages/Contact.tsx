@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -44,12 +44,7 @@ type ContactValues = z.infer<typeof contactSchema>;
 
 const CONTACT_ENDPOINT =
   (import.meta.env.VITE_CONTACT_WEBHOOK_URL as string | undefined)?.trim() ||
-  "https://formsubmit.co/3537b9bf0f25d9b95ffc7c0cc663f81f";
-
-const AUTO_RESPONSE_MESSAGE =
-  "Thank you for contacting Boulai. We have received your message and the Boulai team will get back to you soon.";
-
-const CONTACT_SUCCESS_URL = "https://boulai.org/contact?sent=1";
+  "https://formsubmit.co/ajax/3537b9bf0f25d9b95ffc7c0cc663f81f";
 
 const RequiredLabel = ({ children }: { children: string }) => (
   <FormLabel>
@@ -61,7 +56,6 @@ const Contact = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
-  const contactFormRef = useRef<HTMLFormElement>(null);
   const form = useForm<ContactValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { firstName: "", lastName: "", email: "", company: "", message: "" },
@@ -77,16 +71,47 @@ const Contact = () => {
   const contactName = [firstName, lastName].filter(Boolean).join(" ");
   const subject = `Boulai contact: ${inquiryLabel || "New inquiry"}${contactName ? ` - ${contactName}` : ""}`;
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("sent") === "1") {
+  const sendContactMessage = async (values: ContactValues) => {
+    const selectedInquiry = inquiryTypes.find((t) => t.value === values.inquiryType)?.label ?? values.inquiryType;
+    const selectedName = [values.firstName, values.lastName].filter(Boolean).join(" ");
+    setSubmitting(true);
+
+    try {
+      const response = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `Boulai contact: ${selectedInquiry} - ${selectedName}`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: values.email,
+          "First name": values.firstName,
+          "Last name": values.lastName,
+          email: values.email,
+          Company: values.company,
+          "Inquiry type": selectedInquiry,
+          Message: values.message,
+        }),
+      });
+
+      if (!response.ok) throw new Error(`Contact request failed with status ${response.status}`);
+
+      setConfirmOpen(false);
+      form.reset();
       toast({
         title: "Message sent.",
         description: "A member of the Boulai team will contact you as soon as possible.",
       });
-      window.history.replaceState(null, "", window.location.pathname);
+    } catch {
+      toast({
+        title: "Message not sent.",
+        description: "Please write directly to hello@boulai.org.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
     }
-  }, [toast]);
+  };
 
   const openSubmitConfirmation = async () => {
     const isValid = await form.trigger(undefined, { shouldFocus: true });
@@ -94,21 +119,7 @@ const Contact = () => {
   };
 
   const submitConfirmedMessage = () => {
-    setSubmitting(true);
-    setConfirmOpen(false);
-    window.setTimeout(() => {
-      const currentForm = contactFormRef.current;
-      if (!currentForm) return;
-      if (currentForm.requestSubmit) {
-        currentForm.requestSubmit();
-      } else {
-        currentForm.submit();
-      }
-    }, 0);
-  };
-
-  const onNativeSubmit = () => {
-    setSubmitting(true);
+    void form.handleSubmit(sendContactMessage)();
   };
 
   return (
@@ -137,17 +148,15 @@ const Contact = () => {
           <FadeIn>
             <Form {...form}>
               <form
-                ref={contactFormRef}
-                action={CONTACT_ENDPOINT}
-                method="POST"
-                onSubmit={onNativeSubmit}
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  void openSubmitConfirmation();
+                }}
                 className="premium-panel p-8 md:p-10 space-y-6"
               >
                 <input type="hidden" name="_subject" value={subject} readOnly />
                 <input type="hidden" name="_template" value="table" readOnly />
-                <input type="hidden" name="_autoresponse" value={AUTO_RESPONSE_MESSAGE} readOnly />
                 <input type="hidden" name="_replyto" value={email || ""} readOnly />
-                <input type="hidden" name="_next" value={CONTACT_SUCCESS_URL} readOnly />
                 <input type="hidden" name="First name" value={firstName || ""} readOnly />
                 <input type="hidden" name="Last name" value={lastName || ""} readOnly />
                 <input type="hidden" name="Company" value={company || ""} readOnly />
