@@ -152,7 +152,7 @@ const Index = () => {
                   intelligence around the same evidence.
                 </p>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/[78%]">
-                  Boulai Discovery is the first platform built on that vision. It helps teams turn clinical and
+                  Boulai Discovery is the first product built on that vision. It helps teams turn clinical and
                   real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
                   before committing to expensive decisions.
                 </p>

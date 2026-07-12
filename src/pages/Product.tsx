@@ -59,7 +59,7 @@ const Product = () => (
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">The engines</p>
-            <h2 className="section-title">Three engines, one platform.</h2>
+            <h2 className="section-title">Three engines, one product.</h2>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
