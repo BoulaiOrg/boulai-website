@@ -91,11 +91,10 @@ const Contact = () => {
               Let's talk.
             </h1>
             <p className="text-lg leading-relaxed text-white/[66%]">
-              Tell us about your team and what you're trying to solve. Prefer to write directly? Reach us at{" "}
-              <span className="text-white">
-                hello@boulai.org
+              <span className="block">Tell us about your team and what you're trying to solve. Prefer to write directly?</span>
+              <span className="block">
+                Reach us at <span className="text-white">hello@boulai.org</span>.
               </span>
-              .
             </p>
           </FadeIn>
         </div>
