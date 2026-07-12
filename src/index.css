@@ -132,6 +132,24 @@
     box-shadow: none;
   }
 
+  .page-title {
+    @apply font-display text-[2.7rem] font-normal leading-[1.04] text-white sm:text-[3.1rem] md:text-[3.65rem] lg:text-[4.05rem];
+    letter-spacing: 0;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  .section-title {
+    @apply font-display text-[2rem] font-normal leading-[1.14] text-foreground md:text-[2.7rem];
+    letter-spacing: 0;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  .card-title {
+    @apply text-base font-medium leading-snug text-foreground;
+  }
+
   .eyebrow {
     @apply text-[11px] font-semibold uppercase tracking-[0.26em] text-muted-foreground;
   }

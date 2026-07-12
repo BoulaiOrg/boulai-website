@@ -70,7 +70,7 @@ const Product = () => (
                 </p>
               </div>
             </div>
-            <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
+            <h1 className="page-title mb-7">
               A workbench for scientific data, hypotheses, and decisions.
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-white/[66%]">
@@ -114,7 +114,7 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">Workflow</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
+          <h2 className="section-title mb-16 text-center">
             A cleaner path from data to scientific review.
           </h2>
         </FadeIn>
@@ -123,7 +123,7 @@ const Product = () => (
             <FadeIn key={step.title} delay={i * 0.08}>
               <div className="premium-panel p-6 h-full">
                 <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{step.title}</h3>
+                <h3 className="card-title mb-3">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </FadeIn>
@@ -136,7 +136,7 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <FadeIn>
           <p className="eyebrow mb-4 text-center">The engines</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground text-center mb-16">
+          <h2 className="section-title mb-16 text-center">
             Three engines, one platform.
           </h2>
         </FadeIn>
@@ -145,7 +145,7 @@ const Product = () => (
             <FadeIn key={engine.title} delay={i * 0.1}>
               <div className="premium-panel p-8 h-full">
                 <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{engine.title}</h3>
+                <h3 className="card-title mb-3">{engine.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{engine.desc}</p>
               </div>
             </FadeIn>
@@ -159,7 +159,7 @@ const Product = () => (
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
           <FadeIn>
             <p className="eyebrow mb-4">Outputs</p>
-            <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+            <h2 className="section-title">
               Evidence your team can inspect before it acts.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed text-lg">

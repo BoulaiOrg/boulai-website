@@ -86,7 +86,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
                   animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
                   transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="font-display max-w-[60rem] text-[3.15rem] font-normal leading-[0.94] tracking-[-0.055em] text-white sm:text-[3.9rem] md:text-[4.45rem] lg:text-[4.7rem] xl:text-[5.05rem]"
+                  className="page-title max-w-[56rem]"
                 >
                   {heroLines.map((line) => (
                     <span
@@ -143,7 +143,7 @@ const Index = () => {
             <FadeIn>
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Vision</p>
-                <h2 className="font-display text-3xl font-semibold leading-tight text-foreground md:text-5xl">
+                <h2 className="section-title">
                   A modern Boule for clinical discovery.
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -168,7 +168,7 @@ const Index = () => {
                       <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                         0{index + 1}
                       </p>
-                      <h3 className="mt-2 text-lg font-semibold text-foreground">{item.title}</h3>
+                      <h3 className="card-title mt-2">{item.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
                     </div>
                   ))}
@@ -185,7 +185,7 @@ const Index = () => {
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Methodological foundation</p>
-                <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+                <h2 className="section-title">
                   Research becomes proprietary product.
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
@@ -214,7 +214,7 @@ const Index = () => {
               <FadeIn key={card.title} delay={i * 0.1}>
                 <div className="premium-panel p-7 h-full">
                   <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{card.title}</h3>
+                  <h3 className="card-title mb-3">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
                 </div>
               </FadeIn>
@@ -228,7 +228,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
             <FadeIn>
               <p className="eyebrow mb-4">Where we work</p>
-              <h2 className="font-display text-3xl md:text-5xl font-semibold leading-tight text-foreground">
+              <h2 className="section-title">
                 Built for the industries where wrong answers are expensive.
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
@@ -241,7 +241,7 @@ const Index = () => {
                 {industries.map((item, i) => (
                   <div key={item.title} className="premium-panel p-6 h-full">
                     <p className="text-xs font-semibold text-primary">0{i + 1}</p>
-                    <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
+                    <h3 className="card-title mt-4">{item.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
@@ -257,7 +257,7 @@ const Index = () => {
             <div className="premium-panel p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">First solution</p>
-                <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-foreground">
+                <h2 className="section-title">
                   Boulai Discovery is the first product built on this approach.
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">

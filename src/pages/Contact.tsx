@@ -92,7 +92,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
           <FadeIn>
             <p className="inverse-eyebrow mb-5">Contact</p>
-            <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
+            <h1 className="page-title mb-7">
               Let's talk.
             </h1>
             <p className="text-lg leading-relaxed text-white/[66%]">
