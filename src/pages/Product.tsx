@@ -10,7 +10,6 @@ const engines = [
     role: "Statistics & Econometrics",
     description:
       "Rigorous statistical inference and econometric modeling across trial, observational, and translational datasets.",
-    methods: "METHODS: BAYESIAN / FREQUENTIST / MIXED-EFFECTS",
   },
   {
     code: "E-02",
@@ -18,7 +17,6 @@ const engines = [
     role: "Latent Factor Discovery",
     description:
       "Uncovers hidden drivers and subgroups with heterogeneous responses that classical models miss.",
-    methods: "METHODS: VAE / SPARSE FACTORS / LATENT MIXTURES",
   },
   {
     code: "E-03",
@@ -26,7 +24,6 @@ const engines = [
     role: "Causal DAG Stress-Testing",
     description:
       "Confronts a scientist-authored causal DAG with data to surface anomalies, violations, and root causes.",
-    methods: "METHODS: DO-CALCULUS / SEM / COUNTERFACTUAL RESIDUALS",
   },
 ];
 
@@ -77,12 +74,6 @@ const Product = () => (
                   {engine.role}
                 </p>
                 <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
-
-                <div className="mt-8 border-t border-border/70 pt-4">
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                    {engine.methods}
-                  </span>
-                </div>
               </article>
             ))}
           </div>
