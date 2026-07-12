@@ -6,15 +6,15 @@ import Footer from "@/components/Footer";
 const values = [
   {
     title: "Evidence before narrative",
-    desc: "The system must expose the evidence before anyone turns it into a story.",
+    desc: "We want teams to see evidence, uncertainty, and assumptions before a convincing story begins to harden.",
   },
   {
     title: "Built with scientific teams",
-    desc: "We design for researchers, clinicians, data scientists, and decision-makers who need to challenge one another productively.",
+    desc: "We design for researchers, clinicians, data scientists, and decision-makers who need to challenge evidence together.",
   },
   {
     title: "Ambitious and practical",
-    desc: "We start where better evidence can change expensive decisions — BioPharma R&D, clinical development, and translational science — powered by the proprietary engines behind Boulai Discovery.",
+    desc: "We start where better reasoning can change expensive choices in BioPharma R&D, clinical development, and translational science.",
   },
 ];
 
@@ -38,7 +38,6 @@ const About = () => (
     <section className="section-mid py-28 border-b border-border">
       <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
         <FadeIn className="lg:pt-2">
-          <p className="eyebrow mb-5">Human judgment</p>
           <h2 className="section-title max-w-sm">
             The people behind Boulai
           </h2>
