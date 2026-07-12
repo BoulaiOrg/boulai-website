@@ -63,11 +63,19 @@ const Product = () => (
                 className="shrink-0 text-white"
                 aria-hidden="true"
               />
-              <div className="min-w-0">
-                <p className="inverse-eyebrow mb-2">Boulai Discovery</p>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[38%]">
-                  Scientific AI platform
-                </p>
+              <div className="relative min-h-[42px] min-w-0">
+                <div className="discovery-lockup-parent absolute left-0 top-0">
+                  <p className="inverse-eyebrow mb-2">Boulai</p>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[38%]">
+                    Scientific intelligence
+                  </p>
+                </div>
+                <div className="discovery-lockup-final">
+                  <p className="inverse-eyebrow mb-2">Boulai Discovery</p>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[38%]">
+                    Scientific AI platform
+                  </p>
+                </div>
               </div>
             </div>
             <h1 className="page-title mb-7">

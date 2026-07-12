@@ -150,6 +150,16 @@
     @apply text-base font-medium leading-snug text-foreground;
   }
 
+  .discovery-lockup-parent {
+    animation: boulai-lockup-parent-exit 1.35s ease-in-out forwards;
+  }
+
+  .discovery-lockup-final {
+    animation: boulai-lockup-final-enter 1.35s ease-in-out 0.34s forwards;
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
   .eyebrow {
     @apply text-[11px] font-semibold uppercase tracking-[0.26em] text-muted-foreground;
   }
@@ -233,5 +243,111 @@
   50% {
     opacity: 0.38;
     transform: scale(1.04);
+  }
+}
+
+@keyframes boulai-parent-mark-exit {
+  0%,
+  32% {
+    opacity: 1;
+    transform: scale(0.86) rotate(0deg);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.7) rotate(28deg);
+    filter: blur(2px);
+  }
+}
+
+@keyframes boulai-discovery-mark-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) rotate(-28deg);
+  }
+
+  72% {
+    opacity: 1;
+    transform: scale(1.04) rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes boulai-discovery-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes boulai-discovery-spin-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes boulai-discovery-spin-ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes boulai-lockup-parent-exit {
+  0%,
+  32% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-3px);
+    filter: blur(2px);
+  }
+}
+
+@keyframes boulai-lockup-final-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boulai-parent-mark {
+    opacity: 0 !important;
+  }
+
+  .boulai-discovery-mark {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  svg [style*="boulai-discovery-spin"],
+  svg [style*="boulai-parent-mark-exit"],
+  svg [style*="boulai-discovery-mark-enter"],
+  svg [style*="boulai-discovery-draw"] {
+    animation: none !important;
+    filter: none !important;
+  }
+
+  .discovery-lockup-parent {
+    display: none;
+  }
+
+  .discovery-lockup-final {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
