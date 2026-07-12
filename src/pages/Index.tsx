@@ -7,7 +7,7 @@ import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const heroLines = ["Scientific AI for ", "clinical decisions."];
+const heroLines = ["Scientific AI", "for clinical decisions."];
 
 const methodPillars = [
   {
