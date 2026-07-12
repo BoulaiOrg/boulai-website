@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { AnimatedBoulaiLogo } from "@/components/AnimatedBoulaiLogo";
 import FadeIn from "@/components/FadeIn";
 import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
@@ -56,7 +57,19 @@ const Product = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-start">
           <FadeIn>
-            <p className="inverse-eyebrow mb-5">Boulai Discovery</p>
+            <div className="mb-7 flex items-center gap-4">
+              <AnimatedBoulaiLogo
+                size={56}
+                className="shrink-0 text-white"
+                aria-hidden="true"
+              />
+              <div className="min-w-0">
+                <p className="inverse-eyebrow mb-2">Boulai Discovery</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[38%]">
+                  Scientific AI platform
+                </p>
+              </div>
+            </div>
             <h1 className="mb-7 font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] text-white md:text-7xl">
               A workbench for scientific data, hypotheses, and decisions.
             </h1>
