@@ -56,11 +56,15 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 15.5px;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background:
       linear-gradient(hsl(220 10% 84% / 0.42) 1px, transparent 1px),
       linear-gradient(90deg, hsl(220 10% 84% / 0.3) 1px, transparent 1px),
@@ -131,21 +135,23 @@
   }
 
   .page-title {
-    @apply font-display text-[2.7rem] font-normal leading-[1.04] text-white sm:text-[3.1rem] md:text-[3.65rem] lg:text-[4.05rem];
+    @apply font-display text-[2.48rem] font-normal leading-[1.03] text-white sm:text-[2.85rem] md:text-[3.32rem] lg:text-[3.72rem];
+    font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
     letter-spacing: 0;
     font-kerning: normal;
     font-variant-ligatures: common-ligatures;
   }
 
   .section-title {
-    @apply font-display text-[2rem] font-normal leading-[1.14] text-foreground md:text-[2.7rem];
+    @apply font-display text-[1.86rem] font-normal leading-[1.12] text-foreground md:text-[2.46rem];
+    font-family: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
     letter-spacing: 0;
     font-kerning: normal;
     font-variant-ligatures: common-ligatures;
   }
 
   .card-title {
-    @apply text-base font-medium leading-snug text-foreground;
+    @apply text-[0.96rem] font-medium leading-snug text-foreground;
   }
 
   .discovery-lockup-parent {
@@ -159,16 +165,16 @@
   }
 
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.26em] text-muted-foreground;
+    @apply text-[10px] font-semibold uppercase tracking-[0.26em] text-muted-foreground;
   }
 
   .inverse-eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.26em];
+    @apply text-[10px] font-semibold uppercase tracking-[0.26em];
     color: hsl(0 0% 100% / 0.52);
   }
 
   .brand-wordmark {
-    @apply text-[2rem] font-medium tracking-[-0.055em] text-white;
+    @apply text-[1.88rem] font-medium tracking-[-0.045em] text-white;
     font-kerning: normal;
     font-variant-ligatures: common-ligatures;
   }

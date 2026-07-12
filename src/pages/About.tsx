@@ -43,11 +43,11 @@ const About = () => (
           </h2>
         </FadeIn>
         <FadeIn delay={0.1} className="mx-auto mt-12 max-w-3xl">
-          <p className="text-xl font-normal leading-relaxed text-foreground md:text-2xl">
+          <p className="text-lg font-normal leading-relaxed text-foreground md:text-xl">
             We are researchers, scientists, and industry builders united by a simple belief: the future of scientific AI
             should make human judgment more powerful, not less necessary.
           </p>
-          <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-8 text-[0.95rem] leading-relaxed text-muted-foreground md:text-base">
             Scientific decisions are expensive because uncertainty is expensive. A weak hypothesis, a misleading signal,
             or a false sense of confidence can redirect years of investments. We are building causal AI systems that
             help teams reason through evidence, causal structure, and competing assumptions before those decisions

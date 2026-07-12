@@ -9,7 +9,7 @@ const ContactCTA = () => (
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/[52%]">
           Work with Boulai
         </p>
-        <h2 className="mb-4 font-display text-[2rem] font-normal leading-[1.14] text-white md:text-[2.7rem]">
+        <h2 className="mb-4 font-display text-[1.86rem] font-normal leading-[1.12] text-white md:text-[2.46rem]">
           Bring us a scientific decision workflow.
         </h2>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/[62%] md:text-base">

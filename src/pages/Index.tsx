@@ -65,7 +65,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero min-h-screen border-b border-white/10">
+      <section className="section-hero min-h-screen overflow-hidden border-b border-white/10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="relative flex min-h-screen items-center py-24 md:py-32">
             <div className="relative z-10 max-w-none lg:w-[68%] lg:pr-[12rem] xl:w-[65%] xl:pr-[15rem]">
@@ -102,7 +102,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-8 max-w-[40rem] text-[0.98rem] leading-[1.9] text-white/70 md:text-[1.08rem]"
+                  className="mt-8 max-w-[40rem] text-[0.94rem] leading-[1.9] text-white/70 md:text-[1.02rem]"
                 >
                   Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
                   into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
