@@ -107,14 +107,14 @@ const HeroCausalAnimation = () => (
     aria-hidden="true"
   >
     <motion.div
-      animate={{ opacity: [0.64, 0.82, 0.7] }}
+      animate={{ opacity: [0.42, 0.58, 0.46] }}
       transition={{ duration: 11.5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute inset-y-[8%] left-[4%] right-[-4%] rounded-full bg-[radial-gradient(ellipse_at_44%_50%,_rgba(176,214,255,0.16),_rgba(118,168,232,0.08)_32%,_rgba(46,69,103,0.018)_58%,_transparent_82%)] blur-[88px]"
+      className="absolute inset-y-[8%] left-[4%] right-[-4%] rounded-full bg-[radial-gradient(ellipse_at_44%_50%,_rgba(176,214,255,0.11),_rgba(118,168,232,0.055)_32%,_rgba(46,69,103,0.014)_58%,_transparent_82%)] blur-[88px]"
     />
 
     <svg
       viewBox="0 0 860 620"
-      className="relative h-full w-[126%] max-w-none -translate-x-[4%] overflow-visible opacity-[0.98]"
+      className="relative h-full w-[126%] max-w-none -translate-x-[4%] overflow-visible opacity-[0.86]"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       shapeRendering="geometricPrecision"

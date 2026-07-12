@@ -130,7 +130,7 @@ const Index = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="pointer-events-none absolute right-[-6%] top-1/2 hidden w-[58%] -translate-y-1/2 items-center justify-end opacity-[0.98] lg:flex xl:right-[-4%] xl:w-[56%]">
+            <div className="pointer-events-none absolute right-[-10%] top-1/2 hidden w-[54%] -translate-y-1/2 items-center justify-end opacity-[0.72] lg:flex xl:right-[-8%] xl:w-[52%]">
               <HeroCausalAnimation />
             </div>
           </div>
