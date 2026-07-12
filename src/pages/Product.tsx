@@ -27,6 +27,29 @@ const engines = [
   },
 ];
 
+const productLevers = [
+  {
+    code: "01",
+    title: "Recover decision time",
+    desc: "Compress repeated exploratory analysis into inspectable causal workflows, so teams spend less time chasing weak or redundant signals.",
+  },
+  {
+    code: "02",
+    title: "Reduce false confidence",
+    desc: "Stress-test assumptions, subgroup patterns, and alternative mechanisms before they become trial, biomarker, or portfolio commitments.",
+  },
+  {
+    code: "03",
+    title: "Find patient heterogeneity",
+    desc: "Detect response patterns and hidden clinical structure that average effects can obscure, especially across complex patient-level data.",
+  },
+  {
+    code: "04",
+    title: "Protect missed opportunities",
+    desc: "Generate testable hypotheses from clinical and real-world evidence, helping teams see plausible paths before they are discarded too early.",
+  },
+];
+
 const Product = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
@@ -50,6 +73,34 @@ const Product = () => (
             <Button className="border border-white/[14%] bg-transparent text-white hover:bg-white hover:text-[#121419]" size="lg" asChild>
               <a href="/#vision">View the Approach</a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-mid border-b border-border py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="max-w-3xl">
+              <p className="eyebrow mb-4">Why it matters</p>
+              <h2 className="section-title">
+                Built for the cost of being wrong.
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                Clinical R&amp;D does not only lose money when a trial fails. It loses time when teams pursue weak
+                signals, over-trust subgroup patterns, or miss mechanisms hidden in patient-level data. Boulai
+                Discovery helps teams inspect uncertainty earlier, before it becomes an expensive decision.
+              </p>
+            </div>
+
+            <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+              {productLevers.map((item) => (
+                <article key={item.title} className="bg-card p-7">
+                  <p className="mb-5 text-xs font-semibold text-primary">{item.code}</p>
+                  <h3 className="card-title mb-3">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
