@@ -14,7 +14,7 @@ const engines = [
   {
     code: "E-02",
     name: "Icarus",
-    role: "Latent Factor Discovery",
+    role: "Causal Discovery",
     description:
       "Uncovers hidden drivers and subgroups with heterogeneous responses that classical models miss.",
   },
