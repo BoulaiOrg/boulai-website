@@ -104,12 +104,20 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
+                  aria-label="Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis testing."
                   className="mx-auto mt-8 max-w-[64rem] text-[0.9rem] leading-[1.85] text-white/70 md:text-[0.98rem]"
                 >
-                  <span className="block sm:whitespace-nowrap">
+                  <span className="block sm:hidden" aria-hidden="true">
+                    <span className="block">Boulai is a research-and-product startup:</span>
+                    <span className="block">our proprietary models turn clinical</span>
+                    <span className="block">and real-world data into decision-grade</span>
+                    <span className="block">causal evidence, from patient-level effects</span>
+                    <span className="block">to hidden structure and hypothesis testing.</span>
+                  </span>
+                  <span className="hidden sm:block sm:whitespace-nowrap" aria-hidden="true">
                     Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
                   </span>
-                  <span className="block sm:whitespace-nowrap">
+                  <span className="hidden sm:block sm:whitespace-nowrap" aria-hidden="true">
                     into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
                     testing.
                   </span>
