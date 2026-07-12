@@ -16,8 +16,8 @@ const dots = Array.from({ length: columns * rows }, (_, index) => {
   const leftRise = Math.max(0, 0.32 - colRatio) * (92 - depth * 34);
   const rightFalloff = Math.max(0, colRatio - 0.72) * (46 + depth * 30);
   const y = horizon + perspectiveY + largeSwell + crossSwell - leftRise + rightFalloff;
-  const size = 0.55 + depth * 1.95;
-  const opacity = 0.12 + depth * 0.46;
+  const size = 0.62 + depth * 2.12;
+  const opacity = 0.16 + depth * 0.52;
 
   return { id: `${col}-${row}`, x, y, size, opacity };
 });
@@ -25,11 +25,11 @@ const dots = Array.from({ length: columns * rows }, (_, index) => {
 const HeroDotWave = () => (
   <div
     className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden"
-    style={{ height: "58vh", minHeight: "380px" }}
+    style={{ height: "58vh", minHeight: "360px" }}
     aria-hidden="true"
   >
     <div
-      className="absolute inset-x-0 bottom-0 opacity-90"
+      className="absolute inset-x-0 bottom-0 opacity-100 sm:opacity-90"
       style={{
         height: "100%",
         maskImage: "linear-gradient(to bottom, transparent 0%, black 18%, black 92%, transparent 100%)",

@@ -154,7 +154,7 @@ const Index = () => {
                   formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
                   intelligence around the same evidence.
                 </p>
-                <figure className="mt-12 max-w-[560px] md:max-w-[600px]">
+                <figure className="-mx-4 mt-8 max-w-none sm:mx-0 sm:mt-12 sm:max-w-[560px] md:max-w-[600px]">
                   <img
                     src="/brand/vision-boule-line-instrument.png"
                     alt="A modern research Boulē with a causal reasoning instrument at its center."
@@ -162,7 +162,7 @@ const Index = () => {
                     height={554}
                     loading="lazy"
                     decoding="async"
-                    className="w-full select-none opacity-[0.76] mix-blend-multiply saturate-[0.72] contrast-[1.08] [mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)]"
+                    className="w-full select-none opacity-[0.88] mix-blend-multiply saturate-[0.78] contrast-[1.1] [mask-image:linear-gradient(to_bottom,black_78%,transparent_100%)] sm:opacity-[0.76] sm:saturate-[0.72] sm:[mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)]"
                   />
                 </figure>
               </div>
