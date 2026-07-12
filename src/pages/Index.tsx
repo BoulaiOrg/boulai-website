@@ -182,7 +182,7 @@ const Index = () => {
       <section className="section-mid border-b border-border py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
-            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Methodological foundation</p>
                 <h2 className="section-title">
