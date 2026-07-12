@@ -87,7 +87,7 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
                   animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
                   transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="page-title mx-auto max-w-[56rem]"
+                  className="page-title mx-auto max-w-[64rem] text-[2.8rem] sm:text-[3.22rem] md:text-[3.88rem] lg:text-[4.32rem]"
                 >
                   {heroLines.map((line) => (
                     <span
