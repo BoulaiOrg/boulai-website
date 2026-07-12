@@ -26,7 +26,7 @@ const About = () => (
     <section className="section-hero border-b border-white/10 pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
-          <p className="inverse-eyebrow mb-5">Who we are</p>
+          <p className="inverse-eyebrow mb-5">About</p>
           <h1 className="page-title">
             We are building scientific intelligence for better decisions.
           </h1>
