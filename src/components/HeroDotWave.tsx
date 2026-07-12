@@ -41,13 +41,13 @@ const HeroDotWave = () => (
         className="h-full w-full"
         style={{ width: "100%", height: "100%" }}
         fill="none"
-        preserveAspectRatio="none"
+        preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <radialGradient id="hero-dot-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(246,255,255,1)" />
-            <stop offset="40%" stopColor="rgba(139,232,221,0.88)" />
+            <stop offset="42%" stopColor="rgba(155,244,235,0.96)" />
             <stop offset="100%" stopColor="rgba(87,193,229,0)" />
           </radialGradient>
         </defs>
