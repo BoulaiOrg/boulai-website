@@ -3,18 +3,6 @@ import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const teamMembers = [
-  { name: "Danilo", bio: "Building the vision of rigorous AI for science." },
-  { name: "Andrea", bio: "Strategy and partnerships at the science-AI frontier." },
-  { name: "Arianna", bio: "Bridging domain expertise and product design." },
-  { name: "Francesco", bio: "Advancing causal discovery methods." },
-  { name: "Giacomo", bio: "Working on explainable AI and scientific data analysis." },
-  { name: "Marco", bio: "Statistical learning and hypothesis generation." },
-  { name: "Filippo", bio: "Architecture, infrastructure, and engineering leadership." },
-];
-
-const advisor = { name: "Francesco", bio: "Causal learning lab leadership." };
-
 const values = [
   {
     title: "Evidence before narrative",
@@ -43,9 +31,9 @@ const About = () => (
             We are building scientific intelligence for better decisions.
           </h1>
           <p className="text-lg leading-relaxed text-white/[66%]">
-            Boulai is a research-and-product startup: we bring together causal inference, machine learning, product
-            design, and scientific strategy to build the proprietary models that help research organizations find
-            stronger signals and avoid expensive false confidence.
+            Boulai builds AI systems that make human scientific judgment stronger. We help expert teams reason through
+            evidence, causal structure, and uncertainty before weak hypotheses, misleading signals, or false confidence
+            become costly decisions.
           </p>
         </FadeIn>
       </div>
@@ -65,37 +53,24 @@ const About = () => (
 
     {/* Team */}
     <section className="section-mid py-24 border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-16">The team</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-10">
+            The people behind Boulai
+          </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {teamMembers.map((m, i) => (
-            <FadeIn key={i} delay={i * 0.05} className="h-full">
-              <div className="premium-panel p-6 text-center h-full">
-                <div className="w-16 h-16 bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {m.name[0]}
-                </div>
-                <h3 className="text-base font-semibold text-foreground">{m.name}</h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{m.bio}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Advisor */}
-    <section className="section-deep py-16">
-      <div className="container mx-auto px-4 lg:px-8 max-w-md">
-        <FadeIn>
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6 text-center">Scientific Advisory</p>
-          <div className="premium-panel p-6 text-center">
-            <div className="w-14 h-14 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold mx-auto mb-4">
-              {advisor.name[0]}
-            </div>
-            <h3 className="text-base font-semibold text-foreground">{advisor.name}</h3>
-            <p className="text-sm text-muted-foreground mt-2">{advisor.bio}</p>
+        <FadeIn delay={0.1}>
+          <div className="premium-panel p-8 md:p-10">
+            <p className="text-xl md:text-2xl font-medium leading-relaxed text-foreground">
+              We are researchers, scientists, and industry builders united by a simple belief: the future of scientific
+              AI should make human judgment more powerful, not less necessary.
+            </p>
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-muted-foreground">
+              Scientific decisions are expensive because uncertainty is expensive. A weak hypothesis, a misleading
+              signal, or a false sense of confidence can redirect years of investments. We are building causal AI
+              systems that help teams reason through evidence, causal structure, and competing assumptions before those
+              decisions become costly.
+            </p>
           </div>
         </FadeIn>
       </div>
