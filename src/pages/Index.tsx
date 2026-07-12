@@ -156,6 +156,17 @@ const Index = () => {
                   real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
                   before committing to expensive decisions.
                 </p>
+                <figure className="mt-10 max-w-[680px]">
+                  <img
+                    src="/brand/vision-boule-instrument.png"
+                    alt="A modern research boule with a causal reasoning instrument at its center."
+                    width={1180}
+                    height={498}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full select-none opacity-[0.9] saturate-[0.74] contrast-[1.04]"
+                  />
+                </figure>
               </div>
             </FadeIn>
 
