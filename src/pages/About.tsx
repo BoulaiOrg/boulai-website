@@ -36,13 +36,13 @@ const About = () => (
 
     {/* Team */}
     <section className="section-mid py-28 border-b border-border">
-      <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-        <FadeIn className="lg:pt-2">
-          <h2 className="section-title max-w-sm">
+      <div className="container mx-auto max-w-4xl px-4 text-center lg:px-8">
+        <FadeIn>
+          <h2 className="section-title mx-auto max-w-2xl">
             The people behind Boulai
           </h2>
         </FadeIn>
-        <FadeIn delay={0.1} className="max-w-3xl">
+        <FadeIn delay={0.1} className="mx-auto mt-12 max-w-3xl">
           <p className="text-xl font-normal leading-relaxed text-foreground md:text-2xl">
             We are researchers, scientists, and industry builders united by a simple belief: the future of scientific AI
             should make human judgment more powerful, not less necessary.
