@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-
-const navItems = [
-  { label: "Vision", href: "/#vision", type: "anchor" },
-  { label: "Platform", href: "/product", type: "link" },
-  { label: "Who we are", href: "/about", type: "link" },
-];
+import Navbar from "@/components/Navbar";
 
 const engines = [
   {
@@ -36,78 +31,9 @@ const engines = [
   },
 ];
 
-const CubeLogo = ({ className = "" }: { className?: string }) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    aria-hidden="true"
-  >
-    <path
-      d="M12 2.5 4.5 6.75v8.5L12 19.5l7.5-4.25v-8.5L12 2.5Z"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12 11.5v8M12 11.5 4.75 7M12 11.5 19.25 7"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M7.5 4.95 15.25 9.5v8.65"
-      stroke="currentColor"
-      strokeWidth="1.1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      opacity="0.45"
-    />
-  </svg>
-);
-
 const Product = () => (
   <div className="min-h-screen bg-[#050505] font-sans text-neutral-100">
-    <nav className="fixed left-0 right-0 top-0 z-50 h-16 border-b border-neutral-900 bg-[#050505]/80 backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
-        <Link to="/product" className="flex items-center gap-3 text-white" aria-label="Boulai Discovery platform">
-          <CubeLogo className="h-6 w-6" />
-          <span className="text-sm font-bold uppercase tracking-tight">BOULAI DISCOVERY</span>
-        </Link>
-
-        <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) =>
-            item.type === "anchor" ? (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-[11px] font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors hover:text-white"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                to={item.href}
-                className="text-[11px] font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors hover:text-white"
-              >
-                {item.label}
-              </Link>
-            )
-          )}
-          <Link
-            to="/contact"
-            className="border border-neutral-800 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.15em] text-neutral-100 transition-colors hover:bg-white hover:text-black"
-          >
-            Contact us
-          </Link>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
 
     <main>
       <section className="px-6 pb-32 pt-48">
