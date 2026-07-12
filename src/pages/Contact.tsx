@@ -33,8 +33,17 @@ const contactSchema = z.object({
 type ContactValues = z.infer<typeof contactSchema>;
 
 const CONTACT_ENDPOINT =
-  (import.meta.env.VITE_CONTACT_WEBHOOK_URL as string | undefined) ??
-  "https://formsubmit.co/ajax/hello@boulai.org";
+  (import.meta.env.VITE_CONTACT_WEBHOOK_URL as string | undefined)?.trim() ||
+  "https://formsubmit.co/3537b9bf0f25d9b95ffc7c0cc663f81f";
+
+const AUTO_RESPONSE_MESSAGE =
+  "Thank you for contacting Boulai. We have received your message and the Boulai team will get back to you soon.";
+
+const RequiredLabel = ({ children }: { children: string }) => (
+  <FormLabel>
+    {children} <span className="text-red-600">*</span>
+  </FormLabel>
+);
 
 const Contact = () => {
   const { toast } = useToast();
@@ -47,36 +56,41 @@ const Contact = () => {
   const onSubmit = async (values: ContactValues) => {
     const inquiryLabel = inquiryTypes.find((t) => t.value === values.inquiryType)?.label ?? values.inquiryType;
     setSubmitting(true);
-    try {
-      const res = await fetch(CONTACT_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          _subject: `Boulai contact: ${inquiryLabel} — ${values.firstName} ${values.lastName}`,
-          _template: "table",
-          _captcha: "false",
-          name: `${values.firstName} ${values.lastName}`,
-          firstName: values.firstName,
-          lastName: values.lastName,
-          email: values.email,
-          _replyto: values.email,
-          company: values.company,
-          inquiryType: inquiryLabel,
-          message: values.message,
-        }),
-      });
-      if (!res.ok) throw new Error(`Request failed (${res.status})`);
-      toast({ title: "Thanks!", description: "We've received your message and will be in touch." });
-      form.reset();
-    } catch {
-      toast({
-        title: "Something went wrong",
-        description: "Please email us directly at hello@boulai.org.",
-        variant: "destructive",
-      });
-    } finally {
-      setSubmitting(false);
-    }
+
+    const payload = {
+      _subject: `Boulai contact: ${inquiryLabel} - ${values.firstName} ${values.lastName}`,
+      _template: "table",
+      _autoresponse: AUTO_RESPONSE_MESSAGE,
+      _replyto: values.email,
+      "First name": values.firstName,
+      "Last name": values.lastName,
+      email: values.email,
+      Company: values.company,
+      "Inquiry type": inquiryLabel,
+      Message: values.message,
+    };
+
+    const nativeForm = document.createElement("form");
+    nativeForm.method = "POST";
+    nativeForm.action = CONTACT_ENDPOINT;
+    nativeForm.target = "contact-submit-frame";
+    nativeForm.style.display = "none";
+
+    Object.entries(payload).forEach(([name, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      nativeForm.appendChild(input);
+    });
+
+    document.body.appendChild(nativeForm);
+    nativeForm.submit();
+    nativeForm.remove();
+
+    toast({ title: "Thanks!", description: "We've received your message and will be in touch." });
+    form.reset();
+    setSubmitting(false);
   };
 
   return (
@@ -111,7 +125,7 @@ const Contact = () => {
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>First name</FormLabel>
+                        <RequiredLabel>First name</RequiredLabel>
                         <FormControl>
                           <Input required autoComplete="given-name" {...field} />
                         </FormControl>
@@ -124,7 +138,7 @@ const Contact = () => {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Last name</FormLabel>
+                        <RequiredLabel>Last name</RequiredLabel>
                         <FormControl>
                           <Input required autoComplete="family-name" {...field} />
                         </FormControl>
@@ -140,7 +154,7 @@ const Contact = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <RequiredLabel>Email</RequiredLabel>
                         <FormControl>
                           <Input required type="email" autoComplete="email" {...field} />
                         </FormControl>
@@ -153,7 +167,7 @@ const Contact = () => {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Company</FormLabel>
+                        <RequiredLabel>Company</RequiredLabel>
                         <FormControl>
                           <Input required autoComplete="organization" {...field} />
                         </FormControl>
@@ -168,7 +182,7 @@ const Contact = () => {
                   name="inquiryType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Inquiry type</FormLabel>
+                      <RequiredLabel>Inquiry type</RequiredLabel>
                       <input className="sr-only" tabIndex={-1} required value={field.value ?? ""} readOnly />
                       <Select onValueChange={field.onChange} value={field.value}>
                         <FormControl>
@@ -194,7 +208,7 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <RequiredLabel>Message</RequiredLabel>
                       <FormControl>
                         <Textarea required rows={5} {...field} />
                       </FormControl>
@@ -206,6 +220,7 @@ const Contact = () => {
                 <Button type="submit" size="lg" disabled={submitting} className="w-full">
                   {submitting ? "Sending…" : "Send Message"}
                 </Button>
+                <iframe className="hidden" name="contact-submit-frame" title="Contact form submission" />
               </form>
             </Form>
           </FadeIn>
