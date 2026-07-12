@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Boulai causal AI for CROs social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101217"/>
+      <stop offset="0.58" stop-color="#08090d"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(910 315) rotate(90) scale(270 330)">
+      <stop stop-color="#28415f" stop-opacity="0.32"/>
+      <stop offset="0.46" stop-color="#152338" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#050505" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="590" y1="120" x2="1110" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8f0ff" stop-opacity="0.16"/>
+      <stop offset="0.45" stop-color="#aac4ed" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#f8fbff" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#halo)"/>
+
+  <g opacity="0.42">
+    <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M0 560H1200" stroke="#ffffff" stroke-opacity="0.055"/>
+    <path d="M96 0V630M192 0V630M288 0V630M384 0V630M480 0V630M576 0V630M672 0V630M768 0V630M864 0V630M960 0V630M1056 0V630" stroke="#ffffff" stroke-opacity="0.04"/>
+  </g>
+
+  <g transform="translate(58 44)" fill="none" stroke="#f4f6f8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="0" cy="15" r="3.2" fill="#f4f6f8" stroke="none"/>
+    <circle cx="0" cy="39" r="3.2" fill="#f4f6f8" stroke="none"/>
+    <circle cx="0" cy="63" r="3.2" fill="#f4f6f8" stroke="none"/>
+    <path d="M11 2C40 0 59 15 58 35C57 54 39 67 11 65"/>
+    <path d="M11 15C35 14 48 24 48 39C48 54 33 63 11 63"/>
+    <path d="M11 39H48"/>
+  </g>
+  <text x="116" y="100" fill="#f4f6f8" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="-0.03em">Boulai</text>
+
+  <text x="56" y="174" fill="#9da4ae" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="0.32em">BUILT FOR CRO DECISION WORKFLOWS</text>
+  <text x="56" y="264" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">Causal AI for</text>
+  <text x="56" y="346" fill="#f6f7f8" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="400" letter-spacing="-0.01em">clinical evidence.</text>
+  <text x="58" y="414" fill="#b1b6bd" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <tspan x="58" dy="0">Turn clinical and real-world data into decision-grade</tspan>
+    <tspan x="58" dy="34">causal evidence before costly trial and portfolio decisions.</tspan>
+  </text>
+  <text x="58" y="548" fill="#e9ecf0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="0.26em">BOULAI.ORG</text>
+
+  <g transform="translate(594 112)">
+    <g opacity="0.28">
+      <path d="M0 28H198M0 74H198M0 120H198M0 166H198M0 212H198M0 258H198M0 304H198" stroke="#dbe7f6" stroke-opacity="0.28"/>
+      <path d="M22 0V334M68 0V334M114 0V334M160 0V334" stroke="#dbe7f6" stroke-opacity="0.2"/>
+      <g fill="#e8f0ff">
+        <rect x="26" y="32" width="8" height="8" rx="2" opacity="0.56"/>
+        <rect x="116" y="31" width="8" height="8" rx="2" opacity="0.52"/>
+        <rect x="72" y="77" width="8" height="8" rx="2" opacity="0.38"/>
+        <rect x="162" y="122" width="8" height="8" rx="2" opacity="0.48"/>
+        <rect x="30" y="170" width="8" height="8" rx="2" opacity="0.44"/>
+        <rect x="118" y="214" width="8" height="8" rx="2" opacity="0.34"/>
+        <rect x="74" y="260" width="8" height="8" rx="2" opacity="0.46"/>
+      </g>
+    </g>
+
+    <g stroke="url(#line)" stroke-width="1.35" fill="none" stroke-linecap="round">
+      <path d="M188 75C252 72 300 66 356 56"/>
+      <path d="M188 166C256 166 300 162 362 154"/>
+      <path d="M188 258C250 252 300 246 358 236"/>
+      <path d="M356 56C430 74 480 98 546 128"/>
+      <path d="M362 154C426 130 480 126 546 128"/>
+      <path d="M362 154C430 180 482 210 548 246"/>
+      <path d="M358 236C422 240 482 246 548 246"/>
+      <path d="M546 128C612 94 654 74 706 56"/>
+      <path d="M546 128C620 146 658 166 718 198"/>
+      <path d="M548 246C620 230 660 216 718 198"/>
+      <path d="M548 246C618 284 660 316 706 356"/>
+    </g>
+
+    <g fill="#f7fbff" filter="url(#softGlow)">
+      <circle cx="356" cy="56" r="5.5" opacity="0.72"/>
+      <circle cx="362" cy="154" r="6.2" opacity="0.78"/>
+      <circle cx="358" cy="236" r="5.5" opacity="0.68"/>
+      <circle cx="546" cy="128" r="7" opacity="0.86"/>
+      <circle cx="548" cy="246" r="7" opacity="0.82"/>
+      <circle cx="706" cy="56" r="6" opacity="0.72"/>
+      <circle cx="718" cy="198" r="8" opacity="0.9"/>
+      <circle cx="706" cy="356" r="6" opacity="0.66"/>
+    </g>
+  </g>
+
+  <rect x="0.5" y="0.5" width="1199" height="629" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>
