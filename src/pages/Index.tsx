@@ -144,7 +144,7 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Vision</p>
                 <h2 className="section-title">
-                  A modern Boule for clinical discovery.
+                  A modern Boule for clinical decisions.
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                   Boulai takes its name from the ancient Greek <em>boule</em>: a place where collective judgment was
