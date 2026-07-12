@@ -1,25 +1,23 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import BoulaiListDot from "@/components/BoulaiListDot";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const engines = [
   {
-    code: "E-01",
     name: "Atlas",
     role: "Statistics & Econometrics",
     description:
       "Rigorous statistical inference and econometric modeling across trial, observational, and translational datasets.",
   },
   {
-    code: "E-02",
     name: "Icarus",
     role: "Causal Discovery",
     description:
       "Discovers candidate causal structures, hidden drivers, and heterogeneous-response subgroups, while AI agents turn causal outputs into testable hypotheses for scientists to review.",
   },
   {
-    code: "E-03",
     name: "Locus",
     role: "Causal DAG Stress-Testing",
     description:
@@ -29,22 +27,18 @@ const engines = [
 
 const productLevers = [
   {
-    code: "01",
     title: "Recover decision time",
     desc: "Compress repeated exploratory analysis into inspectable causal workflows, so teams spend less time chasing weak or redundant signals.",
   },
   {
-    code: "02",
     title: "Reduce false confidence",
     desc: "Stress-test assumptions, subgroup patterns, and alternative mechanisms before they become trial, biomarker, or portfolio commitments.",
   },
   {
-    code: "03",
     title: "Find patient heterogeneity",
     desc: "Detect response patterns and hidden clinical structure that average effects can obscure, especially across complex patient-level data.",
   },
   {
-    code: "04",
     title: "Protect missed opportunities",
     desc: "Generate testable hypotheses from clinical and real-world evidence, helping teams see plausible paths before they are discarded too early.",
   },
@@ -95,7 +89,7 @@ const Product = () => (
             <div className="grid gap-px border border-border bg-border md:grid-cols-2">
               {productLevers.map((item) => (
                 <article key={item.title} className="bg-card p-7">
-                  <p className="mb-5 text-xs font-semibold text-primary">{item.code}</p>
+                  <BoulaiListDot className="mb-5 text-primary" />
                   <h3 className="card-title mb-3">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
                 </article>
@@ -115,10 +109,10 @@ const Product = () => (
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
             {engines.map((engine) => (
               <article
-                key={engine.code}
+                key={engine.name}
                 className="premium-panel p-8 h-full"
               >
-                <p className="mb-4 text-xs font-semibold text-primary">{engine.code}</p>
+                <BoulaiListDot className="mb-4 text-primary" />
                 <h3 className="card-title mb-3">{engine.name}</h3>
                 <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                   {engine.role}

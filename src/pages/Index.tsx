@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import HeroDotWave from "@/components/HeroDotWave";
+import BoulaiListDot from "@/components/BoulaiListDot";
 import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -171,11 +172,9 @@ const Index = () => {
               <div className="premium-panel p-8 md:p-10">
                 <p className="eyebrow mb-6">What this means in practice</p>
                 <div className="space-y-6">
-                  {visionPrinciples.map((item, index) => (
+                  {visionPrinciples.map((item) => (
                     <div key={item.title} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                        0{index + 1}
-                      </p>
+                      <BoulaiListDot className="text-primary" />
                       <h3 className="card-title mt-2">{item.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
                     </div>
@@ -210,11 +209,9 @@ const Index = () => {
               <div className="premium-panel p-8 md:p-10">
                 <p className="eyebrow mb-6">What Boulai integrates</p>
                 <div className="space-y-6">
-                  {methodOutcomes.map((item, index) => (
+                  {methodOutcomes.map((item) => (
                     <div key={item} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                        0{index + 1}
-                      </p>
+                      <BoulaiListDot className="text-primary" />
                       <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/[84%]">{item}</p>
                     </div>
                   ))}
@@ -226,7 +223,7 @@ const Index = () => {
             {methodPillars.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
                 <div className="premium-panel p-7 h-full">
-                  <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
+                  <BoulaiListDot className="mb-4 text-primary" />
                   <h3 className="card-title mb-3">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
                 </div>
@@ -251,9 +248,9 @@ const Index = () => {
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="grid sm:grid-cols-3 gap-4">
-                {industries.map((item, i) => (
+                {industries.map((item) => (
                   <div key={item.title} className="premium-panel p-6 h-full">
-                    <p className="text-xs font-semibold text-primary">0{i + 1}</p>
+                    <BoulaiListDot className="text-primary" />
                     <h3 className="card-title mt-4">{item.title}</h3>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>

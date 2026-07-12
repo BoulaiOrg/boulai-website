@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import BoulaiListDot from "@/components/BoulaiListDot";
 import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -67,7 +68,7 @@ const About = () => (
           {values.map((v, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="text-center">
-                <p className="text-xs font-semibold text-primary mb-4">0{i + 1}</p>
+                <BoulaiListDot className="mx-auto mb-4 text-primary" />
                 <h3 className="card-title mb-2">{v.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
               </div>
