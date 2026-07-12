@@ -172,11 +172,15 @@ const Index = () => {
               <div className="premium-panel p-8 md:p-10">
                 <p className="eyebrow mb-6">What this means in practice</p>
                 <div className="space-y-6">
-                  {visionPrinciples.map((item) => (
+                  {visionPrinciples.map((item, index) => (
                     <div key={item.title} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
-                      <BoulaiListDot className="text-primary" />
-                      <h3 className="card-title mt-2">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                      <div className="flex items-start gap-4">
+                        <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                        <div>
+                          <h3 className="card-title">{item.title}</h3>
+                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -209,10 +213,12 @@ const Index = () => {
               <div className="premium-panel p-8 md:p-10">
                 <p className="eyebrow mb-6">What Boulai integrates</p>
                 <div className="space-y-6">
-                  {methodOutcomes.map((item) => (
+                  {methodOutcomes.map((item, index) => (
                     <div key={item} className="border-t border-border/70 pt-4 first:border-t-0 first:pt-0">
-                      <BoulaiListDot className="text-primary" />
-                      <p className="mt-2 max-w-md text-base leading-relaxed text-foreground/[84%]">{item}</p>
+                      <div className="flex items-start gap-4">
+                        <BoulaiListDot count={index + 1} className="mt-2 text-primary" />
+                        <p className="max-w-md text-base leading-relaxed text-foreground/[84%]">{item}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -223,9 +229,13 @@ const Index = () => {
             {methodPillars.map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
                 <div className="premium-panel p-7 h-full">
-                  <BoulaiListDot className="mb-4 text-primary" />
-                  <h3 className="card-title mb-3">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                  <div className="flex items-start gap-5">
+                    <BoulaiListDot count={i + 1} className="mt-1 text-primary" />
+                    <div>
+                      <h3 className="card-title mb-3">{card.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -248,11 +258,15 @@ const Index = () => {
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="grid sm:grid-cols-3 gap-4">
-                {industries.map((item) => (
+                {industries.map((item, index) => (
                   <div key={item.title} className="premium-panel p-6 h-full">
-                    <BoulaiListDot className="text-primary" />
-                    <h3 className="card-title mt-4">{item.title}</h3>
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                    <div className="flex items-start gap-4">
+                      <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                      <div>
+                        <h3 className="card-title">{item.title}</h3>
+                        <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

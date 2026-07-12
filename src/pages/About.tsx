@@ -67,10 +67,12 @@ const About = () => (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {values.map((v, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="text-center">
-                <BoulaiListDot className="mx-auto mb-4 text-primary" />
-                <h3 className="card-title mb-2">{v.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+              <div className="flex items-start gap-4 text-left">
+                <BoulaiListDot count={i + 1} className="mt-1 text-primary" />
+                <div>
+                  <h3 className="card-title mb-2">{v.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                </div>
               </div>
             </FadeIn>
           ))}

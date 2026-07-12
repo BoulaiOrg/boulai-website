@@ -87,11 +87,15 @@ const Product = () => (
             </div>
 
             <div className="grid gap-px border border-border bg-border md:grid-cols-2">
-              {productLevers.map((item) => (
+              {productLevers.map((item, index) => (
                 <article key={item.title} className="bg-card p-7">
-                  <BoulaiListDot className="mb-5 text-primary" />
-                  <h3 className="card-title mb-3">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  <div className="flex items-start gap-5">
+                    <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                    <div>
+                      <h3 className="card-title mb-3">{item.title}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
@@ -107,17 +111,21 @@ const Product = () => (
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {engines.map((engine) => (
+            {engines.map((engine, index) => (
               <article
                 key={engine.name}
                 className="premium-panel p-8 h-full"
               >
-                <BoulaiListDot className="mb-4 text-primary" />
-                <h3 className="card-title mb-3">{engine.name}</h3>
-                <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  {engine.role}
-                </p>
-                <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
+                <div className="flex items-start gap-5">
+                  <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                  <div>
+                    <h3 className="card-title mb-3">{engine.name}</h3>
+                    <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                      {engine.role}
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
