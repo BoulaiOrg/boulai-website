@@ -1,7 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,6 +60,8 @@ const RequiredLabel = ({ children }: { children: string }) => (
 const Contact = () => {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const contactFormRef = useRef<HTMLFormElement>(null);
   const form = useForm<ContactValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { firstName: "", lastName: "", email: "", company: "", message: "" },
@@ -68,9 +80,32 @@ const Contact = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("sent") === "1") {
-      toast({ title: "Thanks!", description: "We've received your message and will be in touch." });
+      toast({
+        title: "Message sent.",
+        description: "A member of the Boulai team will contact you as soon as possible.",
+      });
+      window.history.replaceState(null, "", window.location.pathname);
     }
   }, [toast]);
+
+  const openSubmitConfirmation = async () => {
+    const isValid = await form.trigger(undefined, { shouldFocus: true });
+    if (isValid) setConfirmOpen(true);
+  };
+
+  const submitConfirmedMessage = () => {
+    setSubmitting(true);
+    setConfirmOpen(false);
+    window.setTimeout(() => {
+      const currentForm = contactFormRef.current;
+      if (!currentForm) return;
+      if (currentForm.requestSubmit) {
+        currentForm.requestSubmit();
+      } else {
+        currentForm.submit();
+      }
+    }, 0);
+  };
 
   const onNativeSubmit = () => {
     setSubmitting(true);
@@ -102,6 +137,7 @@ const Contact = () => {
           <FadeIn>
             <Form {...form}>
               <form
+                ref={contactFormRef}
                 action={CONTACT_ENDPOINT}
                 method="POST"
                 onSubmit={onNativeSubmit}
@@ -216,11 +252,25 @@ const Contact = () => {
                   )}
                 />
 
-                <Button type="submit" size="lg" disabled={submitting} className="w-full">
+                <Button type="button" size="lg" disabled={submitting} className="w-full" onClick={openSubmitConfirmation}>
                   {submitting ? "Sending…" : "Send Message"}
                 </Button>
               </form>
             </Form>
+            <AlertDialog open={confirmOpen} onOpenChange={setConfirmOpen}>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Send this message?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Your request will be sent to the Boulai team using the details you provided.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Review</AlertDialogCancel>
+                  <AlertDialogAction onClick={submitConfirmedMessage}>Confirm and send</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </FadeIn>
         </div>
       </section>
