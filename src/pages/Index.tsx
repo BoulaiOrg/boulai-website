@@ -103,11 +103,15 @@ const Index = () => {
                   initial={{ opacity: 0, filter: "blur(8px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  className="mx-auto mt-8 max-w-[43rem] text-[0.94rem] leading-[1.9] text-white/70 md:text-[1.02rem]"
+                  className="mx-auto mt-8 max-w-[64rem] text-[0.9rem] leading-[1.85] text-white/70 md:text-[0.98rem]"
                 >
-                  Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
-                  into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
-                  testing.
+                  <span className="block sm:whitespace-nowrap">
+                    Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
+                  </span>
+                  <span className="block sm:whitespace-nowrap">
+                    into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
+                    testing.
+                  </span>
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, filter: "blur(8px)" }}
