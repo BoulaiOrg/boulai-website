@@ -144,17 +144,17 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Vision</p>
                 <h2 className="section-title">
-                  A modern Boule for clinical decisions.
+                  A modern Boulē
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Boulai takes its name from the ancient Greek <em>boule</em>: a place where collective judgment was
+                  Boulai takes its name from the ancient Greek <em>Boulē</em>: a place where collective judgment was
                   formed. We reinterpret that idea for high-complexity discovery, bringing human expertise and machine
                   intelligence around the same evidence.
                 </p>
                 <figure className="mt-10 max-w-[680px]">
                   <img
                     src="/brand/vision-boule-line-instrument.png"
-                    alt="A modern research boule with a causal reasoning instrument at its center."
+                    alt="A modern research Boulē with a causal reasoning instrument at its center."
                     width={1180}
                     height={554}
                     loading="lazy"
