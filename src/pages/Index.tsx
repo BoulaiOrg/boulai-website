@@ -130,7 +130,7 @@ const Index = () => {
                 >
                   <Button
                     size="sm"
-                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#121419] hover:bg-white/[92%]"
+                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#0B0E14] hover:bg-white/[92%]"
                     asChild
                   >
                     <Link to="/contact">Contact Us</Link>

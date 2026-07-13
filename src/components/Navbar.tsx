@@ -28,8 +28,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-[#121419]/95 backdrop-blur-md"
-          : "border-b border-white/10 bg-[#121419]/[92%]"
+          ? "border-b border-white/10 bg-[#0B0E14]/95 backdrop-blur-md"
+          : "border-b border-white/10 bg-[#0B0E14]/[92%]"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
@@ -70,7 +70,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button
             size="sm"
-            className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+            className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
             asChild
           >
             <Link to="/contact">Contact Us</Link>
@@ -85,7 +85,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-b border-white/10 bg-[#121419]/[98%] px-4 pb-6 backdrop-blur-lg md:hidden">
+        <div className="border-b border-white/10 bg-[#0B0E14]/[98%] px-4 pb-6 backdrop-blur-lg md:hidden">
           <div className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               link.kind === "anchor" ? (
@@ -110,7 +110,7 @@ const Navbar = () => {
             ))}
             <Button
               size="sm"
-              className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#121419]"
+              className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
               asChild
             >
               <Link to="/contact">Contact Us</Link>

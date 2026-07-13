@@ -16,7 +16,7 @@ const ContactCTA = () => (
           We work with teams on discovery, translational analysis, clinical development, and evidence-driven R&D strategy.
         </p>
         <div className="mt-8">
-          <Button size="lg" className="bg-white text-[#121419] hover:bg-white/[92%]" asChild>
+          <Button size="lg" className="bg-white text-[#0B0E14] hover:bg-white/[92%]" asChild>
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>

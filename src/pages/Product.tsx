@@ -61,10 +61,10 @@ const Product = () => (
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" className="bg-white text-[#121419] hover:bg-white/[92%]" asChild>
+            <Button size="lg" className="bg-white text-[#0B0E14] hover:bg-white/[92%]" asChild>
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button className="border border-white/[14%] bg-transparent text-white hover:bg-white hover:text-[#121419]" size="lg" asChild>
+            <Button className="border border-white/[14%] bg-transparent text-white hover:bg-white hover:text-[#0B0E14]" size="lg" asChild>
               <a href="/#vision">View the Approach</a>
             </Button>
           </div>

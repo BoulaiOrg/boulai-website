@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-white/10 bg-[#121419] py-16 text-white">
+  <footer className="border-t border-white/10 bg-[#0B0E14] py-16 text-white">
     <div className="container mx-auto px-4 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         {/* Logo & tagline */}

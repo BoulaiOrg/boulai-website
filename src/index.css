@@ -80,7 +80,7 @@
       radial-gradient(circle at 76% 18%, hsl(214 30% 23% / 0.18), transparent 24%),
       linear-gradient(hsl(220 8% 20% / 0.08) 1px, transparent 1px),
       linear-gradient(90deg, hsl(220 8% 20% / 0.08) 1px, transparent 1px),
-      linear-gradient(180deg, hsl(220 18% 8%), hsl(220 16% 6%));
+      linear-gradient(180deg, #0B0E14, #0B0E14);
     background-size: auto, auto, 88px 88px, 88px 88px, auto;
     color: hsl(0 0% 100%);
   }
@@ -105,7 +105,7 @@
     background:
       linear-gradient(hsl(220 8% 24% / 0.18) 1px, transparent 1px),
       linear-gradient(90deg, hsl(220 8% 24% / 0.14) 1px, transparent 1px),
-      hsl(220 18% 10%);
+      #0B0E14;
     background-size: 88px 88px;
     color: hsl(var(--primary-foreground));
   }
