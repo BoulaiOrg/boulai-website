@@ -7,21 +7,27 @@ import Footer from "@/components/Footer";
 const engines = [
   {
     name: "Atlas",
-    role: "Effect Sizing & Uncertainty",
+    title: "Quantify effects you can defend.",
+    role: "Evidence strength",
     description:
-      "Turns trial, observational, and translational data into defensible estimates of effect size, uncertainty, and signal robustness, so teams can see whether a finding is strong enough to act on.",
+      "Estimate treatment effects, subgroup effects, uncertainty, and signal robustness across clinical and real-world datasets, so teams know which findings are strong enough to guide a trial, biomarker, or portfolio decision.",
+    payoff: "Value: fewer weak signals promoted too early.",
   },
   {
     name: "Icarus",
-    role: "Causal Discovery",
+    title: "Find mechanisms and patient groups worth testing.",
+    role: "Hypothesis discovery",
     description:
-      "Discovers candidate causal structures, hidden drivers, and heterogeneous-response subgroups, while AI agents turn causal outputs into testable hypotheses for scientists to review.",
+      "Discover candidate causal structures, hidden drivers, and heterogeneous-response subgroups; AI agents turn those patterns into testable hypotheses scientists can inspect, rank, and challenge.",
+    payoff: "Value: faster discovery of opportunities your team might miss.",
   },
   {
     name: "Locus",
-    role: "Causal DAG Stress-Testing",
+    title: "Stress-test assumptions before they become commitments.",
+    role: "Decision risk control",
     description:
-      "Stress-tests scientist-authored DAGs against data; AI agents surface violations, compare alternative mechanisms, and generate new hypotheses grounded in the causal model.",
+      "Confront scientist-authored causal DAGs with data, surface violations, compare alternative mechanisms, and show where the evidence is too fragile for an expensive clinical decision.",
+    payoff: "Value: fewer costly decisions made with false confidence.",
   },
 ];
 
@@ -106,8 +112,13 @@ const Product = () => (
       <section className="section-deep border-b border-border py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">The engines</p>
-            <h2 className="section-title">Three engines, one product.</h2>
+            <p className="eyebrow mb-4">What you buy</p>
+            <h2 className="section-title">Decision-grade evidence before expensive commitments.</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Boulai Discovery is not a dashboard or a generic AI chat layer. It is a causal analysis product that helps
+              teams decide which signals to trust, which hypotheses to test next, and which assumptions are too weak to
+              carry into trial or portfolio decisions.
+            </p>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -119,11 +130,14 @@ const Product = () => (
                 <div className="flex items-start gap-5">
                   <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
                   <div>
-                    <h3 className="card-title mb-3">{engine.name}</h3>
-                    <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                      {engine.role}
+                    <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                      {engine.name} / {engine.role}
                     </p>
+                    <h3 className="card-title mb-4">{engine.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
+                    <p className="mt-6 border-t border-border/70 pt-4 text-sm leading-relaxed text-foreground/[72%]">
+                      {engine.payoff}
+                    </p>
                   </div>
                 </div>
               </article>
