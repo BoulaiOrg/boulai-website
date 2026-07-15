@@ -179,15 +179,7 @@ const Index = () => {
             >
               <p className="eyebrow mb-5">Boulai</p>
               <h1 className="font-sans text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-[3.4rem] md:text-[4.2rem] lg:text-[4.75rem]">
-                Scientific AI{" "}
-                <Link to="/about" className="underline decoration-2 underline-offset-[0.12em]">
-                  research
-                </Link>{" "}
-                and{" "}
-                <Link to="/product" className="underline decoration-2 underline-offset-[0.12em]">
-                  products
-                </Link>{" "}
-                for clinical decisions.
+                Scientific AI for clinical decisions.
               </h1>
             </motion.div>
 
