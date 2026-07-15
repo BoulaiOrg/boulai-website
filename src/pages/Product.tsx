@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 const engines = [
   {
     name: "Atlas",
-    role: "Statistics & Econometrics",
+    role: "Effect Sizing & Uncertainty",
     description:
-      "Rigorous statistical inference and econometric modeling across trial, observational, and translational datasets.",
+      "Turns trial, observational, and translational data into defensible estimates of effect size, uncertainty, and signal robustness, so teams can see whether a finding is strong enough to act on.",
   },
   {
     name: "Icarus",
