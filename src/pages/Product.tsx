@@ -7,27 +7,27 @@ import Footer from "@/components/Footer";
 const engines = [
   {
     name: "Atlas",
-    title: "Quantify effects you can defend.",
-    role: "Evidence strength",
+    title: "Run frontier analysis in minimal time.",
+    role: "Robust auditable analysis",
     description:
-      "Estimate treatment effects, subgroup effects, uncertainty, and signal robustness across clinical and real-world datasets, so teams know which findings are strong enough to guide a trial, biomarker, or portfolio decision.",
-    payoff: "Value: fewer weak signals promoted too early.",
+      "Produce robust, auditable analyses at the frontier of statistics and econometrics across clinical and real-world datasets, with transparent assumptions, uncertainty, and reproducible outputs.",
+    payoff: "Value: expert-grade evidence faster, with an audit trail your team can defend.",
   },
   {
     name: "Icarus",
-    title: "Find mechanisms and patient groups worth testing.",
-    role: "Hypothesis discovery",
+    title: "Explain trial failures beyond measured data.",
+    role: "External cause discovery",
     description:
-      "Discover candidate causal structures, hidden drivers, and heterogeneous-response subgroups; AI agents turn those patterns into testable hypotheses scientists can inspect, rank, and challenge.",
-    payoff: "Value: faster discovery of opportunities your team might miss.",
+      "Surface candidate external or unmeasured causes that may explain trial failures, unexpected subgroup behavior, or weak replication, then turn them into testable hypotheses for scientific review.",
+    payoff: "Value: sharper failure diagnosis when measured data alone does not explain the result.",
   },
   {
     name: "Locus",
-    title: "Stress-test assumptions before they become commitments.",
-    role: "Decision risk control",
+    title: "Test clinical theories and spot anomalies.",
+    role: "Auditable theory testing",
     description:
-      "Confront scientist-authored causal DAGs with data, surface violations, compare alternative mechanisms, and show where the evidence is too fragile for an expensive clinical decision.",
-    payoff: "Value: fewer costly decisions made with false confidence.",
+      "Stress-test clinical theories encoded as causal DAGs, detect anomalous behavior against expected mechanisms, and produce auditable evidence in minimal time.",
+    payoff: "Value: faster theory validation and anomaly detection before costly clinical decisions.",
   },
 ];
 
