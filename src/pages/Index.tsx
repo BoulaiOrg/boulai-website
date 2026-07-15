@@ -1,14 +1,114 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
-import HeroDotWave from "@/components/HeroDotWave";
 import BoulaiListDot from "@/components/BoulaiListDot";
 import ContactCTA from "@/components/ContactCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const heroLines = ["Scientific AI", "for clinical decisions."];
+const productModules = [
+  {
+    name: "Atlas",
+    role: "Robust auditable analysis",
+    image: "/brand/product-atlas-instrument.png",
+    imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
+    title: "Run frontier analysis in minimal time.",
+    desc: "Robust, auditable statistical and econometric analyses with transparent assumptions, uncertainty, and reproducible outputs.",
+  },
+  {
+    name: "Icarus",
+    role: "External cause discovery",
+    image: "/brand/product-icarus-instrument.png",
+    imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
+    title: "Explain trial failures beyond measured data.",
+    desc: "Surface candidate external or unmeasured causes that may explain trial failures, unexpected subgroup behavior, or weak replication.",
+  },
+  {
+    name: "Locus",
+    role: "Auditable theory testing",
+    image: "/brand/product-locus-instrument.png",
+    imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
+    title: "Test clinical theories and spot anomalies.",
+    desc: "Stress-test clinical theories encoded as causal DAGs and detect anomalous behavior against expected mechanisms.",
+  },
+];
+
+const decisionConcepts = [
+  {
+    title: "Robust analysis",
+    engine: "Atlas",
+    image: "/brand/product-atlas-instrument.png",
+    x: 14,
+    y: 24,
+    problem: "Clinical teams need analyses that hold up under scrutiny, not just fast summaries.",
+    output: "Auditable statistical and econometric workflows with assumptions, uncertainty, and reproducible outputs.",
+  },
+  {
+    title: "Trial failure diagnosis",
+    engine: "Icarus",
+    image: "/brand/product-icarus-instrument.png",
+    x: 82,
+    y: 22,
+    problem: "A failed trial often leaves teams with measured data that does not explain the result.",
+    output: "Candidate external or unmeasured causes turned into testable scientific hypotheses.",
+  },
+  {
+    title: "External causes",
+    engine: "Icarus",
+    image: "/brand/product-icarus-instrument.png",
+    x: 18,
+    y: 58,
+    problem: "Important drivers can sit outside the variables already captured in the dataset.",
+    output: "Structured hypotheses about missing causes, confounding pathways, and external mechanisms.",
+  },
+  {
+    title: "Clinical theory testing",
+    engine: "Locus",
+    image: "/brand/product-locus-instrument.png",
+    x: 82,
+    y: 58,
+    problem: "Clinical theories become expensive when they are carried forward without being stress-tested.",
+    output: "Causal DAG checks that expose fragile assumptions, unsupported pathways, and competing mechanisms.",
+  },
+  {
+    title: "Patient heterogeneity",
+    engine: "Atlas + Icarus",
+    image: "/brand/product-atlas-instrument.png",
+    x: 36,
+    y: 14,
+    problem: "Average effects can hide the patient groups where a mechanism actually matters.",
+    output: "Inspectable subgroup patterns and heterogeneous-response hypotheses for deeper validation.",
+  },
+  {
+    title: "Anomaly detection",
+    engine: "Locus",
+    image: "/brand/product-locus-instrument.png",
+    x: 64,
+    y: 14,
+    problem: "Unexpected behavior in clinical data is hard to interpret without a causal reference model.",
+    output: "Anomalies surfaced against expected clinical mechanisms, with evidence your team can audit.",
+  },
+  {
+    title: "False confidence",
+    engine: "Locus",
+    image: "/brand/product-locus-instrument.png",
+    x: 36,
+    y: 76,
+    problem: "Weak signals become costly when they are promoted into trial, biomarker, or portfolio decisions.",
+    output: "Assumption stress-tests that show where evidence is too fragile to justify commitment.",
+  },
+  {
+    title: "Decision speed",
+    engine: "Atlas",
+    image: "/brand/product-atlas-instrument.png",
+    x: 64,
+    y: 76,
+    problem: "Expert-grade analysis often takes too long to fit real R&D decision cycles.",
+    output: "Frontier statistical workflows compressed into minimal time without losing traceability.",
+  },
+];
 
 const methodPillars = [
   {
@@ -62,87 +162,227 @@ const industries = [
 ];
 
 const Index = () => {
+  const [activeConceptIndex, setActiveConceptIndex] = useState(0);
+  const activeConcept = decisionConcepts[activeConceptIndex];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero relative min-h-screen overflow-hidden border-b border-white/10">
-        <HeroDotWave />
-        <div className="container relative z-10 mx-auto px-4 lg:px-8">
-          <div className="relative flex min-h-screen items-center justify-center pt-32 pb-44 md:pt-36 md:pb-52">
-            <div className="relative z-10 mx-auto max-w-4xl text-center">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-              >
-                <motion.p
-                  initial={{ opacity: 0, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 0.55, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-                  className="inverse-eyebrow mb-6"
-                >
-                  Explore Boulai
-                </motion.p>
-                <motion.h1
-                  initial={{ opacity: 0, filter: "blur(18px)", scale: 0.992 }}
-                  animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                  transition={{ duration: 1.15, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="page-title mx-auto max-w-[64rem] text-[2.8rem] sm:text-[3.22rem] md:text-[3.88rem] lg:text-[4.32rem]"
-                >
-                  {heroLines.map((line) => (
-                    <span
-                      key={line}
-                      className="block pb-2 will-change-transform md:whitespace-nowrap"
-                      style={{ fontKerning: "normal", fontVariantLigatures: "common-ligatures" }}
-                    >
-                      {line}
+      <section className="section-mid border-b border-border pt-32 pb-16 md:pt-40 md:pb-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <p className="eyebrow mb-5">Boulai</p>
+              <h1 className="font-sans text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-[3.4rem] md:text-[4.2rem] lg:text-[4.75rem]">
+                Scientific AI{" "}
+                <Link to="/about" className="underline decoration-2 underline-offset-[0.12em]">
+                  research
+                </Link>{" "}
+                and{" "}
+                <Link to="/product" className="underline decoration-2 underline-offset-[0.12em]">
+                  products
+                </Link>{" "}
+                for clinical decisions.
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-xl lg:pt-16"
+            >
+              <p className="text-[1.15rem] leading-relaxed text-foreground/[78%] md:text-[1.25rem]">
+                Boulai builds causal AI systems for CROs, pharma, and clinical research teams: turning clinical and
+                real-world data into auditable evidence before expensive trial and portfolio decisions.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Button size="lg" asChild>
+                  <Link to="/product">Explore Product</Link>
+                </Button>
+                <Button className="border border-border bg-transparent text-foreground hover:bg-foreground hover:text-background" size="lg" asChild>
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-16 overflow-hidden border border-[#0B0E14] bg-[#0B0E14] text-white"
+          >
+            <div className="relative min-h-[650px] p-6 md:p-10">
+              <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
+                {decisionConcepts.map((concept) => (
+                  <line
+                    key={concept.title}
+                    x1="50"
+                    y1="47"
+                    x2={concept.x}
+                    y2={concept.y}
+                    stroke="rgba(255,255,255,0.13)"
+                    strokeWidth="0.12"
+                  />
+                ))}
+              </svg>
+
+              <div className="absolute left-1/2 top-[46%] hidden w-[min(520px,72%)] -translate-x-1/2 -translate-y-1/2 text-center md:block">
+                <p className="inverse-eyebrow mb-5">Decision system</p>
+                <h2 className="font-display text-[2.55rem] font-normal leading-[1.02] text-white md:text-[3.25rem]">
+                  Boulai is built for decisions where uncertainty is expensive.
+                </h2>
+              </div>
+
+              <div className="hidden md:block">
+                {decisionConcepts.map((concept, index) => (
+                  <button
+                    key={concept.title}
+                    type="button"
+                    onClick={() => setActiveConceptIndex(index)}
+                    aria-pressed={activeConceptIndex === index}
+                    className={`absolute z-10 flex w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2 text-center transition-opacity hover:opacity-100 ${
+                      activeConceptIndex === index ? "opacity-100" : "opacity-70"
+                    }`}
+                    style={{ left: `${concept.x}%`, top: `${concept.y}%` }}
+                  >
+                    <span className={`block h-16 w-16 overflow-hidden border bg-white transition-colors ${
+                      activeConceptIndex === index ? "border-white" : "border-white/20"
+                    }`}>
+                      <img
+                        src={concept.image}
+                        alt=""
+                        width={720}
+                        height={720}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover saturate-[0.85] contrast-[1.02]"
+                      />
                     </span>
+                    <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/80">
+                      {concept.title}
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className="md:hidden">
+                <p className="inverse-eyebrow mb-5">Decision system</p>
+                <h2 className="font-display text-[2.25rem] font-normal leading-[1.05] text-white">
+                  Built for decisions where uncertainty is expensive.
+                </h2>
+                <p className="mt-5 text-sm leading-relaxed text-white/[62%]">
+                  Select a signal to see what Boulai turns into auditable clinical evidence.
+                </p>
+                <div className="mt-8 space-y-3">
+                  {decisionConcepts.map((concept, index) => (
+                    <div key={concept.title}>
+                      <button
+                        type="button"
+                        onClick={() => setActiveConceptIndex(index)}
+                        className={`flex w-full items-center gap-4 border p-3 text-left transition-colors ${
+                          activeConceptIndex === index
+                            ? "border-white bg-white text-[#0B0E14]"
+                            : "border-white/14 text-white"
+                        }`}
+                      >
+                        <img
+                          src={concept.image}
+                          alt=""
+                          width={720}
+                          height={720}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-12 w-12 shrink-0 object-cover"
+                        />
+                        <span className="text-[11px] font-medium uppercase tracking-[0.16em]">
+                          {concept.title}
+                        </span>
+                      </button>
+                      {activeConceptIndex === index && (
+                        <div className="border-x border-b border-white bg-white p-4 text-[#0B0E14]">
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/50">
+                            {concept.engine}
+                          </p>
+                          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                            <span className="font-medium text-foreground">Problem:</span> {concept.problem}
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                            <span className="font-medium text-foreground">Boulai produces:</span> {concept.output}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 0.6, delay: 0.58, ease: [0.22, 1, 0.36, 1] }}
-                  aria-label="Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis testing."
-                  className="mx-auto mt-8 max-w-[64rem] text-[0.9rem] leading-[1.85] text-white/70 md:text-[0.98rem]"
-                >
-                  <span className="block sm:hidden" aria-hidden="true">
-                    <span className="block">Boulai is a research-and-product startup:</span>
-                    <span className="block">our proprietary models turn clinical</span>
-                    <span className="block">and real-world data into decision-grade</span>
-                    <span className="block">causal evidence, from patient-level effects</span>
-                    <span className="block">to hidden structure and hypothesis testing.</span>
-                  </span>
-                  <span className="hidden sm:block sm:whitespace-nowrap" aria-hidden="true">
-                    Boulai is a research-and-product startup: our proprietary models turn clinical and real-world data
-                  </span>
-                  <span className="hidden sm:block sm:whitespace-nowrap" aria-hidden="true">
-                    into decision-grade causal evidence, from patient-level effects to hidden structure and hypothesis
-                    testing.
-                  </span>
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 0.55, delay: 0.76, ease: [0.22, 1, 0.36, 1] }}
-                  className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-                >
-                  <Button
-                    size="sm"
-                    className="h-10 bg-white px-4 text-[11px] tracking-[0.2em] text-[#0B0E14] hover:bg-white/[92%]"
-                    asChild
-                  >
-                    <Link to="/contact">Contact Us</Link>
-                  </Button>
-                  <a
-                    href="#vision"
-                    className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[56%] transition-colors hover:text-white"
-                  >
-                    View Vision
-                  </a>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-10 left-1/2 right-auto z-20 hidden w-[560px] -translate-x-1/2 border border-white/12 bg-white p-6 text-[#0B0E14] shadow-[0_24px_80px_rgba(0,0,0,0.26)] md:block">
+                <div className="flex items-start gap-4">
+                  <img
+                    src={activeConcept.image}
+                    alt=""
+                    width={720}
+                    height={720}
+                    loading="lazy"
+                    decoding="async"
+                    className="hidden h-16 w-16 shrink-0 object-cover sm:block"
+                  />
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-foreground/50">
+                      {activeConcept.engine}
+                    </p>
+                    <h3 className="mt-2 text-[1.05rem] font-medium leading-tight text-foreground">
+                      {activeConcept.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      <span className="font-medium text-foreground">Problem:</span> {activeConcept.problem}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      <span className="font-medium text-foreground">Boulai produces:</span> {activeConcept.output}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="mt-16">
+            <p className="eyebrow mb-5">Product modules</p>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {productModules.map((engine, index) => (
+                <FadeIn key={engine.name} delay={index * 0.08}>
+                  <article className="premium-panel h-full overflow-hidden">
+                    <figure className="h-56 border-b border-border/70 bg-white md:h-48">
+                      <img
+                        src={engine.image}
+                        alt={engine.imageAlt}
+                        width={720}
+                        height={720}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full select-none object-cover object-center opacity-[0.92] mix-blend-multiply saturate-[0.78] contrast-[1.03]"
+                      />
+                    </figure>
+                    <div className="flex items-start gap-5 p-8">
+                      <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                      <div>
+                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                          {engine.name} / {engine.role}
+                        </p>
+                        <h3 className="card-title mb-4">{engine.title}</h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{engine.desc}</p>
+                      </div>
+                    </div>
+                  </article>
+                </FadeIn>
+              ))}
             </div>
           </div>
         </div>
