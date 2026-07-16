@@ -128,7 +128,6 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <p className="eyebrow mb-4">Discovery solution</p>
               <h2 className="section-title">Boulai Discovery: Boulai's scientific workbench.</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
@@ -323,7 +322,6 @@ const Index = () => {
           <FadeIn>
             <div className="premium-panel p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
               <div className="max-w-3xl">
-                <p className="eyebrow mb-4">Discovery solution</p>
                 <h2 className="section-title">
                   Boulai Discovery is built on this approach.
                 </h2>
