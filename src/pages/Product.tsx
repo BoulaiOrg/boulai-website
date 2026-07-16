@@ -70,15 +70,17 @@ const Product = () => (
     <main>
       <section className="section-hero pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <p className="inverse-eyebrow mb-5">Boulai Discovery</p>
-          <h1 className="page-title mb-7 max-w-4xl">
-            Scientific reasoning at the scale of enterprise R&amp;D.
-          </h1>
+          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+            <h1 className="page-title max-w-4xl">
+              Boulai Discovery
+            </h1>
 
-          <p className="max-w-2xl text-lg leading-relaxed text-white/[66%]">
-            The instrumentation layer for translational, clinical, and discovery research.
-          </p>
-
+            <p className="max-w-2xl font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem] lg:pt-4">
+              The most advanced AI scientific workbench for biopharma teams: it helps analyze biomedical data,
+              uncover hidden causal drivers, stress-test causal hypotheses (DAGs), and turn results into traceable,
+              evidence-backed next steps.
+            </p>
+          </div>
         </div>
       </section>
 
