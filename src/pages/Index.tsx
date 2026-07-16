@@ -37,6 +37,19 @@ const productModules = [
 
 const visionTileColors = ["#E6E8EB", "#A9B0BC", "#E6E8EB", "#D4A11E"];
 
+const mobileVisionPositions = [
+  { x: 16, y: 36, w: 26 },
+  { x: 35, y: 23, w: 24 },
+  { x: 52, y: 17, w: 25 },
+  { x: 70, y: 24, w: 24 },
+  { x: 84, y: 38, w: 25 },
+  { x: 76, y: 56, w: 23 },
+  { x: 26, y: 58, w: 24 },
+  { x: 43, y: 47, w: 22 },
+  { x: 58, y: 66, w: 23 },
+  { x: 18, y: 72, w: 22 },
+];
+
 const visionCards = [
   {
     title: "Human judgment",
@@ -386,42 +399,85 @@ const Index = () => {
                 ))}
               </div>
 
-              <div className="md:hidden">
-                <h2 className="font-display text-[2.05rem] font-normal leading-[1.06] text-white">
+              <div className="px-5 pb-14 pt-5 text-center md:hidden">
+                <div className="relative mx-auto h-[310px] max-w-[360px] overflow-hidden">
+                  <svg
+                    className="pointer-events-none absolute inset-0 h-full w-full"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                  >
+                    {visionCards.map((card, index) => {
+                      const position = mobileVisionPositions[index];
+                      return (
+                        <line
+                          key={`${card.title}-mobile-center`}
+                          x1="50"
+                          y1="78"
+                          x2={position.x}
+                          y2={position.y}
+                          stroke="rgba(230,232,235,0.2)"
+                          strokeWidth="0.12"
+                          className="vision-line-float vision-line-float-soft"
+                          style={
+                            {
+                              "--line-rotate": `${index % 2 === 0 ? 0.28 : -0.24}deg`,
+                              "--line-duration": `${10 + (index % 4) * 0.7}s`,
+                              "--line-delay": `${index * -0.42}s`,
+                            } as CSSProperties
+                          }
+                        />
+                      );
+                    })}
+                  </svg>
+
+                  {visionCards.map((card, index) => {
+                    const position = mobileVisionPositions[index];
+                    return (
+                      <button
+                        key={card.title}
+                        type="button"
+                        onClick={() => setActiveVisionCard(card)}
+                        className="vision-float-card group absolute z-10 bg-transparent text-left focus:outline-none focus:ring-2 focus:ring-white/45"
+                        style={{
+                          left: `${position.x}%`,
+                          top: `${position.y}%`,
+                          width: position.w,
+                          "--float-x": `${index % 2 === 0 ? 5 : -5}px`,
+                          "--float-y": `${index % 3 === 0 ? 6 : -5}px`,
+                          "--float-rotate": `${index % 2 === 0 ? 3 : -2.8}deg`,
+                          "--float-duration": `${8.4 + (index % 5) * 0.5}s`,
+                          "--float-delay": `${index * -0.6}s`,
+                        } as CSSProperties}
+                        aria-label={`Open ${card.title}`}
+                      >
+                        <span
+                          className="block overflow-hidden rounded-[7px] p-0.5 shadow-[0_8px_20px_rgba(0,0,0,0.34)] ring-1 ring-[#E6E8EB]/30"
+                          style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
+                        >
+                          <img
+                            src={card.image}
+                            alt=""
+                            width={720}
+                            height={720}
+                            loading="lazy"
+                            decoding="async"
+                            className="aspect-square w-full scale-[1.72] rounded-[5px] object-cover opacity-100 mix-blend-multiply brightness-[0.64] saturate-[1.5] contrast-[2.1]"
+                          />
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <h2 className="mx-auto mt-1 max-w-[320px] font-display text-[2.12rem] font-normal leading-[1.05] text-white">
                   Boulai is built on scientific intelligence
                 </h2>
-                <p className="mt-5 text-sm leading-relaxed text-white/62">
-                  Tap a card to open the idea behind Boulai's vision.
+                <p className="mx-auto mt-7 max-w-[315px] text-[1.08rem] leading-[1.48] text-white/72">
+                  Human judgment, causal models, and scientific evidence working around the same inspectable system.
                 </p>
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {visionCards.map((card, index) => (
-                    <button
-                      key={card.title}
-                      type="button"
-                      onClick={() => setActiveVisionCard(card)}
-                      className="flex items-center gap-3 rounded-[14px] bg-[#E6E8EB]/[0.04] p-3 text-left transition hover:bg-[#E6E8EB]/[0.08] focus:outline-none focus:ring-2 focus:ring-white/45"
-                      aria-label={`Open ${card.title}`}
-                    >
-                      <span
-                        className="block h-14 w-14 shrink-0 overflow-hidden rounded-[14px] p-1.5 ring-1 ring-[#E6E8EB]/30"
-                        style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
-                      >
-                        <img
-                          src={card.image}
-                          alt=""
-                          width={720}
-                          height={720}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-full w-full scale-[1.72] rounded-[10px] object-cover opacity-100 mix-blend-multiply brightness-[0.62] saturate-[1.4] contrast-[2.15]"
-                        />
-                      </span>
-                      <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68">
-                        {card.title}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+                <Button className="mt-8 bg-[#E6E8EB] px-7 text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
+                  <Link to="/product">Explore Discovery</Link>
+                </Button>
               </div>
 
               <div className="absolute bottom-8 left-4 hidden text-[11px] text-white/42 lg:left-8 md:block">
