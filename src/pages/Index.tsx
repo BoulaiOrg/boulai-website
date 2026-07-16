@@ -128,7 +128,7 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <h2 className="section-title">Boulai Discovery: Boulai's scientific workbench.</h2>
+              <h2 className="section-title">Introducing Boulai Discovery</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
                 biomedical data, uncover hidden causal drivers, and stress-test clinical hypotheses.
