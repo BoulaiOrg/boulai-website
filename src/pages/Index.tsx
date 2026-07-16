@@ -39,7 +39,7 @@ const visionCards = [
   {
     title: "Human judgment",
     theme: "Human reasoning",
-    image: "/brand/vision-human-reasoning.png",
+    image: "/brand/vision-card-human-judgment.png",
     x: 12,
     y: 22,
     desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
@@ -47,7 +47,7 @@ const visionCards = [
   {
     title: "Inspectable reasoning",
     theme: "Human reasoning",
-    image: "/brand/vision-human-reasoning.png",
+    image: "/brand/vision-card-inspectable-reasoning.png",
     x: 29,
     y: 16,
     desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions.",
@@ -55,7 +55,7 @@ const visionCards = [
   {
     title: "Research culture",
     theme: "Research world",
-    image: "/brand/vision-research-world.png",
+    image: "/brand/vision-card-research-culture.png",
     x: 49,
     y: 17,
     desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
@@ -63,7 +63,7 @@ const visionCards = [
   {
     title: "Frontier methods",
     theme: "Research world",
-    image: "/brand/vision-research-world.png",
+    image: "/brand/vision-card-frontier-methods.png",
     x: 67,
     y: 16,
     desc: "We turn causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
@@ -71,7 +71,7 @@ const visionCards = [
   {
     title: "Causal structure",
     theme: "Causal intelligence",
-    image: "/brand/vision-causal-intelligence.png",
+    image: "/brand/vision-card-causal-structure.png",
     x: 87,
     y: 25,
     desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
@@ -79,7 +79,7 @@ const visionCards = [
   {
     title: "Hidden mechanisms",
     theme: "Causal intelligence",
-    image: "/brand/vision-causal-intelligence.png",
+    image: "/brand/vision-card-hidden-mechanisms.png",
     x: 82,
     y: 52,
     desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into testable explanations.",
@@ -87,7 +87,7 @@ const visionCards = [
   {
     title: "Scientific hypotheses",
     theme: "Scientific approach",
-    image: "/brand/vision-scientific-approach.png",
+    image: "/brand/vision-card-scientific-hypotheses.png",
     x: 14,
     y: 55,
     desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
@@ -95,7 +95,7 @@ const visionCards = [
   {
     title: "Anomaly review",
     theme: "Scientific approach",
-    image: "/brand/vision-scientific-approach.png",
+    image: "/brand/vision-card-anomaly-review.png",
     x: 27,
     y: 80,
     desc: "Unexpected behavior becomes more useful when it is reviewed against explicit causal expectations rather than treated as unexplained noise.",
@@ -103,7 +103,7 @@ const visionCards = [
   {
     title: "Auditable evidence",
     theme: "Clinical decisions",
-    image: "/brand/vision-clinical-decisions.png",
+    image: "/brand/vision-card-auditable-evidence.png",
     x: 56,
     y: 82,
     desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
@@ -111,7 +111,7 @@ const visionCards = [
   {
     title: "Costly decisions",
     theme: "Clinical decisions",
-    image: "/brand/vision-clinical-decisions.png",
+    image: "/brand/vision-card-costly-decisions.png",
     x: 82,
     y: 76,
     desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
@@ -197,8 +197,8 @@ const Index = () => {
               className="max-w-xl lg:pt-16"
             >
               <p className="text-[1.15rem] leading-relaxed text-white/68 md:text-[1.25rem]">
-                Boulai builds causal AI systems for CROs, pharma, and clinical research teams: turning clinical and
-                real-world data into auditable evidence before expensive trial and portfolio decisions.
+                Boulai is a research and product company that builds causal AI systems for bio-pharma, and clinical
+                research teams: turning clinical and real-world data into auditable evidence.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-white text-[#0B0E14] hover:bg-white/88" size="lg" asChild>
@@ -215,7 +215,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mt-20 overflow-hidden bg-[#0B0E14] text-white"
+            className="relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px]"
           >
             <div className="relative min-h-[700px] py-10 md:min-h-[740px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -263,7 +263,7 @@ const Index = () => {
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#0B0E14]/95 px-8 py-7">
+                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7">
                   <p className="inverse-eyebrow mb-5">Boulai vision</p>
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
@@ -284,12 +284,12 @@ const Index = () => {
                     style={{
                       left: `${card.x}%`,
                       top: `${card.y}%`,
-                      width: index % 4 === 0 ? 80 : 74,
+                      width: index % 4 === 0 ? 64 : 58,
                     }}
                     aria-label={`Open ${card.title}`}
                   >
                     <span className="block">
-                      <span className="block border border-white/10 bg-white/[0.035] p-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] transition group-hover:border-white/24 group-hover:bg-white/[0.065]">
+                      <span className="block p-0.5 opacity-90 transition group-hover:opacity-100">
                         <img
                           src={card.image}
                           alt=""
@@ -297,10 +297,10 @@ const Index = () => {
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="aspect-square w-full object-cover opacity-[0.88] saturate-[0.86] contrast-[1.14]"
+                          className="aspect-square w-full object-cover opacity-[0.9] mix-blend-screen saturate-[1.08] contrast-[1.12]"
                         />
                       </span>
-                      <span className="mt-2 block bg-[#0B0E14]/86 py-1 text-[8px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/64 transition group-hover:text-white/82">
+                      <span className="mt-2 block bg-[#070A10]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/60 transition group-hover:text-white/82">
                         {card.title}
                       </span>
                     </span>
@@ -322,7 +322,7 @@ const Index = () => {
                       key={card.title}
                       type="button"
                       onClick={() => setActiveVisionCard(card)}
-                      className="flex items-center gap-3 border border-white/10 bg-white/[0.035] p-3 text-left transition hover:bg-white/[0.065] focus:outline-none focus:ring-2 focus:ring-white/45"
+                      className="flex items-center gap-3 bg-white/[0.025] p-3 text-left transition hover:bg-white/[0.055] focus:outline-none focus:ring-2 focus:ring-white/45"
                       aria-label={`Open ${card.title}`}
                     >
                       <img
@@ -332,7 +332,7 @@ const Index = () => {
                         height={720}
                         loading="lazy"
                         decoding="async"
-                        className="h-14 w-14 shrink-0 object-cover opacity-[0.88] saturate-[0.86] contrast-[1.14]"
+                        className="h-11 w-11 shrink-0 object-cover opacity-[0.9] mix-blend-screen saturate-[1.08] contrast-[1.12]"
                       />
                       <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68">
                         {card.title}
