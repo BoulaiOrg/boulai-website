@@ -167,10 +167,6 @@ const Index = () => {
                         <span>Release</span>
                         <span>{engine.version}</span>
                       </div>
-                      <div className="flex items-center justify-between gap-4">
-                        <span>System</span>
-                        <span>Boulai Discovery</span>
-                      </div>
                     </div>
                   </article>
                 </FadeIn>
