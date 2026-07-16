@@ -227,7 +227,6 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="inverse-eyebrow mb-5">Boulai</p>
               <h1 className="page-title max-w-4xl text-[#E6E8EB]">
                 Scientific AI for clinical decisions.
               </h1>
