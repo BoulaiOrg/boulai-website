@@ -10,11 +10,11 @@ const engines = [
     version: "1.0",
     image: "/brand/product-atlas-instrument.png",
     imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
-    title: "Run frontier analysis in minimal time.",
+    title: "Run statistical and econometric analyses faster.",
     description:
-      "Atlas turns clinical and real-world datasets into robust, auditable statistical evidence in minimal time. It is built for teams that need frontier-grade analysis without losing the ability to inspect assumptions, uncertainty, specifications, and reproducibility.",
+      "Atlas is the statistical and econometric analysis engine of Boulai Discovery. It helps scientists, analysts, and biopharma teams run the analyses they would normally build in R, Stata, Python, or SAS, but faster, with guided model selection, automatic diagnostics, and reusable outputs.",
     payoff:
-      "Use it when the question is not only what the data says, but whether the conclusion is strong enough to defend in a clinical, regulatory, or portfolio discussion.",
+      "Use it to profile datasets, inspect missingness and variable quality, compare groups, test associations, fit regression models, evaluate treatment effects, check balance, explore robustness, and generate audit-ready tables and summaries.",
   },
   {
     name: "Icarus",
@@ -23,11 +23,11 @@ const engines = [
     version: "1.0",
     image: "/brand/product-icarus-instrument.png",
     imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
-    title: "Explain trial failures beyond measured data.",
+    title: "Detect hidden structure in biomedical datasets.",
     description:
-      "Icarus searches for plausible external or unmeasured causal drivers behind trial failures, weak replication, or unexpected subgroup behavior. It turns causal discovery outputs into testable explanations that scientists can review, challenge, and prioritize.",
+      "Icarus is the latent discovery engine of Boulai Discovery. It is designed for datasets where the important structure may not be fully explained by observed variables alone: hidden patient subgroups, unobserved biological programs, technical sources of variation, or latent confounding patterns.",
     payoff:
-      "Use it when measured variables do not fully explain what happened and the team needs sharper failure diagnosis before deciding what to rescue, redesign, or stop.",
+      "Use it when there is no mature causal model yet, when heterogeneity is unexplained, or when a team needs hypothesis-generating evidence on latent drivers, subgroup memberships, source-expression patterns, and candidate interpretations for follow-up.",
   },
   {
     name: "Locus",
@@ -36,11 +36,11 @@ const engines = [
     version: "1.0",
     image: "/brand/product-locus-instrument.png",
     imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
-    title: "Test clinical theories and spot anomalies.",
+    title: "Stress-test declared causal theories.",
     description:
-      "Locus stress-tests scientist-authored clinical theories against data. It compares observed behavior with the causal structure the team believes should hold, surfaces anomalies, and makes competing mechanisms easier to inspect.",
+      "Locus is the causal theory stress-testing engine of Boulai Discovery. It starts from a scientist-authored DAG and asks where the declared theory fails to explain the data, localizing stress to the nodes, relationships, or mechanisms most responsible for the mismatch.",
     payoff:
-      "Use it when a clinical theory needs to be tested quickly and auditable evidence is required before committing to a costly trial, indication, or portfolio decision.",
+      "Use it to evaluate whether a proposed mechanism is compatible with observed data, identify strained causal neighborhoods, and generate audited mechanism hypotheses with rejected alternatives, evidence IDs, audit strength, and suggested follow-up branches.",
   },
 ];
 
