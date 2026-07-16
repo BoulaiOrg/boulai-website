@@ -115,9 +115,6 @@ const Index = () => {
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
-                  <Link to="/product">Explore Discovery</Link>
-                </Button>
-                <Button className="border border-[#A9B0BC]/35 bg-transparent text-[#E6E8EB] hover:bg-[#E6E8EB] hover:text-[#0B0E14]" size="lg" asChild>
                   <Link to="/contact">Book a Demo</Link>
                 </Button>
               </div>
@@ -130,9 +127,13 @@ const Index = () => {
       <section className="section-mid py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl">
-              <p className="eyebrow mb-4">Latest releases</p>
-              <h2 className="section-title">Latest releases from Boulai Discovery.</h2>
+            <div className="max-w-3xl">
+              <p className="eyebrow mb-4">First solution</p>
+              <h2 className="section-title">Boulai Discovery is the first solution developed by Boulai.</h2>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
+                biomedical data, uncover hidden causal drivers, and stress-test clinical hypotheses.
+              </p>
             </div>
             <Button className="w-fit border border-border bg-transparent text-foreground hover:bg-[#0B0E14] hover:text-[#E6E8EB]" asChild>
               <Link to="/product">Explore Discovery</Link>
