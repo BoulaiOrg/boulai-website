@@ -202,16 +202,9 @@
     will-change: transform;
   }
 
-  .vision-line-float {
-    animation: vision-line-float var(--line-duration, 11s) ease-in-out infinite;
-    animation-delay: var(--line-delay, 0s);
-    transform-box: fill-box;
-    transform-origin: center;
-    will-change: transform, opacity;
-  }
-
-  .vision-line-float-soft {
-    opacity: 0.72;
+  .vision-connector-line {
+    opacity: 0.82;
+    stroke-linecap: round;
   }
 
   .vision-map-shell {
@@ -281,21 +274,8 @@
   }
 }
 
-@keyframes vision-line-float {
-  0%,
-  100% {
-    opacity: 0.72;
-    transform: rotate(0deg);
-  }
-  48% {
-    opacity: 1;
-    transform: rotate(var(--line-rotate, 0.35deg));
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .vision-float-card,
-  .vision-line-float {
+  .vision-float-card {
     animation: none;
   }
 }

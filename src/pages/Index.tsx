@@ -50,6 +50,15 @@ const mobileVisionPositions = [
   { x: 18, y: 72, w: 22 },
 ];
 
+const getVisionLineDrift = (index: number, scale = 1) => {
+  const horizontal = (index % 2 === 0 ? 0.42 : -0.38) * scale;
+  const vertical = (index % 3 === 0 ? 0.46 : -0.34) * scale;
+  return {
+    x: Number(horizontal.toFixed(2)),
+    y: Number(vertical.toFixed(2)),
+  };
+};
+
 const visionCards = [
   {
     title: "Human judgment",
@@ -277,71 +286,36 @@ const Index = () => {
           >
             <div className="relative min-h-[560px] py-10 md:min-h-[620px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                {visionCards.map((card, index) => (
-                  <line
-                    key={`${card.title}-center`}
-                    x1="50"
-                    y1="48"
-                    x2={card.x}
-                    y2={card.y}
-                    stroke="rgba(230,232,235,0.18)"
-                    strokeWidth={index % 3 === 0 ? "0.1" : "0.08"}
-                    className="vision-line-float"
-                    style={
-                      {
-                        "--line-rotate": `${index % 2 === 0 ? 0.42 : -0.34}deg`,
-                        "--line-duration": `${9.8 + (index % 4) * 0.7}s`,
-                        "--line-delay": `${index * -0.48}s`,
-                      } as CSSProperties
-                    }
-                  />
-                ))}
-                {visionCards.map((card) => {
-                  const linked = visionCards.find(
-                    (candidate) => candidate.theme === card.theme && candidate.title !== card.title,
-                  );
-                  if (!linked) return null;
+                {visionCards.map((card, index) => {
+                  const drift = getVisionLineDrift(index);
+                  const duration = 8.2 + (index % 5) * 0.5;
 
                   return (
                     <line
-                      key={`${card.title}-theme`}
-                      x1={card.x}
-                      y1={card.y}
-                      x2={linked.x}
-                      y2={linked.y}
-                      stroke="rgba(230,232,235,0.12)"
-                      strokeWidth="0.07"
-                      className="vision-line-float vision-line-float-soft"
-                      style={
-                        {
-                          "--line-rotate": `${card.x > linked.x ? -0.5 : 0.5}deg`,
-                          "--line-duration": "12.6s",
-                          "--line-delay": `${card.x * -0.08}s`,
-                        } as CSSProperties
-                      }
-                    />
-                  );
-                })}
-                {visionCards.slice(0, 5).map((card, index) => {
-                  const linked = visionCards[index + 5];
-                  return (
-                    <line
-                      key={`${card.title}-cross`}
-                      x1={card.x}
-                      y1={card.y}
-                      x2={linked.x}
-                      y2={linked.y}
-                      stroke="rgba(230,232,235,0.1)"
-                      strokeWidth="0.06"
-                      className="vision-line-float vision-line-float-soft"
-                      style={
-                        {
-                          "--line-rotate": `${index % 2 === 0 ? -0.26 : 0.26}deg`,
-                          "--line-duration": `${13 + index * 0.8}s`,
-                          "--line-delay": `${index * -0.6}s`,
-                        } as CSSProperties
-                      }
-                    />
+                      key={`${card.title}-connector`}
+                      x1="50"
+                      y1="50"
+                      x2={card.x}
+                      y2={card.y}
+                      stroke="rgba(230,232,235,0.32)"
+                      strokeWidth="0.11"
+                      className="vision-connector-line"
+                    >
+                      <animate
+                        attributeName="x2"
+                        values={`${card.x};${card.x + drift.x};${card.x - drift.x * 0.55};${card.x}`}
+                        dur={`${duration}s`}
+                        begin={`${index * -0.7}s`}
+                        repeatCount="indefinite"
+                      />
+                      <animate
+                        attributeName="y2"
+                        values={`${card.y};${card.y + drift.y};${card.y - drift.y * 0.55};${card.y}`}
+                        dur={`${duration}s`}
+                        begin={`${index * -0.7}s`}
+                        repeatCount="indefinite"
+                      />
+                    </line>
                   );
                 })}
               </svg>
@@ -408,6 +382,8 @@ const Index = () => {
                   >
                     {visionCards.map((card, index) => {
                       const position = mobileVisionPositions[index];
+                      const drift = getVisionLineDrift(index, 0.8);
+                      const duration = 8.4 + (index % 5) * 0.5;
                       return (
                         <line
                           key={`${card.title}-mobile-center`}
@@ -415,17 +391,25 @@ const Index = () => {
                           y1="78"
                           x2={position.x}
                           y2={position.y}
-                          stroke="rgba(230,232,235,0.2)"
-                          strokeWidth="0.12"
-                          className="vision-line-float vision-line-float-soft"
-                          style={
-                            {
-                              "--line-rotate": `${index % 2 === 0 ? 0.28 : -0.24}deg`,
-                              "--line-duration": `${10 + (index % 4) * 0.7}s`,
-                              "--line-delay": `${index * -0.42}s`,
-                            } as CSSProperties
-                          }
-                        />
+                          stroke="rgba(230,232,235,0.34)"
+                          strokeWidth="0.16"
+                          className="vision-connector-line"
+                        >
+                          <animate
+                            attributeName="x2"
+                            values={`${position.x};${position.x + drift.x};${position.x - drift.x * 0.55};${position.x}`}
+                            dur={`${duration}s`}
+                            begin={`${index * -0.6}s`}
+                            repeatCount="indefinite"
+                          />
+                          <animate
+                            attributeName="y2"
+                            values={`${position.y};${position.y + drift.y};${position.y - drift.y * 0.55};${position.y}`}
+                            dur={`${duration}s`}
+                            begin={`${index * -0.6}s`}
+                            repeatCount="indefinite"
+                          />
+                        </line>
                       );
                     })}
                   </svg>
