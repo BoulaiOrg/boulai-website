@@ -152,7 +152,7 @@ const Product = () => (
                     height={512}
                     loading="lazy"
                     decoding="async"
-                    className="mt-0.5 h-8 w-8 shrink-0 select-none object-contain opacity-75 brightness-0"
+                    className={`mt-0.5 ${engine.name === "Icarus" ? "h-8 w-8" : "h-7 w-7"} shrink-0 select-none object-contain opacity-75 brightness-0`}
                   />
                   <div>
                     <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
