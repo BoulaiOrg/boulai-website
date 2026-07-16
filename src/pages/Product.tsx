@@ -76,8 +76,9 @@ const Product = () => (
             </h1>
 
             <p className="max-w-2xl font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem] lg:pt-4">
-              The AI scientific workbench for biopharma and clinical research teams: analyze biomedical data, uncover
-              hidden causal drivers, stress-test DAGs, and turn results into traceable, evidence-backed next steps.
+              The causal AI workbench for biopharma and clinical research teams: analyze biomedical data, uncover
+              hidden causal drivers, stress-test DAGs and assumptions, and turn results into causally grounded,
+              evidence-backed next steps.
             </p>
           </div>
         </div>
