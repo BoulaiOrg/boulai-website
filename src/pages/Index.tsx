@@ -335,7 +335,7 @@ const Index = () => {
 
               <div className="vision-map-copy absolute left-1/2 top-1/2 z-20 hidden w-[min(530px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 text-center md:block">
                 <div className="bg-[#1B2A41]/95 px-8 py-7">
-                  <h2 className="font-display text-[2.35rem] font-normal leading-[1.04] text-white md:text-[3rem]">
+                  <h2 className="font-display text-[2.15rem] font-normal leading-[1.04] text-white md:text-[2.65rem]">
                     Boulai is built on scientific intelligence
                   </h2>
                   <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/58">
@@ -355,10 +355,10 @@ const Index = () => {
                       left: `${card.x}%`,
                       top: `${card.y}%`,
                       width: index % 4 === 0 ? 54 : 50,
-                      "--float-x": `${index % 2 === 0 ? 4 : -3}px`,
-                      "--float-y": `${index % 3 === 0 ? 5 : -4}px`,
-                      "--float-rotate": `${index % 2 === 0 ? 2.4 : -2.1}deg`,
-                      "--float-duration": `${8.8 + (index % 5) * 0.55}s`,
+                      "--float-x": `${index % 2 === 0 ? 7 : -6}px`,
+                      "--float-y": `${index % 3 === 0 ? 8 : -7}px`,
+                      "--float-rotate": `${index % 2 === 0 ? 3.4 : -3}deg`,
+                      "--float-duration": `${8.2 + (index % 5) * 0.5}s`,
                       "--float-delay": `${index * -0.7}s`,
                     } as CSSProperties}
                     aria-label={`Open ${card.title}`}
