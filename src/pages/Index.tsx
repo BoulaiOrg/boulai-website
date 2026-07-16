@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import BoulaiListDot from "@/components/BoulaiListDot";
@@ -35,78 +35,134 @@ const productModules = [
   },
 ];
 
-const decisionConcepts = [
+const visionQuestions = [
   {
-    title: "Robust analysis",
-    engine: "Atlas",
-    image: "/brand/product-atlas-instrument.png",
-    x: 14,
+    id: "human-reasoning",
+    question: "How should AI strengthen human reasoning?",
+    sub: "By making assumptions, uncertainty, and alternatives easier to inspect.",
+    x: 23,
+    y: 34,
+  },
+  {
+    id: "research-world",
+    question: "How should AI work with the research world?",
+    sub: "By staying close to scientific practice, peer review, and domain expertise.",
+    x: 50,
     y: 24,
-    problem: "Clinical teams need analyses that hold up under scrutiny, not just fast summaries.",
-    output: "Auditable statistical and econometric workflows with assumptions, uncertainty, and reproducible outputs.",
   },
   {
-    title: "Trial failure diagnosis",
-    engine: "Icarus",
-    image: "/brand/product-icarus-instrument.png",
-    x: 82,
+    id: "causal-intelligence",
+    question: "What makes intelligence causal?",
+    sub: "The ability to reason about mechanisms, counterfactuals, and hidden structure.",
+    x: 77,
+    y: 34,
+  },
+  {
+    id: "scientific-approach",
+    question: "What should scientific AI produce?",
+    sub: "Hypotheses, anomalies, and evidence that teams can challenge.",
+    x: 32,
+    y: 72,
+  },
+  {
+    id: "clinical-decisions",
+    question: "How should costly decisions be made?",
+    sub: "With auditable reasoning before trial and portfolio commitments.",
+    x: 72,
+    y: 74,
+  },
+];
+
+const visionCards = [
+  {
+    title: "Human judgment stays central",
+    questionId: "human-reasoning",
+    theme: "Human reasoning",
+    image: "/brand/vision-boule-line-instrument.png",
+    x: 10,
+    y: 24,
+    desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
+  },
+  {
+    title: "Reasoning should be inspectable",
+    questionId: "human-reasoning",
+    theme: "Human reasoning",
+    image: "/brand/product-locus-instrument.png",
+    x: 31,
     y: 22,
-    problem: "A failed trial often leaves teams with measured data that does not explain the result.",
-    output: "Candidate external or unmeasured causes turned into testable scientific hypotheses.",
+    desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions. Boulai turns reasoning into something teams can review and contest.",
   },
   {
-    title: "External causes",
-    engine: "Icarus",
+    title: "Built with scientific partners",
+    questionId: "research-world",
+    theme: "Research world",
+    image: "/brand/product-atlas-instrument.png",
+    x: 38,
+    y: 10,
+    desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
+  },
+  {
+    title: "Research becomes product",
+    questionId: "research-world",
+    theme: "Research world",
     image: "/brand/product-icarus-instrument.png",
-    x: 18,
-    y: 58,
-    problem: "Important drivers can sit outside the variables already captured in the dataset.",
-    output: "Structured hypotheses about missing causes, confounding pathways, and external mechanisms.",
+    x: 63,
+    y: 10,
+    desc: "The goal is not to wrap generic AI around scientific workflows. Boulai turns causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
   },
   {
-    title: "Clinical theory testing",
-    engine: "Locus",
+    title: "Mechanisms over correlations",
+    questionId: "causal-intelligence",
+    theme: "Causal intelligence",
     image: "/brand/product-locus-instrument.png",
-    x: 82,
-    y: 58,
-    problem: "Clinical theories become expensive when they are carried forward without being stress-tested.",
-    output: "Causal DAG checks that expose fragile assumptions, unsupported pathways, and competing mechanisms.",
+    x: 91,
+    y: 22,
+    desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
   },
   {
-    title: "Patient heterogeneity",
-    engine: "Atlas + Icarus",
+    title: "Hidden structure matters",
+    questionId: "causal-intelligence",
+    theme: "Causal intelligence",
+    image: "/brand/product-icarus-instrument.png",
+    x: 66,
+    y: 23,
+    desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into hypotheses scientists can test.",
+  },
+  {
+    title: "Hypotheses before commitment",
+    questionId: "scientific-approach",
+    theme: "Scientific approach",
+    image: "/brand/product-icarus-instrument.png",
+    x: 16,
+    y: 66,
+    desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
+  },
+  {
+    title: "Evidence must be auditable",
+    questionId: "scientific-approach",
+    theme: "Scientific approach",
     image: "/brand/product-atlas-instrument.png",
-    x: 36,
-    y: 14,
-    problem: "Average effects can hide the patient groups where a mechanism actually matters.",
-    output: "Inspectable subgroup patterns and heterogeneous-response hypotheses for deeper validation.",
+    x: 41,
+    y: 84,
+    desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
   },
   {
-    title: "Anomaly detection",
-    engine: "Locus",
+    title: "False confidence is expensive",
+    questionId: "clinical-decisions",
+    theme: "Clinical decisions",
     image: "/brand/product-locus-instrument.png",
-    x: 64,
-    y: 14,
-    problem: "Unexpected behavior in clinical data is hard to interpret without a causal reference model.",
-    output: "Anomalies surfaced against expected clinical mechanisms, with evidence your team can audit.",
+    x: 62,
+    y: 88,
+    desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
   },
   {
-    title: "False confidence",
-    engine: "Locus",
-    image: "/brand/product-locus-instrument.png",
-    x: 36,
-    y: 76,
-    problem: "Weak signals become costly when they are promoted into trial, biomarker, or portfolio decisions.",
-    output: "Assumption stress-tests that show where evidence is too fragile to justify commitment.",
-  },
-  {
-    title: "Decision speed",
-    engine: "Atlas",
+    title: "Missed opportunities are expensive too",
+    questionId: "clinical-decisions",
+    theme: "Clinical decisions",
     image: "/brand/product-atlas-instrument.png",
-    x: 64,
-    y: 76,
-    problem: "Expert-grade analysis often takes too long to fit real R&D decision cycles.",
-    output: "Frontier statistical workflows compressed into minimal time without losing traceability.",
+    x: 87,
+    y: 69,
+    desc: "A false negative can bury the signal that mattered. Boulai helps teams look for patient-level effects, heterogeneous responses, and anomalies that deserve deeper validation.",
   },
 ];
 
@@ -162,8 +218,8 @@ const industries = [
 ];
 
 const Index = () => {
-  const [activeConceptIndex, setActiveConceptIndex] = useState(0);
-  const activeConcept = decisionConcepts[activeConceptIndex];
+  const [activeVisionCard, setActiveVisionCard] = useState<(typeof visionCards)[number] | null>(null);
+  const questionById = Object.fromEntries(visionQuestions.map((question) => [question.id, question]));
 
   return (
     <div className="min-h-screen bg-background">
@@ -210,138 +266,186 @@ const Index = () => {
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="mt-16 overflow-hidden border border-[#0B0E14] bg-[#0B0E14] text-white"
           >
-            <div className="relative min-h-[650px] p-6 md:p-10">
+            <div className="relative min-h-[760px] p-6 md:p-10">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                {decisionConcepts.map((concept) => (
+                {visionQuestions.map((question) => (
                   <line
-                    key={concept.title}
+                    key={question.id}
                     x1="50"
                     y1="47"
-                    x2={concept.x}
-                    y2={concept.y}
-                    stroke="rgba(255,255,255,0.13)"
+                    x2={question.x}
+                    y2={question.y}
+                    stroke="rgba(255,255,255,0.12)"
                     strokeWidth="0.12"
                   />
                 ))}
+                {visionCards.map((card) => {
+                  const question = questionById[card.questionId];
+                  return (
+                    <line
+                      key={card.title}
+                      x1={question.x}
+                      y1={question.y}
+                      x2={card.x}
+                      y2={card.y}
+                      stroke="rgba(255,255,255,0.16)"
+                      strokeWidth="0.11"
+                    />
+                  );
+                })}
               </svg>
 
-              <div className="absolute left-1/2 top-[46%] hidden w-[min(520px,72%)] -translate-x-1/2 -translate-y-1/2 text-center md:block">
-                <p className="inverse-eyebrow mb-5">Decision system</p>
-                <h2 className="font-display text-[2.55rem] font-normal leading-[1.02] text-white md:text-[3.25rem]">
-                  Boulai is built for decisions where uncertainty is expensive.
+              <div className="absolute left-1/2 top-[47%] hidden w-[min(470px,64%)] -translate-x-1/2 -translate-y-1/2 text-center md:block">
+                <p className="inverse-eyebrow mb-5">Boulai vision</p>
+                <h2 className="font-display text-[2.5rem] font-normal leading-[1.03] text-white md:text-[3.15rem]">
+                  Human reasoning at scientific scale.
                 </h2>
+                <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/54">
+                  A map of the questions behind Boulai: judgment, research culture, causal intelligence, and auditable evidence.
+                </p>
               </div>
 
               <div className="hidden md:block">
-                {decisionConcepts.map((concept, index) => (
-                  <button
-                    key={concept.title}
-                    type="button"
-                    onClick={() => setActiveConceptIndex(index)}
-                    aria-pressed={activeConceptIndex === index}
-                    className={`absolute z-10 flex w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2 text-center transition-opacity hover:opacity-100 ${
-                      activeConceptIndex === index ? "opacity-100" : "opacity-70"
-                    }`}
-                    style={{ left: `${concept.x}%`, top: `${concept.y}%` }}
+                {visionQuestions.map((question) => (
+                  <div
+                    key={question.id}
+                    className="absolute z-10 w-60 -translate-x-1/2 -translate-y-1/2 text-center"
+                    style={{ left: `${question.x}%`, top: `${question.y}%` }}
                   >
-                    <span className={`block h-16 w-16 overflow-hidden border bg-white transition-colors ${
-                      activeConceptIndex === index ? "border-white" : "border-white/20"
-                    }`}>
-                      <img
-                        src={concept.image}
-                        alt=""
-                        width={720}
-                        height={720}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-full w-full object-cover saturate-[0.85] contrast-[1.02]"
-                      />
-                    </span>
-                    <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/80">
-                      {concept.title}
-                    </span>
+                    <h3 className="font-display text-[1.14rem] font-normal leading-[1.08] text-white">
+                      {question.question}
+                    </h3>
+                    <p className="mx-auto mt-2 max-w-[13.5rem] text-[12px] leading-relaxed text-white/48">
+                      {question.sub}
+                    </p>
+                  </div>
+                ))}
+
+                {visionCards.map((card, index) => (
+                  <button
+                    key={card.title}
+                    type="button"
+                    onClick={() => setActiveVisionCard(card)}
+                    className="absolute z-20 block -translate-x-1/2 -translate-y-1/2 border border-white/18 bg-white/92 p-1 shadow-[0_18px_60px_rgba(0,0,0,0.2)] transition duration-300 hover:scale-110 hover:border-white hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/70"
+                    style={{
+                      left: `${card.x}%`,
+                      top: `${card.y}%`,
+                      width: index % 3 === 0 ? 64 : 54,
+                      height: index % 3 === 0 ? 64 : 54,
+                    }}
+                    aria-label={`Open ${card.title}`}
+                  >
+                    <img
+                      src={card.image}
+                      alt=""
+                      width={720}
+                      height={720}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover opacity-90 mix-blend-multiply saturate-[0.82] contrast-[1.08]"
+                    />
                   </button>
                 ))}
               </div>
 
               <div className="md:hidden">
-                <p className="inverse-eyebrow mb-5">Decision system</p>
+                <p className="inverse-eyebrow mb-5">Boulai vision</p>
                 <h2 className="font-display text-[2.25rem] font-normal leading-[1.05] text-white">
-                  Built for decisions where uncertainty is expensive.
+                  Human reasoning at scientific scale.
                 </h2>
                 <p className="mt-5 text-sm leading-relaxed text-white/[62%]">
-                  Select a signal to see what Boulai turns into auditable clinical evidence.
+                  Tap an image to open the idea behind Boulai's vision.
                 </p>
-                <div className="mt-8 space-y-3">
-                  {decisionConcepts.map((concept, index) => (
-                    <div key={concept.title}>
-                      <button
-                        type="button"
-                        onClick={() => setActiveConceptIndex(index)}
-                        className={`flex w-full items-center gap-4 border p-3 text-left transition-colors ${
-                          activeConceptIndex === index
-                            ? "border-white bg-white text-[#0B0E14]"
-                            : "border-white/14 text-white"
-                        }`}
-                      >
+                <div className="mt-8 space-y-7">
+                  {visionQuestions.map((question) => (
+                    <section key={question.id}>
+                      <h3 className="font-display text-[1.3rem] font-normal leading-tight text-white">
+                        {question.question}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/50">{question.sub}</p>
+                      <div className="mt-4 grid grid-cols-3 gap-3">
+                        {visionCards
+                          .filter((card) => card.questionId === question.id)
+                          .map((card) => (
+                            <button
+                              key={card.title}
+                              type="button"
+                              onClick={() => setActiveVisionCard(card)}
+                              className="border border-white/16 bg-white/92 p-1 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/70"
+                              aria-label={`Open ${card.title}`}
+                            >
+                              <img
+                                src={card.image}
+                                alt=""
+                                width={720}
+                                height={720}
+                                loading="lazy"
+                                decoding="async"
+                                className="aspect-square w-full object-cover opacity-90 mix-blend-multiply saturate-[0.82] contrast-[1.08]"
+                              />
+                            </button>
+                          ))}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+              </div>
+
+              <div className="absolute bottom-6 left-6 hidden border border-white/10 px-4 py-2 text-[11px] text-white/42 md:block">
+                Click an image to read more
+              </div>
+
+              <AnimatePresence>
+                {activeVisionCard && (
+                  <motion.div
+                    className="absolute inset-0 z-50 flex items-center justify-center bg-[#0B0E14]/82 p-5 backdrop-blur-[3px]"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setActiveVisionCard(null)}
+                  >
+                    <motion.article
+                      className="w-full max-w-[420px] overflow-hidden border border-white/14 bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
+                      initial={{ opacity: 0, y: 18, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 12, scale: 0.97 }}
+                      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <figure className="relative aspect-[1.24] bg-white">
                         <img
-                          src={concept.image}
+                          src={activeVisionCard.image}
                           alt=""
                           width={720}
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="h-12 w-12 shrink-0 object-cover"
+                          className="h-full w-full object-cover opacity-[0.94] mix-blend-multiply saturate-[0.82] contrast-[1.08]"
                         />
-                        <span className="text-[11px] font-medium uppercase tracking-[0.16em]">
-                          {concept.title}
-                        </span>
-                      </button>
-                      {activeConceptIndex === index && (
-                        <div className="border-x border-b border-white bg-white p-4 text-[#0B0E14]">
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/50">
-                            {concept.engine}
-                          </p>
-                          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                            <span className="font-medium text-foreground">Problem:</span> {concept.problem}
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                            <span className="font-medium text-foreground">Boulai produces:</span> {concept.output}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="absolute bottom-10 left-1/2 right-auto z-20 hidden w-[560px] -translate-x-1/2 border border-white/12 bg-white p-6 text-[#0B0E14] shadow-[0_24px_80px_rgba(0,0,0,0.26)] md:block">
-                <div className="flex items-start gap-4">
-                  <img
-                    src={activeConcept.image}
-                    alt=""
-                    width={720}
-                    height={720}
-                    loading="lazy"
-                    decoding="async"
-                    className="hidden h-16 w-16 shrink-0 object-cover sm:block"
-                  />
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-foreground/50">
-                      {activeConcept.engine}
-                    </p>
-                    <h3 className="mt-2 text-[1.05rem] font-medium leading-tight text-foreground">
-                      {activeConcept.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-medium text-foreground">Problem:</span> {activeConcept.problem}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-medium text-foreground">Boulai produces:</span> {activeConcept.output}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                        <button
+                          type="button"
+                          onClick={() => setActiveVisionCard(null)}
+                          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#0B0E14] text-sm text-white transition hover:bg-foreground"
+                          aria-label="Close popup"
+                        >
+                          ×
+                        </button>
+                      </figure>
+                      <div className="p-6">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/48">
+                          {activeVisionCard.theme}
+                        </p>
+                        <h3 className="mt-3 font-display text-[1.6rem] font-normal leading-[1.08] text-foreground">
+                          {activeVisionCard.title}
+                        </h3>
+                        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                          {activeVisionCard.desc}
+                        </p>
+                      </div>
+                    </motion.article>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
 
