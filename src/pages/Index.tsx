@@ -280,7 +280,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mx-auto mt-24 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:mt-32 md:rounded-[34px] ${
+            className={`vision-map-shell relative mx-auto mt-24 w-full overflow-hidden text-white md:mt-32 ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
@@ -321,7 +321,7 @@ const Index = () => {
               </svg>
 
               <div className="vision-map-copy absolute left-1/2 top-1/2 z-20 hidden w-[min(530px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 text-center md:block">
-                <div className="bg-[#1B2A41]/95 px-8 py-7">
+                <div className="px-8 py-7">
                   <h2 className="font-display text-[2.15rem] font-normal leading-[1.04] text-white md:text-[2.65rem]">
                     Boulai is built on scientific intelligence
                   </h2>
@@ -365,7 +365,7 @@ const Index = () => {
                           className="aspect-square w-full scale-[1.84] rounded-[8px] object-cover opacity-100 mix-blend-multiply brightness-[0.58] saturate-[1.55] contrast-[2.35]"
                         />
                       </span>
-                      <span className="mt-2 block bg-[#1B2A41]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/72 transition group-hover:text-white/90">
+                      <span className="mt-2 block py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/72 transition group-hover:text-white/90">
                         {card.title}
                       </span>
                     </span>
