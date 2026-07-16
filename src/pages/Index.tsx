@@ -111,7 +111,8 @@ const Index = () => {
             >
               <p className="font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem]">
                 Boulai is a research and product company building causal AI systems for biopharma and clinical research
-                teams: turning clinical and real-world data into auditable analyses and evidence-backed next steps.
+                teams: scientific AI grounded in causal intelligence, turning clinical and real-world data into auditable
+                evidence.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
