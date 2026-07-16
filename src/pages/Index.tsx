@@ -109,7 +109,7 @@ const Index = () => {
               transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-xl"
             >
-              <p className="font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem]">
+              <p className="text-[1.08rem] font-light leading-[1.42] text-[#E6E8EB]/72 md:text-[1.2rem]">
                 Boulai is a research and product company building Scientific AI systems for biopharma and clinical
                 research teams: grounded in human causal intelligence, built to accelerate R&D.
               </p>
