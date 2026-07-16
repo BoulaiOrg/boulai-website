@@ -130,7 +130,7 @@ const Index = () => {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">First solution</p>
-              <h2 className="section-title">Boulai Discovery is the first solution developed by Boulai.</h2>
+              <h2 className="section-title">Boulai Discovery: Boulai's first solution.</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
                 biomedical data, uncover hidden causal drivers, and stress-test clinical hypotheses.
