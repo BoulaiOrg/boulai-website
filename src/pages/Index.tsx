@@ -36,23 +36,23 @@ const productModules = [
 
 const methodPillars = [
   {
-    title: "State-of-the-art research",
-    desc: "We build on peer-reviewed causal inference, statistics, and machine learning — not off-the-shelf tooling.",
+    title: "Research translated",
+    desc: "We turn frontier causal AI, statistics, and scientific reasoning into product modules for real R&D decisions.",
   },
   {
-    title: "Proprietary models",
-    desc: "That research becomes proprietary models embedded directly in our products, not a thin wrapper over generic AI.",
+    title: "Built with scientists",
+    desc: "Methods are shaped with academic and industry partners, so products reflect how scientists test and use evidence.",
   },
   {
-    title: "Built with partners",
-    desc: "We develop and validate our methods together with academic and industry research partners.",
+    title: "Internal research engine",
+    desc: "Boulai develops proprietary methods internally, then ships them as focused tools rather than generic AI wrappers.",
   },
 ];
 
 const methodOutcomes = [
-  "Scientific intelligence for organizing evidence around explicit causal questions.",
-  "Causal reasoning for comparing mechanisms, pathways, and subgroup explanations.",
-  "Machine learning, statistics, and agents working together without removing human scientific judgment.",
+  "Frontier causal AI research converted into usable decision workflows.",
+  "Scientific teams, academic partners, and industry R&D working around inspectable evidence.",
+  "Products that make hypotheses, assumptions, and causal explanations easier to test before costly commitments.",
 ];
 
 const visionPrinciples = [
@@ -238,17 +238,18 @@ const Index = () => {
               <div className="max-w-3xl">
                 <p className="eyebrow mb-4">Methodological foundation</p>
                 <h2 className="section-title">
-                  Research becomes proprietary product.
+                  Causal AI research becomes decision software.
                 </h2>
                 <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                  Boulai is a research-and-product startup. We work with academic and scientific partners to bring
-                  state-of-the-art causal inference, statistics, and machine learning into proprietary models — the
-                  ones that power our products today, and what comes next.
+                  Boulai translates frontier research in causal AI for science into focused products for R&D teams. We
+                  sit between academia and industry, turning rigorous methods into workflows that make clinical and
+                  discovery decisions more targeted, traceable, and faster.
                 </p>
                 <p className="mt-5 text-base leading-relaxed text-foreground/[78%]">
-                  Boulai Discovery is the first product built on that vision. It helps teams turn clinical and
-                  real-world data into testable hypotheses, explainable anomalies, and causal evidence they can inspect
-                  before committing to expensive decisions.
+                  In parallel, we develop internal research that feeds the next generation of products. Boulai Discovery
+                  is the first expression of this model: a scientific workbench that turns clinical and real-world data
+                  into hypotheses, anomalies, and causal evidence teams can inspect before committing to expensive
+                  decisions.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
