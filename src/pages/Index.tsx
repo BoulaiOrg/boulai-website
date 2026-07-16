@@ -35,88 +35,85 @@ const productModules = [
   },
 ];
 
-const visionConcepts = [
-  {
-    id: "human-reasoning",
-    label: "Human reasoning",
-    sub: "By making assumptions, uncertainty, and alternatives easier to inspect.",
-    x: 23,
-    y: 34,
-  },
-  {
-    id: "research-world",
-    label: "Research culture",
-    sub: "By staying close to scientific practice, peer review, and domain expertise.",
-    x: 50,
-    y: 24,
-  },
-  {
-    id: "causal-intelligence",
-    label: "Causal intelligence",
-    sub: "The ability to reason about mechanisms, counterfactuals, and hidden structure.",
-    x: 77,
-    y: 34,
-  },
-  {
-    id: "scientific-approach",
-    label: "Scientific method",
-    sub: "Hypotheses, anomalies, and evidence that teams can challenge.",
-    x: 32,
-    y: 72,
-  },
-  {
-    id: "clinical-decisions",
-    label: "Auditable decisions",
-    sub: "With auditable reasoning before trial and portfolio commitments.",
-    x: 72,
-    y: 74,
-  },
-];
-
 const visionCards = [
   {
-    title: "Human judgment stays central",
-    questionId: "human-reasoning",
+    title: "Human judgment",
     theme: "Human reasoning",
     image: "/brand/vision-human-reasoning.png",
-    x: 13,
-    y: 24,
+    x: 12,
+    y: 22,
     desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
   },
   {
-    title: "Built with scientific partners",
-    questionId: "research-world",
+    title: "Inspectable reasoning",
+    theme: "Human reasoning",
+    image: "/brand/vision-human-reasoning.png",
+    x: 29,
+    y: 16,
+    desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions.",
+  },
+  {
+    title: "Research culture",
     theme: "Research world",
     image: "/brand/vision-research-world.png",
-    x: 61,
-    y: 12,
+    x: 49,
+    y: 17,
     desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
   },
   {
-    title: "Mechanisms over correlations",
-    questionId: "causal-intelligence",
+    title: "Frontier methods",
+    theme: "Research world",
+    image: "/brand/vision-research-world.png",
+    x: 67,
+    y: 16,
+    desc: "We turn causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
+  },
+  {
+    title: "Causal structure",
     theme: "Causal intelligence",
     image: "/brand/vision-causal-intelligence.png",
-    x: 89,
-    y: 22,
+    x: 87,
+    y: 25,
     desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
   },
   {
-    title: "Hypotheses before commitment",
-    questionId: "scientific-approach",
+    title: "Hidden mechanisms",
+    theme: "Causal intelligence",
+    image: "/brand/vision-causal-intelligence.png",
+    x: 82,
+    y: 52,
+    desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into testable explanations.",
+  },
+  {
+    title: "Scientific hypotheses",
     theme: "Scientific approach",
     image: "/brand/vision-scientific-approach.png",
-    x: 16,
-    y: 66,
+    x: 14,
+    y: 55,
     desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
   },
   {
-    title: "Evidence before expensive decisions",
-    questionId: "clinical-decisions",
+    title: "Anomaly review",
+    theme: "Scientific approach",
+    image: "/brand/vision-scientific-approach.png",
+    x: 27,
+    y: 80,
+    desc: "Unexpected behavior becomes more useful when it is reviewed against explicit causal expectations rather than treated as unexplained noise.",
+  },
+  {
+    title: "Auditable evidence",
     theme: "Clinical decisions",
     image: "/brand/vision-clinical-decisions.png",
-    x: 88,
-    y: 66,
+    x: 56,
+    y: 82,
+    desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
+  },
+  {
+    title: "Costly decisions",
+    theme: "Clinical decisions",
+    image: "/brand/vision-clinical-decisions.png",
+    x: 82,
+    y: 76,
     desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
   },
 ];
@@ -174,13 +171,12 @@ const industries = [
 
 const Index = () => {
   const [activeVisionCard, setActiveVisionCard] = useState<(typeof visionCards)[number] | null>(null);
-  const conceptById = Object.fromEntries(visionConcepts.map((concept) => [concept.id, concept]));
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-mid border-b border-border pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="border-b border-white/10 bg-[#0B0E14] pt-32 pb-16 text-white md:pt-40 md:pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
             <motion.div
@@ -188,8 +184,8 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="eyebrow mb-5">Boulai</p>
-              <h1 className="font-sans text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-[3.4rem] md:text-[4.2rem] lg:text-[4.75rem]">
+              <p className="inverse-eyebrow mb-5">Boulai</p>
+              <h1 className="font-sans text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.03em] text-white sm:text-[3.4rem] md:text-[4.2rem] lg:text-[4.75rem]">
                 Scientific AI for clinical decisions.
               </h1>
             </motion.div>
@@ -200,15 +196,15 @@ const Index = () => {
               transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-xl lg:pt-16"
             >
-              <p className="text-[1.15rem] leading-relaxed text-foreground/[78%] md:text-[1.25rem]">
+              <p className="text-[1.15rem] leading-relaxed text-white/68 md:text-[1.25rem]">
                 Boulai builds causal AI systems for CROs, pharma, and clinical research teams: turning clinical and
                 real-world data into auditable evidence before expensive trial and portfolio decisions.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild>
+                <Button className="bg-white text-[#0B0E14] hover:bg-white/88" size="lg" asChild>
                   <Link to="/product">Explore Product</Link>
                 </Button>
-                <Button className="border border-border bg-transparent text-foreground hover:bg-foreground hover:text-background" size="lg" asChild>
+                <Button className="border border-white/22 bg-transparent text-white hover:bg-white hover:text-[#0B0E14]" size="lg" asChild>
                   <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
@@ -219,149 +215,148 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-16 overflow-hidden text-foreground"
+            className="relative mt-20 overflow-hidden bg-[#0B0E14] text-white"
           >
-            <div className="relative min-h-[640px] py-8 md:min-h-[700px]">
+            <div className="relative min-h-[700px] py-10 md:min-h-[740px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                {visionConcepts.map((concept) => (
+                {visionCards.map((card, index) => (
                   <line
-                    key={concept.id}
+                    key={`${card.title}-center`}
                     x1="50"
-                    y1="47"
-                    x2={concept.x}
-                    y2={concept.y}
-                    stroke="rgba(11,14,20,0.12)"
-                    strokeWidth="0.1"
+                    y1="48"
+                    x2={card.x}
+                    y2={card.y}
+                    stroke="rgba(255,255,255,0.085)"
+                    strokeWidth={index % 3 === 0 ? "0.075" : "0.055"}
                   />
                 ))}
                 {visionCards.map((card) => {
-                  const concept = conceptById[card.questionId];
+                  const linked = visionCards.find((candidate) => candidate.theme === card.theme && candidate.title !== card.title);
+                  if (!linked) return null;
+
                   return (
                     <line
-                      key={card.title}
-                      x1={concept.x}
-                      y1={concept.y}
-                      x2={card.x}
-                      y2={card.y}
-                      stroke="rgba(11,14,20,0.16)"
-                      strokeWidth="0.1"
+                      key={`${card.title}-theme`}
+                      x1={card.x}
+                      y1={card.y}
+                      x2={linked.x}
+                      y2={linked.y}
+                      stroke="rgba(255,255,255,0.055)"
+                      strokeWidth="0.045"
+                    />
+                  );
+                })}
+                {visionCards.slice(0, 5).map((card, index) => {
+                  const linked = visionCards[index + 5];
+                  return (
+                    <line
+                      key={`${card.title}-cross`}
+                      x1={card.x}
+                      y1={card.y}
+                      x2={linked.x}
+                      y2={linked.y}
+                      stroke="rgba(255,255,255,0.035)"
+                      strokeWidth="0.04"
                     />
                   );
                 })}
               </svg>
 
-              <div className="absolute left-1/2 top-[47%] hidden w-[min(460px,62%)] -translate-x-1/2 -translate-y-1/2 text-center md:block">
-                <p className="eyebrow mb-5">Boulai vision</p>
-                <h2 className="font-display text-[2.35rem] font-normal leading-[1.04] text-foreground md:text-[2.95rem]">
-                  Human reasoning at scientific scale.
-                </h2>
-                <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                  A map of the ideas behind Boulai: judgment, research culture, causal intelligence, and auditable evidence.
-                </p>
+              <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
+                <div className="mx-auto max-w-[530px] bg-[#0B0E14]/95 px-8 py-7">
+                  <p className="inverse-eyebrow mb-5">Boulai vision</p>
+                  <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
+                    Scientific reasoning at scale.
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/58">
+                    Human judgment, causal models, and scientific evidence working around the same inspectable system.
+                  </p>
+                </div>
               </div>
 
               <div className="hidden md:block">
-                {visionConcepts.map((concept) => (
-                  <div
-                    key={concept.id}
-                    className="absolute z-10 w-56 -translate-x-1/2 -translate-y-1/2 text-center"
-                    style={{ left: `${concept.x}%`, top: `${concept.y}%` }}
-                  >
-                    <h3 className="text-[12px] font-semibold uppercase tracking-[0.22em] text-foreground">
-                      {concept.label}
-                    </h3>
-                    <p className="mx-auto mt-2 max-w-[13rem] text-[12px] leading-relaxed text-muted-foreground">
-                      {concept.sub}
-                    </p>
-                  </div>
-                ))}
-
                 {visionCards.map((card, index) => (
                   <button
                     key={card.title}
                     type="button"
                     onClick={() => setActiveVisionCard(card)}
-                    className="absolute z-20 block -translate-x-1/2 -translate-y-1/2 bg-transparent transition duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-foreground/40"
+                    className="group absolute z-30 -translate-x-1/2 -translate-y-1/2 bg-transparent text-left transition duration-300 hover:scale-[1.04] focus:outline-none focus:ring-2 focus:ring-white/45"
                     style={{
                       left: `${card.x}%`,
                       top: `${card.y}%`,
-                      width: index % 2 === 0 ? 58 : 52,
-                      height: index % 2 === 0 ? 58 : 52,
+                      width: index % 4 === 0 ? 80 : 74,
                     }}
                     aria-label={`Open ${card.title}`}
                   >
-                    <img
-                      src={card.image}
-                      alt=""
-                      width={720}
-                      height={720}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover opacity-100 saturate-[1.05] contrast-[1.22]"
-                    />
+                    <span className="block">
+                      <span className="block border border-white/10 bg-white/[0.035] p-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.18)] transition group-hover:border-white/24 group-hover:bg-white/[0.065]">
+                        <img
+                          src={card.image}
+                          alt=""
+                          width={720}
+                          height={720}
+                          loading="lazy"
+                          decoding="async"
+                          className="aspect-square w-full object-cover opacity-[0.88] saturate-[0.86] contrast-[1.14]"
+                        />
+                      </span>
+                      <span className="mt-2 block bg-[#0B0E14]/86 py-1 text-[8px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/64 transition group-hover:text-white/82">
+                        {card.title}
+                      </span>
+                    </span>
                   </button>
                 ))}
               </div>
 
               <div className="md:hidden">
-                <p className="eyebrow mb-5">Boulai vision</p>
-                <h2 className="font-display text-[2.25rem] font-normal leading-[1.05] text-foreground">
-                  Human reasoning at scientific scale.
+                <p className="inverse-eyebrow mb-5">Boulai vision</p>
+                <h2 className="font-display text-[2.35rem] font-normal leading-[1.05] text-white">
+                  Scientific reasoning at scale.
                 </h2>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  Tap an image to open the idea behind Boulai's vision.
+                <p className="mt-5 text-sm leading-relaxed text-white/62">
+                  Tap a card to open the idea behind Boulai's vision.
                 </p>
-                <div className="mt-8 space-y-7">
-                  {visionConcepts.map((concept) => {
-                    const card = visionCards.find((item) => item.questionId === concept.id);
-
-                    return (
-                      <section key={concept.id} className="flex items-start gap-4">
-                        {card && (
-                          <button
-                            type="button"
-                            onClick={() => setActiveVisionCard(card)}
-                            className="mt-1 shrink-0 bg-transparent p-0 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-foreground/40"
-                            aria-label={`Open ${card.title}`}
-                          >
-                            <img
-                              src={card.image}
-                              alt=""
-                              width={720}
-                              height={720}
-                              loading="lazy"
-                              decoding="async"
-                              className="h-16 w-16 object-cover opacity-100 saturate-[1.05] contrast-[1.22]"
-                            />
-                          </button>
-                        )}
-                        <div>
-                          <h3 className="text-[12px] font-semibold uppercase tracking-[0.22em] text-foreground">
-                            {concept.label}
-                          </h3>
-                          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{concept.sub}</p>
-                        </div>
-                      </section>
-                    );
-                  })}
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {visionCards.map((card) => (
+                    <button
+                      key={card.title}
+                      type="button"
+                      onClick={() => setActiveVisionCard(card)}
+                      className="flex items-center gap-3 border border-white/10 bg-white/[0.035] p-3 text-left transition hover:bg-white/[0.065] focus:outline-none focus:ring-2 focus:ring-white/45"
+                      aria-label={`Open ${card.title}`}
+                    >
+                      <img
+                        src={card.image}
+                        alt=""
+                        width={720}
+                        height={720}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-14 w-14 shrink-0 object-cover opacity-[0.88] saturate-[0.86] contrast-[1.14]"
+                      />
+                      <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68">
+                        {card.title}
+                      </span>
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              <div className="absolute bottom-6 left-0 hidden text-[11px] text-muted-foreground md:block">
+              <div className="absolute bottom-8 left-4 hidden text-[11px] text-white/42 lg:left-8 md:block">
                 Click an image to read more
               </div>
 
               <AnimatePresence>
                 {activeVisionCard && (
                   <motion.div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-background/74 p-5 backdrop-blur-[3px]"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B0E14]/78 p-5 backdrop-blur-[4px]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onClick={() => setActiveVisionCard(null)}
                   >
                     <motion.article
-                      className="w-full max-w-[380px] overflow-hidden border border-border bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.24)]"
+                      className="w-full max-w-[380px] overflow-hidden border border-white/12 bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
                       initial={{ opacity: 0, y: 18, scale: 0.96 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 12, scale: 0.97 }}
@@ -404,8 +399,12 @@ const Index = () => {
               </AnimatePresence>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="mt-16">
+      <section className="section-mid border-b border-border py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div>
             <p className="eyebrow mb-5">Product modules</p>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {productModules.map((engine, index) => (
