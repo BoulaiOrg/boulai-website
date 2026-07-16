@@ -65,8 +65,8 @@ const visionPrinciples = [
     desc: "We go beyond pattern-matching by combining causal reasoning, exploratory AI, and explainable statistical workflows teams can challenge and inspect.",
   },
   {
-    title: "Discovery first",
-    desc: "Boulai Discovery is the first system built on this vision, turning complex data into hypotheses, anomalies, and decision-grade causal evidence.",
+    title: "Discovery focus",
+    desc: "Boulai Discovery is built on this vision, turning complex data into hypotheses, anomalies, and decision-grade causal evidence.",
   },
 ];
 
@@ -128,8 +128,8 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <p className="eyebrow mb-4">First solution</p>
-              <h2 className="section-title">Boulai Discovery: Boulai's first solution.</h2>
+              <p className="eyebrow mb-4">Discovery solution</p>
+              <h2 className="section-title">Boulai Discovery: Boulai's scientific workbench.</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
                 biomedical data, uncover hidden causal drivers, and stress-test clinical hypotheses.
@@ -247,7 +247,7 @@ const Index = () => {
                 </p>
                 <p className="mt-5 text-base leading-relaxed text-foreground/[78%]">
                   In parallel, we develop internal research that feeds the next generation of products. Boulai Discovery
-                  is the first expression of this model: a scientific workbench that turns clinical and real-world data
+                  is an expression of this model: a scientific workbench that turns clinical and real-world data
                   into hypotheses, anomalies, and causal evidence teams can inspect before committing to expensive
                   decisions.
                 </p>
@@ -323,9 +323,9 @@ const Index = () => {
           <FadeIn>
             <div className="premium-panel p-8 md:p-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
               <div className="max-w-3xl">
-                <p className="eyebrow mb-4">First solution</p>
+                <p className="eyebrow mb-4">Discovery solution</p>
                 <h2 className="section-title">
-                  Boulai Discovery is the first product built on this approach.
+                  Boulai Discovery is built on this approach.
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">
                   It helps teams use clinical, real-world, and translational data to find responder structure,
