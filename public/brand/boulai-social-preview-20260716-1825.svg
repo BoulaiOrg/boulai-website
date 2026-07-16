@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <radialGradient id="glow" cx="72%" cy="45%" r="48%">
+      <stop offset="0%" stop-color="#1B2A41" stop-opacity="0.72"/>
+      <stop offset="48%" stop-color="#0B0E14" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0B0E14" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6E8EB" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#E6E8EB" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#E6E8EB" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="logoLight">
+      <feColorMatrix type="matrix" values="-1 0 0 0 0.902 0 -1 0 0 0.910 0 0 -1 0 0.922 0 0 0 1 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#0B0E14"/>
+  <rect y="285" width="1200" height="630" fill="#0B0E14"/>
+  <rect y="285" width="1200" height="630" fill="url(#glow)"/>
+
+  <g opacity="0.18">
+    <path d="M0 420H1200M0 520H1200M0 620H1200M0 720H1200M0 820H1200" stroke="url(#lineFade)" stroke-width="1"/>
+    <path d="M120 285V915M260 285V915M400 285V915M540 285V915M680 285V915M820 285V915M960 285V915M1100 285V915" stroke="#E6E8EB" stroke-opacity="0.07" stroke-width="1"/>
+  </g>
+
+  <image href="boulai-logo.png" x="84" y="334" width="214" height="78" preserveAspectRatio="xMinYMid meet" filter="url(#logoLight)" opacity="0.96"/>
+
+  <text x="86" y="520" fill="#E6E8EB" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="400" letter-spacing="-1">
+    <tspan x="86" dy="0">Scientific AI for</tspan>
+    <tspan x="86" dy="92">clinical decisions.</tspan>
+  </text>
+
+  <text x="88" y="735" fill="#E6E8EB" fill-opacity="0.72" font-family="Inter, Helvetica, Arial, sans-serif" font-size="31" font-weight="400">
+    <tspan x="88" dy="0">Scientific AI grounded in human causal intelligence,</tspan>
+    <tspan x="88" dy="43">built to accelerate R&amp;D.</tspan>
+  </text>
+
+  <g opacity="0.62">
+    <circle cx="840" cy="530" r="5" fill="#E6E8EB"/>
+    <circle cx="930" cy="500" r="5" fill="#E6E8EB"/>
+    <circle cx="1030" cy="565" r="6" fill="#E6E8EB"/>
+    <circle cx="930" cy="665" r="5" fill="#E6E8EB"/>
+    <path d="M840 530C875 510 895 505 930 500C968 512 1002 535 1030 565C995 606 966 637 930 665C890 622 868 578 840 530Z" fill="none" stroke="#E6E8EB" stroke-opacity="0.35" stroke-width="2"/>
+    <path d="M780 620C840 590 895 580 960 590C1015 600 1060 628 1110 675" fill="none" stroke="#E6E8EB" stroke-opacity="0.18" stroke-width="2"/>
+  </g>
+
+  <text x="88" y="848" fill="#E6E8EB" fill-opacity="0.54" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="6">BOULAI.ORG</text>
+</svg>
