@@ -229,7 +229,7 @@ const Index = () => {
                   <Link to="/product">Explore Product</Link>
                 </Button>
                 <Button className="border border-white/22 bg-transparent text-white hover:bg-white hover:text-[#0B0E14]" size="lg" asChild>
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">Book a Demo</Link>
                 </Button>
               </div>
             </motion.div>

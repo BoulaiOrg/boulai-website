@@ -73,7 +73,7 @@ const Navbar = () => {
             className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
             asChild
           >
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">Book a Demo</Link>
           </Button>
         </div>
 
@@ -113,7 +113,7 @@ const Navbar = () => {
               className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
               asChild
             >
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">Book a Demo</Link>
             </Button>
           </div>
         </div>

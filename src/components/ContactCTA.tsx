@@ -17,7 +17,7 @@ const ContactCTA = () => (
         </p>
         <div className="mt-8">
           <Button size="lg" className="bg-white text-[#0B0E14] hover:bg-white/[92%]" asChild>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">Book a Demo</Link>
           </Button>
         </div>
       </FadeIn>
