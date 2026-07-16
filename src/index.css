@@ -195,53 +195,6 @@
     border-color: hsl(var(--primary) / 0.35);
   }
 
-  .vision-float-card {
-    animation: vision-card-float var(--float-duration, 9s) ease-in-out infinite;
-    animation-delay: var(--float-delay, 0s);
-    transform-origin: center;
-    will-change: transform;
-  }
-
-  .vision-connector-line {
-    opacity: 0.82;
-    stroke-linecap: round;
-  }
-
-  .vision-map-shell {
-    background: transparent;
-  }
-
-  @media (min-width: 768px) {
-    .vision-map-shell {
-      width: 100vw !important;
-      max-width: none !important;
-      margin-left: calc((100% - 100vw) / 2);
-      margin-right: calc((100% - 100vw) / 2);
-    }
-
-  }
-
-}
-
-@keyframes vision-card-float {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(0deg);
-  }
-  28% {
-    transform: translate(-50%, -50%) translate3d(var(--float-x, 3px), calc(var(--float-y, 3px) * -0.72), 0)
-      rotate(var(--float-rotate, 2deg));
-  }
-  58% {
-    transform: translate(-50%, -50%) translate3d(calc(var(--float-x, 3px) * -0.5), var(--float-y, 3px), 0)
-      rotate(calc(var(--float-rotate, 2deg) * -0.85));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vision-float-card {
-    animation: none;
-  }
 }
 
 @keyframes causal-flow-dash {

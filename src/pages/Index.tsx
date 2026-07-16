@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 import BoulaiListDot from "@/components/BoulaiListDot";
@@ -35,110 +34,22 @@ const productModules = [
   },
 ];
 
-const visionTileColors = ["#E6E8EB", "#A9B0BC", "#E6E8EB", "#D4A11E"];
-
-const mobileVisionPositions = [
-  { x: 16, y: 36, w: 26 },
-  { x: 35, y: 23, w: 24 },
-  { x: 52, y: 17, w: 25 },
-  { x: 70, y: 24, w: 24 },
-  { x: 84, y: 38, w: 25 },
-  { x: 76, y: 56, w: 23 },
-  { x: 26, y: 58, w: 24 },
-  { x: 43, y: 47, w: 22 },
-  { x: 58, y: 66, w: 23 },
-  { x: 18, y: 72, w: 22 },
-];
-
-const getVisionLineDrift = (index: number, scale = 1) => {
-  const horizontal = (index % 2 === 0 ? 0.42 : -0.38) * scale;
-  const vertical = (index % 3 === 0 ? 0.46 : -0.34) * scale;
-  return {
-    x: Number(horizontal.toFixed(2)),
-    y: Number(vertical.toFixed(2)),
-  };
-};
-
-const visionCards = [
+const scientificIntelligenceCards = [
   {
     title: "Human judgment",
-    theme: "Human reasoning",
-    image: "/brand/vision-card-human-judgment.png",
-    x: 14,
-    y: 22,
-    desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
-  },
-  {
-    title: "Inspectable reasoning",
-    theme: "Human reasoning",
-    image: "/brand/vision-card-inspectable-reasoning.png",
-    x: 29,
-    y: 15,
-    desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions.",
-  },
-  {
-    title: "Research culture",
-    theme: "Research world",
-    image: "/brand/vision-card-research-culture.png",
-    x: 48,
-    y: 13,
-    desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
-  },
-  {
-    title: "Frontier methods",
-    theme: "Research world",
-    image: "/brand/vision-card-frontier-methods.png",
-    x: 68,
-    y: 15,
-    desc: "We turn causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
+    desc: "Expert assumptions, uncertainty, and alternative explanations stay visible so teams can reason with the system.",
   },
   {
     title: "Causal structure",
-    theme: "Causal intelligence",
-    image: "/brand/vision-card-causal-structure.png",
-    x: 84,
-    y: 24,
-    desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
-  },
-  {
-    title: "Hidden mechanisms",
-    theme: "Causal intelligence",
-    image: "/brand/vision-card-hidden-mechanisms.png",
-    x: 84,
-    y: 54,
-    desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into testable explanations.",
-  },
-  {
-    title: "Scientific hypotheses",
-    theme: "Scientific approach",
-    image: "/brand/vision-card-scientific-hypotheses.png",
-    x: 15,
-    y: 58,
-    desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
-  },
-  {
-    title: "Anomaly review",
-    theme: "Scientific approach",
-    image: "/brand/vision-card-anomaly-review.png",
-    x: 30,
-    y: 80,
-    desc: "Unexpected behavior becomes more useful when it is reviewed against explicit causal expectations rather than treated as unexplained noise.",
+    desc: "Signals are interpreted through explicit mechanisms, not treated as isolated correlations.",
   },
   {
     title: "Auditable evidence",
-    theme: "Clinical decisions",
-    image: "/brand/vision-card-auditable-evidence.png",
-    x: 56,
-    y: 82,
-    desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
+    desc: "Analytical choices, model outputs, and next-step hypotheses remain traceable and open to challenge.",
   },
   {
-    title: "Costly decisions",
-    theme: "Clinical decisions",
-    image: "/brand/vision-card-costly-decisions.png",
-    x: 80,
-    y: 78,
-    desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
+    title: "Scientific hypotheses",
+    desc: "Findings are translated into testable branches that teams can validate, reject, or refine.",
   },
 ];
 
@@ -194,49 +105,6 @@ const industries = [
 ];
 
 const Index = () => {
-  const [activeVisionCard, setActiveVisionCard] = useState<(typeof visionCards)[number] | null>(null);
-  const visionMapRef = useRef<HTMLDivElement>(null);
-  const [isVisionMapExpanded, setIsVisionMapExpanded] = useState(false);
-
-  useEffect(() => {
-    const node = visionMapRef.current;
-    if (!node) return;
-
-    let frame = 0;
-
-    const updateVisionMapState = () => {
-      const rect = node.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const shouldExpand = rect.top <= viewportHeight * 0.28 && rect.bottom >= viewportHeight * 0.58;
-      const shouldCollapse =
-        window.scrollY <= 12 || rect.top >= viewportHeight * 0.42 || rect.bottom <= viewportHeight * 0.28;
-
-      setIsVisionMapExpanded((current) => {
-        if (!current && shouldExpand) return true;
-        if (current && shouldCollapse) return false;
-        return current;
-      });
-    };
-
-    const requestUpdate = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        updateVisionMapState();
-        frame = 0;
-      });
-    };
-
-    updateVisionMapState();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-
-    return () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -275,252 +143,6 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <motion.div
-            ref={visionMapRef}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mx-auto mt-24 w-full overflow-hidden text-white md:mt-32 ${
-              isVisionMapExpanded ? "vision-map-shell-expanded" : ""
-            }`}
-          >
-            <div className="relative min-h-[560px] py-10 md:min-h-[620px]">
-              <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
-                {visionCards.map((card, index) => {
-                  const drift = getVisionLineDrift(index);
-                  const duration = 8.2 + (index % 5) * 0.5;
-
-                  return (
-                    <line
-                      key={`${card.title}-connector`}
-                      x1="50"
-                      y1="50"
-                      x2={card.x}
-                      y2={card.y}
-                      stroke="rgba(230,232,235,0.32)"
-                      strokeWidth="0.11"
-                      className="vision-connector-line"
-                    >
-                      <animate
-                        attributeName="x2"
-                        values={`${card.x};${card.x + drift.x};${card.x - drift.x * 0.55};${card.x}`}
-                        dur={`${duration}s`}
-                        begin={`${index * -0.7}s`}
-                        repeatCount="indefinite"
-                      />
-                      <animate
-                        attributeName="y2"
-                        values={`${card.y};${card.y + drift.y};${card.y - drift.y * 0.55};${card.y}`}
-                        dur={`${duration}s`}
-                        begin={`${index * -0.7}s`}
-                        repeatCount="indefinite"
-                      />
-                    </line>
-                  );
-                })}
-              </svg>
-
-              <div className="vision-map-copy absolute left-1/2 top-1/2 z-20 hidden w-[min(530px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 text-center md:block">
-                <div className="px-8 py-7">
-                  <h2 className="font-display text-[2.15rem] font-normal leading-[1.04] text-white md:text-[2.65rem]">
-                    Boulai is built on scientific intelligence
-                  </h2>
-                  <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/58">
-                    Human judgment, causal models, and scientific evidence working around the same inspectable system.
-                  </p>
-                </div>
-              </div>
-
-              <div className="hidden md:block">
-                {visionCards.map((card, index) => (
-                  <button
-                    key={card.title}
-                    type="button"
-                    onClick={() => setActiveVisionCard(card)}
-                    className="vision-float-card group absolute z-30 bg-transparent text-left focus:outline-none focus:ring-2 focus:ring-white/45"
-                    style={{
-                      left: `${card.x}%`,
-                      top: `${card.y}%`,
-                      width: index % 4 === 0 ? 54 : 50,
-                      "--float-x": `${index % 2 === 0 ? 7 : -6}px`,
-                      "--float-y": `${index % 3 === 0 ? 8 : -7}px`,
-                      "--float-rotate": `${index % 2 === 0 ? 3.4 : -3}deg`,
-                      "--float-duration": `${8.2 + (index % 5) * 0.5}s`,
-                      "--float-delay": `${index * -0.7}s`,
-                    } as CSSProperties}
-                    aria-label={`Open ${card.title}`}
-                  >
-                    <span className="block transition-transform duration-300 group-hover:scale-[1.06]">
-                      <span
-                        className="block overflow-hidden rounded-[11px] p-1 shadow-[0_10px_26px_rgba(0,0,0,0.3)] ring-1 ring-[#E6E8EB]/35 transition group-hover:opacity-100"
-                        style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
-                      >
-                        <img
-                          src={card.image}
-                          alt=""
-                          width={720}
-                          height={720}
-                          loading="lazy"
-                          decoding="async"
-                          className="aspect-square w-full scale-[1.84] rounded-[8px] object-cover opacity-100 mix-blend-multiply brightness-[0.58] saturate-[1.55] contrast-[2.35]"
-                        />
-                      </span>
-                      <span className="mt-2 block py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/72 transition group-hover:text-white/90">
-                        {card.title}
-                      </span>
-                    </span>
-                  </button>
-                ))}
-              </div>
-
-              <div className="px-5 pb-14 pt-5 text-center md:hidden">
-                <div className="relative mx-auto h-[310px] max-w-[360px] overflow-hidden">
-                  <svg
-                    className="pointer-events-none absolute inset-0 h-full w-full"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                  >
-                    {visionCards.map((card, index) => {
-                      const position = mobileVisionPositions[index];
-                      const drift = getVisionLineDrift(index, 0.8);
-                      const duration = 8.4 + (index % 5) * 0.5;
-                      return (
-                        <line
-                          key={`${card.title}-mobile-center`}
-                          x1="50"
-                          y1="78"
-                          x2={position.x}
-                          y2={position.y}
-                          stroke="rgba(230,232,235,0.34)"
-                          strokeWidth="0.16"
-                          className="vision-connector-line"
-                        >
-                          <animate
-                            attributeName="x2"
-                            values={`${position.x};${position.x + drift.x};${position.x - drift.x * 0.55};${position.x}`}
-                            dur={`${duration}s`}
-                            begin={`${index * -0.6}s`}
-                            repeatCount="indefinite"
-                          />
-                          <animate
-                            attributeName="y2"
-                            values={`${position.y};${position.y + drift.y};${position.y - drift.y * 0.55};${position.y}`}
-                            dur={`${duration}s`}
-                            begin={`${index * -0.6}s`}
-                            repeatCount="indefinite"
-                          />
-                        </line>
-                      );
-                    })}
-                  </svg>
-
-                  {visionCards.map((card, index) => {
-                    const position = mobileVisionPositions[index];
-                    return (
-                      <button
-                        key={card.title}
-                        type="button"
-                        onClick={() => setActiveVisionCard(card)}
-                        className="vision-float-card group absolute z-10 bg-transparent text-left focus:outline-none focus:ring-2 focus:ring-white/45"
-                        style={{
-                          left: `${position.x}%`,
-                          top: `${position.y}%`,
-                          width: position.w,
-                          "--float-x": `${index % 2 === 0 ? 5 : -5}px`,
-                          "--float-y": `${index % 3 === 0 ? 6 : -5}px`,
-                          "--float-rotate": `${index % 2 === 0 ? 3 : -2.8}deg`,
-                          "--float-duration": `${8.4 + (index % 5) * 0.5}s`,
-                          "--float-delay": `${index * -0.6}s`,
-                        } as CSSProperties}
-                        aria-label={`Open ${card.title}`}
-                      >
-                        <span
-                          className="block overflow-hidden rounded-[7px] p-0.5 shadow-[0_8px_20px_rgba(0,0,0,0.34)] ring-1 ring-[#E6E8EB]/30"
-                          style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
-                        >
-                          <img
-                            src={card.image}
-                            alt=""
-                            width={720}
-                            height={720}
-                            loading="lazy"
-                            decoding="async"
-                            className="aspect-square w-full scale-[1.72] rounded-[5px] object-cover opacity-100 mix-blend-multiply brightness-[0.64] saturate-[1.5] contrast-[2.1]"
-                          />
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                <h2 className="mx-auto mt-1 max-w-[320px] font-display text-[2.12rem] font-normal leading-[1.05] text-white">
-                  Boulai is built on scientific intelligence
-                </h2>
-                <p className="mx-auto mt-7 max-w-[315px] text-[1.08rem] leading-[1.48] text-white/72">
-                  Human judgment, causal models, and scientific evidence working around the same inspectable system.
-                </p>
-                <Button className="mt-8 bg-[#E6E8EB] px-7 text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
-                  <Link to="/product">Explore Discovery</Link>
-                </Button>
-              </div>
-
-              <div className="absolute bottom-8 left-4 hidden text-[11px] text-white/42 lg:left-8 md:block">
-                Click an image to read more
-              </div>
-
-              <AnimatePresence>
-                {activeVisionCard && (
-                  <motion.div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B0E14]/78 p-5 backdrop-blur-[4px]"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setActiveVisionCard(null)}
-                  >
-                    <motion.article
-                      className="w-full max-w-[380px] overflow-hidden rounded-[18px] border border-[#A9B0BC]/40 bg-[#E6E8EB] text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
-                      initial={{ opacity: 0, y: 18, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 12, scale: 0.97 }}
-                      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-                      onClick={(event) => event.stopPropagation()}
-                    >
-                      <figure className="relative aspect-[1.18] bg-[#E6E8EB]">
-                        <img
-                          src={activeVisionCard.image}
-                          alt=""
-                          width={720}
-                          height={720}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-full w-full object-cover opacity-[0.94] mix-blend-multiply saturate-[0.82] contrast-[1.08]"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => setActiveVisionCard(null)}
-                          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#0B0E14] text-sm text-[#E6E8EB] transition hover:bg-[#1B2A41]"
-                          aria-label="Close popup"
-                        >
-                          ×
-                        </button>
-                      </figure>
-                      <div className="p-6">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/48">
-                          {activeVisionCard.theme}
-                        </p>
-                        <h3 className="mt-3 font-display text-[1.6rem] font-normal leading-[1.08] text-foreground">
-                          {activeVisionCard.title}
-                        </h3>
-                        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                          {activeVisionCard.desc}
-                        </p>
-                      </div>
-                    </motion.article>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -677,6 +299,33 @@ const Index = () => {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={0.15}>
+            <div className="mt-20 grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+              <div className="max-w-2xl">
+                <p className="eyebrow mb-4">Scientific intelligence</p>
+                <h2 className="section-title">Made inspectable.</h2>
+                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                  Boulai combines human judgment, causal structure, statistical evidence, and machine reasoning into
+                  workflows that teams can inspect, challenge, and reuse.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {scientificIntelligenceCards.map((item, index) => (
+                  <div key={item.title} className="premium-panel p-6">
+                    <div className="flex items-start gap-4">
+                      <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
+                      <div>
+                        <h3 className="card-title">{item.title}</h3>
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
