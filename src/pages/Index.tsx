@@ -178,26 +178,41 @@ const Index = () => {
 
   useEffect(() => {
     const node = visionMapRef.current;
-    if (!node || isVisionMapExpanded) return;
+    if (!node) return;
 
-    const expandWhenPassed = () => {
+    let ticking = false;
+
+    const updateVisionMapState = () => {
       const rect = node.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.24 && rect.bottom > window.innerHeight * 0.42) {
-        setIsVisionMapExpanded(true);
-        window.removeEventListener("scroll", expandWhenPassed);
-        window.removeEventListener("resize", expandWhenPassed);
-      }
+      const viewportHeight = window.innerHeight;
+      const shouldOpen = rect.top < viewportHeight * 0.34 && rect.bottom > viewportHeight * 0.45;
+      const shouldClose = rect.top > viewportHeight * 0.48 || rect.bottom < viewportHeight * 0.28;
+
+      setIsVisionMapExpanded((current) => {
+        if (current && shouldClose) return false;
+        if (!current && shouldOpen) return true;
+        return current;
+      });
     };
 
-    expandWhenPassed();
-    window.addEventListener("scroll", expandWhenPassed, { passive: true });
-    window.addEventListener("resize", expandWhenPassed);
+    const requestUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateVisionMapState();
+        ticking = false;
+      });
+    };
+
+    updateVisionMapState();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
 
     return () => {
-      window.removeEventListener("scroll", expandWhenPassed);
-      window.removeEventListener("resize", expandWhenPassed);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
     };
-  }, [isVisionMapExpanded]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -243,12 +258,12 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:w-[calc(100%-5rem)] md:max-w-[1180px] md:rounded-[34px] ${
+            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
             <div className="relative min-h-[560px] py-10 md:min-h-[620px]">
-              <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <svg className="vision-detail-layer pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
                 {visionCards.map((card, index) => (
                   <line
                     key={`${card.title}-center`}
@@ -329,7 +344,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="hidden md:block">
+              <div className="vision-detail-layer hidden md:block">
                 {visionCards.map((card, index) => (
                   <button
                     key={card.title}
@@ -409,7 +424,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="absolute bottom-8 left-4 hidden text-[11px] text-white/42 lg:left-8 md:block">
+              <div className="vision-detail-layer absolute bottom-8 left-4 hidden text-[11px] text-white/42 lg:left-8 md:block">
                 Click an image to read more
               </div>
 
