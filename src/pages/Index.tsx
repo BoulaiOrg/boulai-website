@@ -244,7 +244,7 @@ const Index = () => {
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
-                  <Link to="/product">Explore Product</Link>
+                  <Link to="/product">Explore Discovery</Link>
                 </Button>
                 <Button className="border border-[#A9B0BC]/35 bg-transparent text-[#E6E8EB] hover:bg-[#E6E8EB] hover:text-[#0B0E14]" size="lg" asChild>
                   <Link to="/contact">Book a Demo</Link>
@@ -492,7 +492,7 @@ const Index = () => {
               <h2 className="section-title">Latest releases from Boulai Discovery.</h2>
             </div>
             <Button className="w-fit border border-border bg-transparent text-foreground hover:bg-[#0B0E14] hover:text-[#E6E8EB]" asChild>
-              <Link to="/product">Explore Product</Link>
+              <Link to="/product">Explore Discovery</Link>
             </Button>
           </div>
 
@@ -688,7 +688,7 @@ const Index = () => {
               </div>
               <div className="flex lg:justify-end">
                 <Button size="lg" asChild>
-                  <Link to="/product">Explore Boulai Discovery</Link>
+                  <Link to="/product">Explore Discovery</Link>
                 </Button>
               </div>
             </div>
