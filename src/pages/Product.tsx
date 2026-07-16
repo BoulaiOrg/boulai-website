@@ -1,12 +1,12 @@
 import BoulaiListDot from "@/components/BoulaiListDot";
-import EngineMark from "@/components/EngineMark";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const engines = [
   {
     name: "Atlas",
-    mark: "atlas" as const,
+    logo: "/brand/module-atlas-logo.png",
+    logoAlt: "Atlas logo",
     version: "1.0",
     image: "/brand/product-atlas-instrument.png",
     imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
@@ -18,7 +18,8 @@ const engines = [
   },
   {
     name: "Icarus",
-    mark: "icarus" as const,
+    logo: "/brand/module-icarus-logo.png",
+    logoAlt: "Icarus logo",
     version: "1.0",
     image: "/brand/product-icarus-instrument.png",
     imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
@@ -30,7 +31,8 @@ const engines = [
   },
   {
     name: "Locus",
-    mark: "locus" as const,
+    logo: "/brand/module-locus-logo.png",
+    logoAlt: "Locus logo",
     version: "1.0",
     image: "/brand/product-locus-instrument.png",
     imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
@@ -142,7 +144,15 @@ const Product = () => (
                   />
                 </figure>
                 <div className="flex items-start gap-5 p-8">
-                  <EngineMark name={engine.mark} className="mt-0.5 h-8 w-8 shrink-0 text-muted-foreground" />
+                  <img
+                    src={engine.logo}
+                    alt={engine.logoAlt}
+                    width={512}
+                    height={512}
+                    loading="lazy"
+                    decoding="async"
+                    className="mt-0.5 h-8 w-8 shrink-0 select-none object-contain opacity-75 brightness-0"
+                  />
                   <div>
                     <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
                       {engine.name} {engine.version}
