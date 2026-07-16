@@ -24,7 +24,7 @@ const About = () => (
     <Navbar />
 
     {/* Hero */}
-    <section className="section-hero border-b border-white/10 pt-32 pb-20">
+    <section className="section-hero pt-32 pb-20">
       <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
         <FadeIn>
           <p className="inverse-eyebrow mb-5">About</p>
@@ -36,7 +36,7 @@ const About = () => (
     </section>
 
     {/* Team */}
-    <section className="section-mid py-28 border-b border-border">
+    <section className="section-mid py-28">
       <div className="container mx-auto max-w-4xl px-4 text-center lg:px-8">
         <FadeIn>
           <h2 className="section-title mx-auto max-w-2xl">

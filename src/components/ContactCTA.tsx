@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
 
 const ContactCTA = () => (
-  <section className="section-cta border-y border-white/10 py-24">
+  <section className="section-cta py-24">
     <div className="container mx-auto px-4 lg:px-8 text-center">
       <FadeIn>
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/[52%]">

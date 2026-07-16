@@ -35,52 +35,54 @@ const productModules = [
   },
 ];
 
+const visionTileColors = ["#E6E8EB", "#A9B0BC", "#527BB7", "#D4A11E", "#1B2A41", "#3A3F45"];
+
 const visionCards = [
   {
     title: "Human judgment",
     theme: "Human reasoning",
     image: "/brand/vision-card-human-judgment.png",
-    x: 12,
-    y: 22,
+    x: 17,
+    y: 25,
     desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
   },
   {
     title: "Inspectable reasoning",
     theme: "Human reasoning",
     image: "/brand/vision-card-inspectable-reasoning.png",
-    x: 29,
-    y: 16,
+    x: 31,
+    y: 20,
     desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions.",
   },
   {
     title: "Research culture",
     theme: "Research world",
     image: "/brand/vision-card-research-culture.png",
-    x: 49,
-    y: 17,
+    x: 48,
+    y: 19,
     desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
   },
   {
     title: "Frontier methods",
     theme: "Research world",
     image: "/brand/vision-card-frontier-methods.png",
-    x: 67,
-    y: 16,
+    x: 65,
+    y: 20,
     desc: "We turn causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
   },
   {
     title: "Causal structure",
     theme: "Causal intelligence",
     image: "/brand/vision-card-causal-structure.png",
-    x: 87,
-    y: 25,
+    x: 80,
+    y: 28,
     desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
   },
   {
     title: "Hidden mechanisms",
     theme: "Causal intelligence",
     image: "/brand/vision-card-hidden-mechanisms.png",
-    x: 82,
+    x: 77,
     y: 52,
     desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into testable explanations.",
   },
@@ -88,7 +90,7 @@ const visionCards = [
     title: "Scientific hypotheses",
     theme: "Scientific approach",
     image: "/brand/vision-card-scientific-hypotheses.png",
-    x: 14,
+    x: 18,
     y: 55,
     desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
   },
@@ -96,8 +98,8 @@ const visionCards = [
     title: "Anomaly review",
     theme: "Scientific approach",
     image: "/brand/vision-card-anomaly-review.png",
-    x: 27,
-    y: 80,
+    x: 31,
+    y: 74,
     desc: "Unexpected behavior becomes more useful when it is reviewed against explicit causal expectations rather than treated as unexplained noise.",
   },
   {
@@ -105,15 +107,15 @@ const visionCards = [
     theme: "Clinical decisions",
     image: "/brand/vision-card-auditable-evidence.png",
     x: 56,
-    y: 82,
+    y: 75,
     desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
   },
   {
     title: "Costly decisions",
     theme: "Clinical decisions",
     image: "/brand/vision-card-costly-decisions.png",
-    x: 82,
-    y: 76,
+    x: 78,
+    y: 72,
     desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
   },
 ];
@@ -200,7 +202,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="border-b border-white/10 bg-[#0B0E14] pt-32 pb-16 text-white md:pt-40 md:pb-20">
+      <section className="section-hero pt-32 pb-16 text-white md:pt-40 md:pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
             <motion.div
@@ -209,7 +211,7 @@ const Index = () => {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="inverse-eyebrow mb-5">Boulai</p>
-              <h1 className="font-sans text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.03em] text-white sm:text-[3.4rem] md:text-[4.2rem] lg:text-[4.75rem]">
+              <h1 className="page-title max-w-4xl text-[#E6E8EB]">
                 Scientific AI for clinical decisions.
               </h1>
             </motion.div>
@@ -220,7 +222,7 @@ const Index = () => {
               transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-xl lg:pt-16"
             >
-              <p className="text-[1.15rem] leading-relaxed text-white/68 md:text-[1.25rem]">
+              <p className="font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem]">
                 Boulai is a research and product company that builds causal AI systems for bio-pharma, and clinical
                 research teams: turning clinical and real-world data into auditable evidence.
               </p>
@@ -240,7 +242,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#0F1C2E] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.16)] md:rounded-[34px] ${
+            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#0B0E14] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.22)] md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
@@ -253,8 +255,8 @@ const Index = () => {
                     y1="48"
                     x2={card.x}
                     y2={card.y}
-                    stroke="rgba(255,255,255,0.085)"
-                    strokeWidth={index % 3 === 0 ? "0.075" : "0.055"}
+                    stroke="rgba(230,232,235,0.18)"
+                    strokeWidth={index % 3 === 0 ? "0.1" : "0.08"}
                     className="vision-line-float"
                     style={
                       {
@@ -278,8 +280,8 @@ const Index = () => {
                       y1={card.y}
                       x2={linked.x}
                       y2={linked.y}
-                      stroke="rgba(255,255,255,0.055)"
-                      strokeWidth="0.045"
+                      stroke="rgba(230,232,235,0.12)"
+                      strokeWidth="0.07"
                       className="vision-line-float vision-line-float-soft"
                       style={
                         {
@@ -300,8 +302,8 @@ const Index = () => {
                       y1={card.y}
                       x2={linked.x}
                       y2={linked.y}
-                      stroke="rgba(255,255,255,0.035)"
-                      strokeWidth="0.04"
+                      stroke="rgba(230,232,235,0.1)"
+                      strokeWidth="0.06"
                       className="vision-line-float vision-line-float-soft"
                       style={
                         {
@@ -316,7 +318,7 @@ const Index = () => {
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#0F1C2E]/95 px-8 py-7">
+                <div className="mx-auto max-w-[530px] bg-[#0B0E14]/95 px-8 py-7">
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
                   </h2>
@@ -346,7 +348,10 @@ const Index = () => {
                     aria-label={`Open ${card.title}`}
                   >
                     <span className="block transition-transform duration-300 group-hover:scale-[1.06]">
-                      <span className="block p-0.5 opacity-90 transition group-hover:opacity-100">
+                      <span
+                        className="block overflow-hidden rounded-[10px] p-1 shadow-[0_10px_30px_rgba(0,0,0,0.28)] ring-1 ring-[#E6E8EB]/18 transition group-hover:opacity-100"
+                        style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
+                      >
                         <img
                           src={card.image}
                           alt=""
@@ -354,10 +359,10 @@ const Index = () => {
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="aspect-square w-full object-cover opacity-[0.9] mix-blend-screen saturate-[1.08] contrast-[1.12]"
+                          className="aspect-square w-full rounded-[7px] object-cover opacity-[0.96] saturate-[0.92] contrast-[1.08]"
                         />
                       </span>
-                      <span className="mt-2 block bg-[#0F1C2E]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/60 transition group-hover:text-white/82">
+                      <span className="mt-2 block bg-[#0B0E14]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68 transition group-hover:text-white/90">
                         {card.title}
                       </span>
                     </span>
@@ -373,23 +378,28 @@ const Index = () => {
                   Tap a card to open the idea behind Boulai's vision.
                 </p>
                 <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {visionCards.map((card) => (
+                  {visionCards.map((card, index) => (
                     <button
                       key={card.title}
                       type="button"
                       onClick={() => setActiveVisionCard(card)}
-                      className="flex items-center gap-3 bg-[#E6E8EB]/[0.025] p-3 text-left transition hover:bg-[#E6E8EB]/[0.055] focus:outline-none focus:ring-2 focus:ring-white/45"
+                      className="flex items-center gap-3 rounded-[14px] bg-[#E6E8EB]/[0.04] p-3 text-left transition hover:bg-[#E6E8EB]/[0.08] focus:outline-none focus:ring-2 focus:ring-white/45"
                       aria-label={`Open ${card.title}`}
                     >
-                      <img
-                        src={card.image}
-                        alt=""
-                        width={720}
-                        height={720}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-11 w-11 shrink-0 object-cover opacity-[0.9] mix-blend-screen saturate-[1.08] contrast-[1.12]"
-                      />
+                      <span
+                        className="block h-11 w-11 shrink-0 overflow-hidden rounded-[10px] p-1 ring-1 ring-[#E6E8EB]/18"
+                        style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
+                      >
+                        <img
+                          src={card.image}
+                          alt=""
+                          width={720}
+                          height={720}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full rounded-[7px] object-cover opacity-[0.96] saturate-[0.92] contrast-[1.08]"
+                        />
+                      </span>
                       <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68">
                         {card.title}
                       </span>
@@ -458,7 +468,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-mid border-b border-border py-20">
+      <section className="section-mid py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
@@ -511,7 +521,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="vision" className="section-deep border-b border-border py-24">
+      <section id="vision" className="section-deep py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <FadeIn>
@@ -561,7 +571,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-mid border-b border-border py-24">
+      <section className="section-mid py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <FadeIn>
             <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
@@ -614,7 +624,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="section-deep py-24 border-b border-border">
+      <section className="section-deep py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
             <FadeIn>

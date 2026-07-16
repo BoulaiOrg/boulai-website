@@ -126,7 +126,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero border-b border-white/10 pt-32 pb-20">
+      <section className="section-hero pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
           <FadeIn>
             <p className="inverse-eyebrow mb-5">Contact</p>

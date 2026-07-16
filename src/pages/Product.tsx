@@ -68,7 +68,7 @@ const Product = () => (
     <Navbar />
 
     <main>
-      <section className="section-hero border-b border-white/10 pt-32 pb-20">
+      <section className="section-hero pt-32 pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <p className="inverse-eyebrow mb-5">Boulai Discovery</p>
           <h1 className="page-title mb-7 max-w-4xl">
@@ -82,7 +82,7 @@ const Product = () => (
         </div>
       </section>
 
-      <section className="section-mid border-b border-border py-24">
+      <section className="section-mid py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="max-w-3xl">
@@ -114,7 +114,7 @@ const Product = () => (
         </div>
       </section>
 
-      <section className="section-deep border-b border-border py-24">
+      <section className="section-deep py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">What you buy</p>
