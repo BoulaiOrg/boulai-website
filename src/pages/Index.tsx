@@ -185,8 +185,9 @@ const Index = () => {
     const updateVisionMapState = () => {
       const rect = node.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const shouldExpand = rect.top < viewportHeight * 0.24 && rect.bottom > viewportHeight * 0.42;
-      const shouldCollapse = rect.top > viewportHeight * 0.58;
+      const shouldExpand = rect.top <= viewportHeight * 0.28 && rect.bottom >= viewportHeight * 0.58;
+      const shouldCollapse =
+        window.scrollY <= 12 || rect.top >= viewportHeight * 0.42 || rect.bottom <= viewportHeight * 0.28;
 
       setIsVisionMapExpanded((current) => {
         if (!current && shouldExpand) return true;
@@ -258,7 +259,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:w-[calc(100%-5rem)] md:max-w-[1180px] md:rounded-[34px] ${
+            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
@@ -333,8 +334,8 @@ const Index = () => {
                 })}
               </svg>
 
-              <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#1B2A41]/95 px-8 py-7">
+              <div className="vision-map-copy absolute left-1/2 top-1/2 z-20 hidden w-[min(530px,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 text-center md:block">
+                <div className="bg-[#1B2A41]/95 px-8 py-7">
                   <h2 className="font-display text-[2.35rem] font-normal leading-[1.04] text-white md:text-[3rem]">
                     Boulai is built on scientific intelligence
                   </h2>

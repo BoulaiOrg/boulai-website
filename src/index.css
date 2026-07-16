@@ -215,20 +215,48 @@
   }
 
   .vision-map-shell {
+    background: transparent !important;
+    box-shadow: none !important;
     transition:
-      width 700ms ease-out,
-      max-width 700ms ease-out,
-      margin 700ms ease-out,
       border-radius 700ms ease-out,
       box-shadow 700ms ease-out;
   }
 
+  .vision-map-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 50%;
+    z-index: 0;
+    width: 100%;
+    transform: translateX(-50%);
+    border-radius: inherit;
+    background: #1B2A41;
+    box-shadow: inset 0 0 0 1px rgb(169 176 188 / 0.28);
+    transition:
+      width 760ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-radius 760ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .vision-map-shell > * {
+    position: relative;
+    z-index: 1;
+  }
+
   @media (min-width: 768px) {
-    .vision-map-shell-expanded {
+    .vision-map-shell {
       width: 100vw !important;
       max-width: none !important;
       margin-left: calc((100% - 100vw) / 2);
       margin-right: calc((100% - 100vw) / 2);
+    }
+
+    .vision-map-shell::before {
+      width: calc(100vw - 5rem);
+    }
+
+    .vision-map-shell-expanded::before {
+      width: 100vw;
       border-radius: 28px !important;
       box-shadow:
         inset 0 0 0 1px rgb(255 255 255 / 0.08),
