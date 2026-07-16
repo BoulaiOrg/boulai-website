@@ -180,22 +180,23 @@ const Index = () => {
     const node = visionMapRef.current;
     if (!node || isVisionMapExpanded) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisionMapExpanded(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: "-18% 0px -30% 0px",
-        threshold: 0.18,
-      },
-    );
+    const expandWhenPassed = () => {
+      const rect = node.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.24 && rect.bottom > window.innerHeight * 0.42) {
+        setIsVisionMapExpanded(true);
+        window.removeEventListener("scroll", expandWhenPassed);
+        window.removeEventListener("resize", expandWhenPassed);
+      }
+    };
 
-    observer.observe(node);
+    expandWhenPassed();
+    window.addEventListener("scroll", expandWhenPassed, { passive: true });
+    window.addEventListener("resize", expandWhenPassed);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", expandWhenPassed);
+      window.removeEventListener("resize", expandWhenPassed);
+    };
   }, [isVisionMapExpanded]);
 
   return (
@@ -242,11 +243,11 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#0B0E14] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.22)] md:rounded-[34px] ${
+            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:w-[calc(100%-5rem)] md:max-w-[1180px] md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
-            <div className="relative min-h-[700px] py-10 md:min-h-[740px]">
+            <div className="relative min-h-[560px] py-10 md:min-h-[620px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
                 {visionCards.map((card, index) => (
                   <line
@@ -318,7 +319,7 @@ const Index = () => {
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#0B0E14]/95 px-8 py-7">
+                <div className="mx-auto max-w-[530px] bg-[#1B2A41]/95 px-8 py-7">
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
                   </h2>
@@ -338,7 +339,7 @@ const Index = () => {
                     style={{
                       left: `${card.x}%`,
                       top: `${card.y}%`,
-                      width: index % 4 === 0 ? 84 : 78,
+                      width: index % 4 === 0 ? 54 : 50,
                       "--float-x": `${index % 2 === 0 ? 4 : -3}px`,
                       "--float-y": `${index % 3 === 0 ? 5 : -4}px`,
                       "--float-rotate": `${index % 2 === 0 ? 2.4 : -2.1}deg`,
@@ -349,7 +350,7 @@ const Index = () => {
                   >
                     <span className="block transition-transform duration-300 group-hover:scale-[1.06]">
                       <span
-                        className="block overflow-hidden rounded-[14px] p-1.5 shadow-[0_14px_34px_rgba(0,0,0,0.32)] ring-1 ring-[#E6E8EB]/30 transition group-hover:opacity-100"
+                        className="block overflow-hidden rounded-[11px] p-1 shadow-[0_10px_26px_rgba(0,0,0,0.3)] ring-1 ring-[#E6E8EB]/35 transition group-hover:opacity-100"
                         style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
                       >
                         <img
@@ -359,10 +360,10 @@ const Index = () => {
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="aspect-square w-full scale-[1.72] rounded-[10px] object-cover opacity-100 mix-blend-multiply brightness-[0.62] saturate-[1.4] contrast-[2.15]"
+                          className="aspect-square w-full scale-[1.84] rounded-[8px] object-cover opacity-100 mix-blend-multiply brightness-[0.58] saturate-[1.55] contrast-[2.35]"
                         />
                       </span>
-                      <span className="mt-2 block bg-[#0B0E14]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68 transition group-hover:text-white/90">
+                      <span className="mt-2 block bg-[#1B2A41]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/72 transition group-hover:text-white/90">
                         {card.title}
                       </span>
                     </span>

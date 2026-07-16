@@ -217,6 +217,7 @@
   .vision-map-shell {
     transition:
       width 700ms ease-out,
+      max-width 700ms ease-out,
       margin 700ms ease-out,
       border-radius 700ms ease-out,
       box-shadow 700ms ease-out;
@@ -224,7 +225,8 @@
 
   @media (min-width: 768px) {
     .vision-map-shell-expanded {
-      width: 100vw;
+      width: 100vw !important;
+      max-width: none !important;
       margin-left: calc((100% - 100vw) / 2);
       margin-right: calc((100% - 100vw) / 2);
       border-radius: 28px !important;
