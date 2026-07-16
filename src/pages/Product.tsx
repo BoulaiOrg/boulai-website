@@ -97,7 +97,7 @@ const Product = () => (
               </p>
             </div>
 
-            <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+            <div className="grid gap-px overflow-hidden rounded-[18px] border border-border bg-border md:grid-cols-2">
               {productLevers.map((item, index) => (
                 <article key={item.title} className="bg-card p-7">
                   <div className="flex items-start gap-5">

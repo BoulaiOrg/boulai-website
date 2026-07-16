@@ -412,7 +412,7 @@ const Index = () => {
                     onClick={() => setActiveVisionCard(null)}
                   >
                     <motion.article
-                      className="w-full max-w-[380px] overflow-hidden border border-white/12 bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
+                      className="w-full max-w-[380px] overflow-hidden rounded-[18px] border border-white/12 bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
                       initial={{ opacity: 0, y: 18, scale: 0.96 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 12, scale: 0.97 }}
