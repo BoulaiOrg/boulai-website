@@ -34,25 +34,6 @@ const productModules = [
   },
 ];
 
-const scientificIntelligenceCards = [
-  {
-    title: "Human judgment",
-    desc: "Expert assumptions, uncertainty, and alternative explanations stay visible so teams can reason with the system.",
-  },
-  {
-    title: "Causal structure",
-    desc: "Signals are interpreted through explicit mechanisms, not treated as isolated correlations.",
-  },
-  {
-    title: "Auditable evidence",
-    desc: "Analytical choices, model outputs, and next-step hypotheses remain traceable and open to challenge.",
-  },
-  {
-    title: "Scientific hypotheses",
-    desc: "Findings are translated into testable branches that teams can validate, reject, or refine.",
-  },
-];
-
 const methodPillars = [
   {
     title: "State-of-the-art research",
@@ -300,32 +281,6 @@ const Index = () => {
             ))}
           </div>
 
-          <FadeIn delay={0.15}>
-            <div className="mt-20 grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-              <div className="max-w-2xl">
-                <p className="eyebrow mb-4">Scientific intelligence</p>
-                <h2 className="section-title">Made inspectable.</h2>
-                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Boulai combines human judgment, causal structure, statistical evidence, and machine reasoning into
-                  workflows that teams can inspect, challenge, and reuse.
-                </p>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {scientificIntelligenceCards.map((item, index) => (
-                  <div key={item.title} className="premium-panel p-6">
-                    <div className="flex items-start gap-4">
-                      <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
-                      <div>
-                        <h3 className="card-title">{item.title}</h3>
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
