@@ -156,7 +156,7 @@ const Product = () => (
                   />
                   <div>
                     <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                      {engine.name} {engine.version}
+                      {engine.name}
                     </p>
                     <h3 className="card-title mb-4">{engine.title}</h3>
                     <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>

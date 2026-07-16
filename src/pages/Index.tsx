@@ -130,7 +130,7 @@ const Index = () => {
             <div className="max-w-3xl">
               <h2 className="section-title">Introducing Boulai Discovery</h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                It launches with three modules — Atlas 1.0, Icarus 1.0, and Locus 1.0 — built to help teams analyze
+                It launches with three modules — Atlas, Icarus, and Locus — built to help teams analyze
                 biomedical data, uncover hidden causal drivers, and stress-test clinical hypotheses.
               </p>
             </div>
@@ -156,7 +156,7 @@ const Index = () => {
                       />
                       <div>
                         <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[#3A3F45]/75">
-                          {engine.name} {engine.version}
+                          {engine.name}
                         </p>
                         <h3 className="card-title mb-4">{engine.title}</h3>
                         <p className="text-sm leading-relaxed text-[#3A3F45]/85">{engine.desc}</p>
