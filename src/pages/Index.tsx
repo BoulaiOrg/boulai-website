@@ -474,7 +474,7 @@ const Index = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {productModules.map((engine, index) => (
                 <FadeIn key={engine.name} delay={index * 0.08}>
-                  <article className="premium-panel h-full p-8">
+                  <article className="premium-panel h-full border-[#A9B0BC]/70 bg-[#A9B0BC] p-8 text-[#0B0E14]">
                     <div className="flex items-start gap-5">
                       <img
                         src={engine.logo}
@@ -486,14 +486,14 @@ const Index = () => {
                         className="mt-0.5 h-8 w-8 shrink-0 select-none object-contain opacity-75 brightness-0"
                       />
                       <div>
-                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[#313844]/75">
                           {engine.name} {engine.version}
                         </p>
                         <h3 className="card-title mb-4">{engine.title}</h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{engine.desc}</p>
+                        <p className="text-sm leading-relaxed text-[#313844]/85">{engine.desc}</p>
                       </div>
                     </div>
-                    <div className="mt-8 grid gap-3 border-t border-border/70 pt-5 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    <div className="mt-8 grid gap-3 border-t border-[#0B0E14]/15 pt-5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#313844]/70">
                       <div className="flex items-center justify-between gap-4">
                         <span>Release</span>
                         <span>{engine.version}</span>
