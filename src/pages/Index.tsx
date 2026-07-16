@@ -42,16 +42,16 @@ const visionCards = [
     title: "Human judgment",
     theme: "Human reasoning",
     image: "/brand/vision-card-human-judgment.png",
-    x: 17,
-    y: 25,
+    x: 14,
+    y: 22,
     desc: "Boulai is built to make expert judgment more powerful, not less necessary. The system exposes assumptions, alternatives, and uncertainty so scientists can reason with the model instead of accepting a black-box answer.",
   },
   {
     title: "Inspectable reasoning",
     theme: "Human reasoning",
     image: "/brand/vision-card-inspectable-reasoning.png",
-    x: 31,
-    y: 20,
+    x: 29,
+    y: 15,
     desc: "Scientific reasoning becomes stronger when each conclusion can be traced back to evidence, causal structure, and explicit assumptions.",
   },
   {
@@ -59,47 +59,47 @@ const visionCards = [
     theme: "Research world",
     image: "/brand/vision-card-research-culture.png",
     x: 48,
-    y: 19,
+    y: 13,
     desc: "Boulai is a research-and-product company. Its methods are developed with academic and scientific partners so product work remains anchored in frontier methodology and real research practice.",
   },
   {
     title: "Frontier methods",
     theme: "Research world",
     image: "/brand/vision-card-frontier-methods.png",
-    x: 65,
-    y: 20,
+    x: 68,
+    y: 15,
     desc: "We turn causal inference, statistics, and machine learning into proprietary systems designed for clinical and translational research.",
   },
   {
     title: "Causal structure",
     theme: "Causal intelligence",
     image: "/brand/vision-card-causal-structure.png",
-    x: 80,
-    y: 28,
+    x: 84,
+    y: 24,
     desc: "Causal intelligence asks what could be driving a signal, which mechanisms are plausible, and which assumptions must hold. This is the difference between pattern recognition and scientific reasoning.",
   },
   {
     title: "Hidden mechanisms",
     theme: "Causal intelligence",
     image: "/brand/vision-card-hidden-mechanisms.png",
-    x: 77,
-    y: 52,
+    x: 84,
+    y: 54,
     desc: "Clinical data often contains symptoms of causes that were not directly measured. Boulai helps teams surface hidden structure and translate it into testable explanations.",
   },
   {
     title: "Scientific hypotheses",
     theme: "Scientific approach",
     image: "/brand/vision-card-scientific-hypotheses.png",
-    x: 18,
-    y: 55,
+    x: 15,
+    y: 58,
     desc: "Boulai is designed to generate testable hypotheses from clinical and real-world data before teams commit years of work to a weak signal or a misleading explanation.",
   },
   {
     title: "Anomaly review",
     theme: "Scientific approach",
     image: "/brand/vision-card-anomaly-review.png",
-    x: 31,
-    y: 74,
+    x: 30,
+    y: 80,
     desc: "Unexpected behavior becomes more useful when it is reviewed against explicit causal expectations rather than treated as unexplained noise.",
   },
   {
@@ -107,15 +107,15 @@ const visionCards = [
     theme: "Clinical decisions",
     image: "/brand/vision-card-auditable-evidence.png",
     x: 56,
-    y: 75,
+    y: 82,
     desc: "Scientific AI should produce evidence that can be inspected, reproduced, and challenged. Boulai keeps uncertainty, assumptions, and analytical choices visible.",
   },
   {
     title: "Costly decisions",
     theme: "Clinical decisions",
     image: "/brand/vision-card-costly-decisions.png",
-    x: 78,
-    y: 72,
+    x: 80,
+    y: 78,
     desc: "In clinical development, a confident but fragile conclusion can redirect years of investment. Boulai stress-tests causal assumptions before evidence becomes a portfolio or trial decision.",
   },
 ];
@@ -178,26 +178,41 @@ const Index = () => {
 
   useEffect(() => {
     const node = visionMapRef.current;
-    if (!node || isVisionMapExpanded) return;
+    if (!node) return;
 
-    const expandWhenPassed = () => {
+    let frame = 0;
+
+    const updateVisionMapState = () => {
       const rect = node.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.24 && rect.bottom > window.innerHeight * 0.42) {
-        setIsVisionMapExpanded(true);
-        window.removeEventListener("scroll", expandWhenPassed);
-        window.removeEventListener("resize", expandWhenPassed);
-      }
+      const viewportHeight = window.innerHeight;
+      const shouldExpand = rect.top < viewportHeight * 0.24 && rect.bottom > viewportHeight * 0.42;
+      const shouldCollapse = rect.top > viewportHeight * 0.58;
+
+      setIsVisionMapExpanded((current) => {
+        if (!current && shouldExpand) return true;
+        if (current && shouldCollapse) return false;
+        return current;
+      });
     };
 
-    expandWhenPassed();
-    window.addEventListener("scroll", expandWhenPassed, { passive: true });
-    window.addEventListener("resize", expandWhenPassed);
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        updateVisionMapState();
+        frame = 0;
+      });
+    };
+
+    updateVisionMapState();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
 
     return () => {
-      window.removeEventListener("scroll", expandWhenPassed);
-      window.removeEventListener("resize", expandWhenPassed);
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
     };
-  }, [isVisionMapExpanded]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
