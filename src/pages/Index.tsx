@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
@@ -171,6 +171,30 @@ const industries = [
 
 const Index = () => {
   const [activeVisionCard, setActiveVisionCard] = useState<(typeof visionCards)[number] | null>(null);
+  const visionMapRef = useRef<HTMLDivElement>(null);
+  const [isVisionMapExpanded, setIsVisionMapExpanded] = useState(false);
+
+  useEffect(() => {
+    const node = visionMapRef.current;
+    if (!node || isVisionMapExpanded) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisionMapExpanded(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: "-18% 0px -30% 0px",
+        threshold: 0.18,
+      },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [isVisionMapExpanded]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -212,10 +236,13 @@ const Index = () => {
           </div>
 
           <motion.div
+            ref={visionMapRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="vision-map-shell group/vision relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px]"
+            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px] ${
+              isVisionMapExpanded ? "vision-map-shell-expanded" : ""
+            }`}
           >
             <div className="relative min-h-[700px] py-10 md:min-h-[740px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -289,8 +316,7 @@ const Index = () => {
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7 transition-transform duration-700 ease-out md:group-hover/vision:scale-[1.015]">
-                  <p className="inverse-eyebrow mb-5">Boulai vision</p>
+                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7">
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
                   </h2>
@@ -340,7 +366,6 @@ const Index = () => {
               </div>
 
               <div className="md:hidden">
-                <p className="inverse-eyebrow mb-5">Boulai vision</p>
                 <h2 className="font-display text-[2.35rem] font-normal leading-[1.05] text-white">
                   Scientific reasoning at scale.
                 </h2>
