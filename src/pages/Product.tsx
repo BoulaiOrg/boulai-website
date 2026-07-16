@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import BoulaiListDot from "@/components/BoulaiListDot";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,33 +5,30 @@ import Footer from "@/components/Footer";
 const engines = [
   {
     name: "Atlas",
-    image: "/brand/product-atlas-instrument.png",
-    imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
-    title: "Run frontier analysis in minimal time.",
-    role: "Robust auditable analysis",
+    logo: "/brand/module-atlas-logo.png",
+    logoAlt: "Atlas 1.0",
     description:
-      "Produce robust, auditable analyses at the frontier of statistics and econometrics across clinical and real-world datasets, with transparent assumptions, uncertainty, and reproducible outputs.",
-    payoff: "Value: expert-grade evidence faster, with an audit trail your team can defend.",
+      "Atlas turns clinical and real-world datasets into robust, auditable statistical evidence in minimal time. It is built for teams that need frontier-grade analysis without losing the ability to inspect assumptions, uncertainty, specifications, and reproducibility.",
+    payoff:
+      "Use it when the question is not only what the data says, but whether the conclusion is strong enough to defend in a clinical, regulatory, or portfolio discussion.",
   },
   {
     name: "Icarus",
-    image: "/brand/product-icarus-instrument.png",
-    imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
-    title: "Explain trial failures beyond measured data.",
-    role: "External cause discovery",
+    logo: "/brand/module-icarus-logo.png",
+    logoAlt: "Icarus 1.0",
     description:
-      "Surface candidate external or unmeasured causes that may explain trial failures, unexpected subgroup behavior, or weak replication, then turn them into testable hypotheses for scientific review.",
-    payoff: "Value: sharper failure diagnosis when measured data alone does not explain the result.",
+      "Icarus searches for plausible external or unmeasured causal drivers behind trial failures, weak replication, or unexpected subgroup behavior. It turns causal discovery outputs into testable explanations that scientists can review, challenge, and prioritize.",
+    payoff:
+      "Use it when measured variables do not fully explain what happened and the team needs sharper failure diagnosis before deciding what to rescue, redesign, or stop.",
   },
   {
     name: "Locus",
-    image: "/brand/product-locus-instrument.png",
-    imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
-    title: "Test clinical theories and spot anomalies.",
-    role: "Auditable theory testing",
+    logo: "/brand/module-locus-logo.png",
+    logoAlt: "Locus 1.0",
     description:
-      "Stress-test clinical theories encoded as causal DAGs, detect anomalous behavior against expected mechanisms, and produce auditable evidence in minimal time.",
-    payoff: "Value: faster theory validation and anomaly detection before costly clinical decisions.",
+      "Locus stress-tests scientist-authored clinical theories against data. It compares observed behavior with the causal structure the team believes should hold, surfaces anomalies, and makes competing mechanisms easier to inspect.",
+    payoff:
+      "Use it when a clinical theory needs to be tested quickly and auditable evidence is required before committing to a costly trial, indication, or portfolio decision.",
   },
 ];
 
@@ -72,14 +67,6 @@ const Product = () => (
             The instrumentation layer for translational, clinical, and discovery research.
           </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" className="bg-white text-[#0B0E14] hover:bg-white/[92%]" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-            <Button className="border border-white/[14%] bg-transparent text-white hover:bg-white hover:text-[#0B0E14]" size="lg" asChild>
-              <a href="/#vision">View the Approach</a>
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -128,34 +115,27 @@ const Product = () => (
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {engines.map((engine, index) => (
+            {engines.map((engine) => (
               <article
                 key={engine.name}
-                className="premium-panel h-full overflow-hidden"
+                className="premium-panel h-full overflow-hidden bg-white"
               >
-                <figure className="h-56 border-b border-border/70 bg-white md:h-48">
+                <figure className="flex h-28 items-center bg-white px-7 pt-7 md:h-32">
                   <img
-                    src={engine.image}
-                    alt={engine.imageAlt}
-                    width={720}
-                    height={720}
+                    src={engine.logo}
+                    alt={engine.logoAlt}
+                    width={860}
+                    height={200}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full select-none object-cover object-center opacity-[0.92] mix-blend-multiply saturate-[0.78] contrast-[1.03]"
+                    className="h-full max-h-16 w-full select-none object-contain object-left"
                   />
                 </figure>
-                <div className="flex items-start gap-5 p-8">
-                  <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
-                  <div>
-                    <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                      {engine.name} / {engine.role}
-                    </p>
-                    <h3 className="card-title mb-4">{engine.title}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
-                    <p className="mt-6 border-t border-border/70 pt-4 text-sm leading-relaxed text-foreground/[72%]">
-                      {engine.payoff}
-                    </p>
-                  </div>
+                <div className="px-8 pb-8 pt-6">
+                  <p className="text-sm leading-relaxed text-muted-foreground">{engine.description}</p>
+                  <p className="mt-6 border-t border-border/70 pt-4 text-sm leading-relaxed text-foreground/[72%]">
+                    {engine.payoff}
+                  </p>
                 </div>
               </article>
             ))}

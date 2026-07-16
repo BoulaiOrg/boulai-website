@@ -11,27 +11,18 @@ import Footer from "@/components/Footer";
 const productModules = [
   {
     name: "Atlas",
-    role: "Robust auditable analysis",
-    image: "/brand/product-atlas-instrument.png",
-    imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
-    title: "Run frontier analysis in minimal time.",
-    desc: "Robust, auditable statistical and econometric analyses with transparent assumptions, uncertainty, and reproducible outputs.",
+    logo: "/brand/module-atlas-logo.png",
+    logoAlt: "Atlas 1.0",
   },
   {
     name: "Icarus",
-    role: "External cause discovery",
-    image: "/brand/product-icarus-instrument.png",
-    imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
-    title: "Explain trial failures beyond measured data.",
-    desc: "Surface candidate external or unmeasured causes that may explain trial failures, unexpected subgroup behavior, or weak replication.",
+    logo: "/brand/module-icarus-logo.png",
+    logoAlt: "Icarus 1.0",
   },
   {
     name: "Locus",
-    role: "Auditable theory testing",
-    image: "/brand/product-locus-instrument.png",
-    imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
-    title: "Test clinical theories and spot anomalies.",
-    desc: "Stress-test clinical theories encoded as causal DAGs and detect anomalous behavior against expected mechanisms.",
+    logo: "/brand/module-locus-logo.png",
+    logoAlt: "Locus 1.0",
   },
 ];
 
@@ -465,28 +456,18 @@ const Index = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {productModules.map((engine, index) => (
                 <FadeIn key={engine.name} delay={index * 0.08}>
-                  <article className="premium-panel h-full overflow-hidden">
-                    <figure className="h-56 border-b border-border/70 bg-white md:h-48">
+                  <article className="premium-panel flex min-h-40 items-center bg-white p-8">
+                    <figure className="w-full">
                       <img
-                        src={engine.image}
-                        alt={engine.imageAlt}
-                        width={720}
-                        height={720}
+                        src={engine.logo}
+                        alt={engine.logoAlt}
+                        width={860}
+                        height={200}
                         loading="lazy"
                         decoding="async"
-                        className="h-full w-full select-none object-cover object-center opacity-[0.92] mix-blend-multiply saturate-[0.78] contrast-[1.03]"
+                        className="h-16 w-full select-none object-contain object-left md:h-20"
                       />
                     </figure>
-                    <div className="flex items-start gap-5 p-8">
-                      <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
-                      <div>
-                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                          {engine.name} / {engine.role}
-                        </p>
-                        <h3 className="card-title mb-4">{engine.title}</h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{engine.desc}</p>
-                      </div>
-                    </div>
                   </article>
                 </FadeIn>
               ))}
