@@ -335,8 +335,8 @@ const Index = () => {
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
                 <div className="mx-auto max-w-[530px] bg-[#1B2A41]/95 px-8 py-7">
-                  <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
-                    Boulai is built around scientific reasoning
+                  <h2 className="font-display text-[2.35rem] font-normal leading-[1.04] text-white md:text-[3rem]">
+                    Boulai is built on scientific intelligence
                   </h2>
                   <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-white/58">
                     Human judgment, causal models, and scientific evidence working around the same inspectable system.
@@ -387,8 +387,8 @@ const Index = () => {
               </div>
 
               <div className="md:hidden">
-                <h2 className="font-display text-[2.35rem] font-normal leading-[1.05] text-white">
-                  Boulai is built around scientific reasoning
+                <h2 className="font-display text-[2.05rem] font-normal leading-[1.06] text-white">
+                  Boulai is built on scientific intelligence
                 </h2>
                 <p className="mt-5 text-sm leading-relaxed text-white/62">
                   Tap a card to open the idea behind Boulai's vision.
