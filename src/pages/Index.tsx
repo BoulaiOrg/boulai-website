@@ -244,12 +244,6 @@ const Index = () => {
                   sit between academia and industry, turning rigorous methods into workflows that make clinical and
                   discovery decisions more targeted, traceable, and faster.
                 </p>
-                <p className="mt-5 text-base leading-relaxed text-foreground/[78%]">
-                  In parallel, we develop internal research that feeds the next generation of products. Boulai Discovery
-                  is an expression of this model: a scientific workbench that turns clinical and real-world data
-                  into hypotheses, anomalies, and causal evidence teams can inspect before committing to expensive
-                  decisions.
-                </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
                 <p className="eyebrow mb-6">What Boulai integrates</p>
