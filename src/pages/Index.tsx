@@ -30,7 +30,7 @@ const productModules = [
     logoAlt: "Locus logo",
     version: "1.0",
     title: "Causal stress-testing.",
-    desc: "Test clinical hypotheses against data and surface where assumptions fail.",
+    desc: "Test clinical hypotheses against data and find where assumptions fail.",
   },
 ];
 
