@@ -10,11 +10,11 @@ const engines = [
     version: "1.0",
     image: "/brand/product-atlas-instrument.png",
     imageAlt: "Layered analytical interface for robust auditable statistical analysis.",
-    title: "Run statistical and econometric analyses faster.",
+    title: "Compress analysis cycles without losing rigor.",
     description:
-      "Atlas is the statistical and econometric analysis engine of Boulai Discovery. It helps scientists, analysts, and biopharma teams run the analyses they would normally build in R, Stata, Python, or SAS, but faster, with guided model selection, automatic diagnostics, and reusable outputs.",
+      "Atlas is the analysis workbench of Boulai Discovery. It helps biostatistics, translational, and clinical strategy teams run the analyses they would normally build in R, Stata, Python, or SAS, but faster, with guided model selection, automatic diagnostics, and reusable outputs.",
     payoff:
-      "Use it to profile datasets, inspect missingness and variable quality, compare groups, test associations, fit regression models, evaluate treatment effects, check balance, explore robustness, and generate audit-ready tables and summaries.",
+      "Use it to profile datasets, inspect missingness and variable quality, compare cohorts, fit statistical models, evaluate treatment effects, check balance, explore robustness, and generate audit-ready tables and summaries.",
   },
   {
     name: "Icarus",
@@ -23,11 +23,11 @@ const engines = [
     version: "1.0",
     image: "/brand/product-icarus-instrument.png",
     imageAlt: "Clinical signal layers mapping measured data to candidate external causes.",
-    title: "Detect hidden structure in biomedical datasets.",
+    title: "Find hidden drivers behind response and failure.",
     description:
-      "Icarus is the latent discovery engine of Boulai Discovery. It is designed for datasets where the important structure may not be fully explained by observed variables alone: hidden patient subgroups, unobserved biological programs, technical sources of variation, or latent confounding patterns.",
+      "Icarus is the discovery engine of Boulai Discovery. It is designed for datasets where observed variables do not fully explain what happened: hidden responder groups, unmeasured biological programs, technical sources of variation, or latent confounding patterns.",
     payoff:
-      "Use it when there is no mature causal model yet, when heterogeneity is unexplained, or when a team needs hypothesis-generating evidence on latent drivers, subgroup memberships, source-expression patterns, and candidate interpretations for follow-up.",
+      "Use it when trial outcomes are heterogeneous, when a signal fails without an obvious explanation, or when a team needs hypothesis-generating evidence on candidate drivers, subgroup memberships, and follow-up interpretations.",
   },
   {
     name: "Locus",
@@ -36,30 +36,30 @@ const engines = [
     version: "1.0",
     image: "/brand/product-locus-instrument.png",
     imageAlt: "Causal graph instrument for stress-testing clinical theories and anomalies.",
-    title: "Stress-test declared causal theories.",
+    title: "Stress-test causal hypotheses before they drive decisions.",
     description:
       "Locus is the causal theory stress-testing engine of Boulai Discovery. It starts from a scientist-authored DAG and asks where the declared theory fails to explain the data, localizing stress to the nodes, relationships, or mechanisms most responsible for the mismatch.",
     payoff:
-      "Use it to evaluate whether a proposed mechanism is compatible with observed data, identify strained causal neighborhoods, and generate audited mechanism hypotheses with rejected alternatives, evidence IDs, audit strength, and suggested follow-up branches.",
+      "Use it to evaluate whether a clinical mechanism is compatible with observed data, identify strained causal neighborhoods, compare alternative explanations, and generate audited next-step hypotheses with rejected alternatives and evidence IDs.",
   },
 ];
 
 const productLevers = [
   {
-    title: "Recover decision time",
-    desc: "Compress repeated exploratory analysis into inspectable causal workflows, so teams spend less time chasing weak or redundant signals.",
+    title: "Use existing data harder",
+    desc: "Turn clinical, real-world, and translational datasets into structured analyses before teams collect more data or commit to a new study.",
   },
   {
-    title: "Reduce false confidence",
+    title: "Reduce decision risk",
     desc: "Stress-test assumptions, subgroup patterns, and alternative mechanisms before they become trial, biomarker, or portfolio commitments.",
   },
   {
-    title: "Find patient heterogeneity",
-    desc: "Detect response patterns and hidden clinical structure that average effects can obscure, especially across complex patient-level data.",
+    title: "Find responder structure",
+    desc: "Detect heterogeneous response patterns, candidate subgroups, and hidden clinical structure that average effects can obscure.",
   },
   {
-    title: "Protect missed opportunities",
-    desc: "Generate testable hypotheses from clinical and real-world evidence, helping teams see plausible paths before they are discarded too early.",
+    title: "Move to the next step",
+    desc: "Translate analyses into traceable hypotheses, follow-up branches, and decision-ready summaries teams can inspect together.",
   },
 ];
 
@@ -76,9 +76,8 @@ const Product = () => (
             </h1>
 
             <p className="max-w-2xl font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem] lg:pt-4">
-              The most advanced AI scientific workbench for biopharma teams: it helps analyze biomedical data,
-              uncover hidden causal drivers, stress-test causal hypotheses (DAGs), and turn results into traceable,
-              evidence-backed next steps.
+              The AI scientific workbench for biopharma and clinical research teams: analyze biomedical data, uncover
+              hidden causal drivers, stress-test DAGs, and turn results into traceable, evidence-backed next steps.
             </p>
           </div>
         </div>
@@ -90,12 +89,13 @@ const Product = () => (
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Why it matters</p>
               <h2 className="section-title">
-                Built for the cost of being wrong.
+                Built for the cost of slow or fragile decisions.
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Clinical R&amp;D does not only lose money when a trial fails. It loses time when teams pursue weak
-                signals, over-trust subgroup patterns, or miss mechanisms hidden in patient-level data. Boulai
-                Discovery helps teams inspect uncertainty earlier, before it becomes an expensive decision.
+                signals, over-trust subgroup patterns, miss mechanisms hidden in patient-level data, or wait too long
+                to decide what the evidence supports. Boulai Discovery helps teams inspect uncertainty earlier, before
+                it becomes an expensive commitment.
               </p>
             </div>
 
@@ -120,11 +120,11 @@ const Product = () => (
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">What you buy</p>
-            <h2 className="section-title">Decision-grade evidence before expensive commitments.</h2>
+            <h2 className="section-title">A scientific workbench for evidence-backed clinical decisions.</h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Boulai Discovery is not a dashboard or a generic AI chat layer. It is a causal analysis product that helps
-              teams decide which signals to trust, which hypotheses to test next, and which assumptions are too weak to
-              carry into trial or portfolio decisions.
+              Boulai Discovery is not a dashboard or a generic AI chat layer. It is a modular causal analysis product
+              for teams that need to decide which signals to trust, which patient groups or mechanisms deserve follow-up,
+              and which assumptions are too weak to carry into trial or portfolio decisions.
             </p>
           </div>
 

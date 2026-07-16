@@ -14,24 +14,24 @@ const productModules = [
     logo: "/brand/module-atlas-logo.png",
     logoAlt: "Atlas logo",
     version: "1.0",
-    title: "Statistical and econometric workbench.",
-    desc: "Run statistical and econometric analyses faster, using established methods with guided diagnostics and audit-ready outputs.",
+    title: "Analysis workbench.",
+    desc: "Compress statistical and econometric workflows into guided, audit-ready analyses.",
   },
   {
     name: "Icarus",
     logo: "/brand/module-icarus-logo.png",
     logoAlt: "Icarus logo",
     version: "1.0",
-    title: "Latent discovery engine.",
-    desc: "Detect hidden drivers, latent subgroups, and unobserved structure in biomedical datasets.",
+    title: "Discovery engine.",
+    desc: "Find hidden drivers, responder structure, and candidate explanations in biomedical data.",
   },
   {
     name: "Locus",
     logo: "/brand/module-locus-logo.png",
     logoAlt: "Locus logo",
     version: "1.0",
-    title: "Causal theory stress-testing.",
-    desc: "Stress-test a causal DAG, localize where the theory fails, and generate audited mechanism hypotheses.",
+    title: "Causal stress-testing.",
+    desc: "Test clinical hypotheses against data and surface where assumptions fail.",
   },
 ];
 
@@ -239,8 +239,8 @@ const Index = () => {
               className="max-w-xl lg:pt-16"
             >
               <p className="font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem]">
-                Boulai is a research and product company that builds causal AI systems for bio-pharma, and clinical
-                research teams: turning clinical and real-world data into auditable evidence.
+                Boulai is a research and product company building causal AI systems for biopharma and clinical research
+                teams: turning clinical and real-world data into auditable analyses and evidence-backed next steps.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
@@ -682,8 +682,8 @@ const Index = () => {
                   Boulai Discovery is the first product built on this approach.
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">
-                  It helps teams analyze scientific datasets, explore causal hypotheses, and identify patterns that
-                  deserve deeper validation.
+                  It helps teams use clinical, real-world, and translational data to find responder structure,
+                  stress-test causal hypotheses, and produce traceable next steps.
                 </p>
               </div>
               <div className="flex lg:justify-end">
