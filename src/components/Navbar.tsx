@@ -24,6 +24,13 @@ const Navbar = () => {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  const handleHomeClick = () => {
+    setMobileOpen(false);
+    window.setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, 0);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -34,7 +41,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center" aria-label="Boulai home">
+        <Link to="/" onClick={handleHomeClick} className="flex items-center" aria-label="Boulai home">
           <img
             src="/brand/boulai-logo.png?v=8"
             alt="Boulai"
