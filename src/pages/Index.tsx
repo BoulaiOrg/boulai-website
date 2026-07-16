@@ -249,7 +249,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-xl lg:pt-16"
+              className="max-w-xl"
             >
               <p className="font-display text-[1.2rem] font-normal leading-[1.24] text-[#E6E8EB]/72 md:text-[1.34rem]">
                 Boulai is a research and product company building causal AI systems for biopharma and clinical research
