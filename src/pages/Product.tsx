@@ -83,15 +83,15 @@ const Product = () => (
         </div>
       </section>
 
-      <section className="section-mid py-24">
+      <section className="section-mid pt-16 pb-14 md:pt-20 md:pb-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Why it matters</p>
               <h2 className="section-title">
                 Built for the cost of slow or fragile decisions.
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Clinical R&amp;D does not only lose money when a trial fails. It loses time when teams pursue weak
                 signals, over-trust subgroup patterns, miss mechanisms hidden in patient-level data, or wait too long
                 to decide what the evidence supports. Boulai Discovery helps teams inspect uncertainty earlier, before
@@ -101,7 +101,7 @@ const Product = () => (
 
             <div className="grid gap-px overflow-hidden rounded-[18px] border border-border bg-border md:grid-cols-2">
               {productLevers.map((item, index) => (
-                <article key={item.title} className="bg-card p-7">
+                <article key={item.title} className="bg-card p-6">
                   <div className="flex items-start gap-5">
                     <BoulaiListDot count={index + 1} className="mt-1 text-primary" />
                     <div>
@@ -116,7 +116,7 @@ const Product = () => (
         </div>
       </section>
 
-      <section className="section-deep pt-14 pb-24">
+      <section className="section-deep pt-8 pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="section-title">A scientific workbench for evidence-backed clinical decisions.</h2>
