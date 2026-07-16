@@ -35,7 +35,7 @@ const productModules = [
   },
 ];
 
-const visionTileColors = ["#E6E8EB", "#A9B0BC", "#527BB7", "#D4A11E", "#1B2A41", "#3A3F45"];
+const visionTileColors = ["#E6E8EB", "#A9B0BC", "#E6E8EB", "#D4A11E"];
 
 const visionCards = [
   {
@@ -338,7 +338,7 @@ const Index = () => {
                     style={{
                       left: `${card.x}%`,
                       top: `${card.y}%`,
-                      width: index % 4 === 0 ? 64 : 58,
+                      width: index % 4 === 0 ? 84 : 78,
                       "--float-x": `${index % 2 === 0 ? 4 : -3}px`,
                       "--float-y": `${index % 3 === 0 ? 5 : -4}px`,
                       "--float-rotate": `${index % 2 === 0 ? 2.4 : -2.1}deg`,
@@ -349,7 +349,7 @@ const Index = () => {
                   >
                     <span className="block transition-transform duration-300 group-hover:scale-[1.06]">
                       <span
-                        className="block overflow-hidden rounded-[10px] p-1 shadow-[0_10px_30px_rgba(0,0,0,0.28)] ring-1 ring-[#E6E8EB]/18 transition group-hover:opacity-100"
+                        className="block overflow-hidden rounded-[14px] p-1.5 shadow-[0_14px_34px_rgba(0,0,0,0.32)] ring-1 ring-[#E6E8EB]/30 transition group-hover:opacity-100"
                         style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
                       >
                         <img
@@ -359,7 +359,7 @@ const Index = () => {
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="aspect-square w-full rounded-[7px] object-cover opacity-[0.96] saturate-[0.92] contrast-[1.08]"
+                          className="aspect-square w-full scale-[1.72] rounded-[10px] object-cover opacity-100 mix-blend-multiply brightness-[0.62] saturate-[1.4] contrast-[2.15]"
                         />
                       </span>
                       <span className="mt-2 block bg-[#0B0E14]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68 transition group-hover:text-white/90">
@@ -387,7 +387,7 @@ const Index = () => {
                       aria-label={`Open ${card.title}`}
                     >
                       <span
-                        className="block h-11 w-11 shrink-0 overflow-hidden rounded-[10px] p-1 ring-1 ring-[#E6E8EB]/18"
+                        className="block h-14 w-14 shrink-0 overflow-hidden rounded-[14px] p-1.5 ring-1 ring-[#E6E8EB]/30"
                         style={{ backgroundColor: visionTileColors[index % visionTileColors.length] }}
                       >
                         <img
@@ -397,7 +397,7 @@ const Index = () => {
                           height={720}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full rounded-[7px] object-cover opacity-[0.96] saturate-[0.92] contrast-[1.08]"
+                          className="h-full w-full scale-[1.72] rounded-[10px] object-cover opacity-100 mix-blend-multiply brightness-[0.62] saturate-[1.4] contrast-[2.15]"
                         />
                       </span>
                       <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/68">
