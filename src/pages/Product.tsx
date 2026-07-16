@@ -132,7 +132,7 @@ const Product = () => (
                 key={engine.name}
                 className="premium-panel h-full overflow-hidden"
               >
-                <figure className="h-56 border-b border-border/70 bg-white md:h-48">
+                <figure className="h-56 border-b border-border/70 bg-[#E6E8EB] md:h-48">
                   <img
                     src={engine.image}
                     alt={engine.imageAlt}

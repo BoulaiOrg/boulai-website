@@ -225,10 +225,10 @@ const Index = () => {
                 research teams: turning clinical and real-world data into auditable evidence.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button className="bg-white text-[#0B0E14] hover:bg-white/88" size="lg" asChild>
+                <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
                   <Link to="/product">Explore Product</Link>
                 </Button>
-                <Button className="border border-white/22 bg-transparent text-white hover:bg-white hover:text-[#0B0E14]" size="lg" asChild>
+                <Button className="border border-[#A9B0BC]/35 bg-transparent text-[#E6E8EB] hover:bg-[#E6E8EB] hover:text-[#0B0E14]" size="lg" asChild>
                   <Link to="/contact">Book a Demo</Link>
                 </Button>
               </div>
@@ -240,7 +240,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px] ${
+            className={`vision-map-shell relative mt-20 overflow-hidden rounded-[28px] bg-[#0F1C2E] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.16)] md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
@@ -316,7 +316,7 @@ const Index = () => {
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7">
+                <div className="mx-auto max-w-[530px] bg-[#0F1C2E]/95 px-8 py-7">
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
                   </h2>
@@ -357,7 +357,7 @@ const Index = () => {
                           className="aspect-square w-full object-cover opacity-[0.9] mix-blend-screen saturate-[1.08] contrast-[1.12]"
                         />
                       </span>
-                      <span className="mt-2 block bg-[#070A10]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/60 transition group-hover:text-white/82">
+                      <span className="mt-2 block bg-[#0F1C2E]/86 py-1 text-[7px] font-semibold uppercase leading-tight tracking-[0.16em] text-white/60 transition group-hover:text-white/82">
                         {card.title}
                       </span>
                     </span>
@@ -378,7 +378,7 @@ const Index = () => {
                       key={card.title}
                       type="button"
                       onClick={() => setActiveVisionCard(card)}
-                      className="flex items-center gap-3 bg-white/[0.025] p-3 text-left transition hover:bg-white/[0.055] focus:outline-none focus:ring-2 focus:ring-white/45"
+                      className="flex items-center gap-3 bg-[#E6E8EB]/[0.025] p-3 text-left transition hover:bg-[#E6E8EB]/[0.055] focus:outline-none focus:ring-2 focus:ring-white/45"
                       aria-label={`Open ${card.title}`}
                     >
                       <img
@@ -412,14 +412,14 @@ const Index = () => {
                     onClick={() => setActiveVisionCard(null)}
                   >
                     <motion.article
-                      className="w-full max-w-[380px] overflow-hidden rounded-[18px] border border-white/12 bg-white text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
+                      className="w-full max-w-[380px] overflow-hidden rounded-[18px] border border-[#A9B0BC]/40 bg-[#E6E8EB] text-[#0B0E14] shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
                       initial={{ opacity: 0, y: 18, scale: 0.96 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 12, scale: 0.97 }}
                       transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                       onClick={(event) => event.stopPropagation()}
                     >
-                      <figure className="relative aspect-[1.18] bg-white">
+                      <figure className="relative aspect-[1.18] bg-[#E6E8EB]">
                         <img
                           src={activeVisionCard.image}
                           alt=""
@@ -432,7 +432,7 @@ const Index = () => {
                         <button
                           type="button"
                           onClick={() => setActiveVisionCard(null)}
-                          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#0B0E14] text-sm text-white transition hover:bg-foreground"
+                          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#0B0E14] text-sm text-[#E6E8EB] transition hover:bg-[#1B2A41]"
                           aria-label="Close popup"
                         >
                           ×
@@ -465,7 +465,7 @@ const Index = () => {
               <p className="eyebrow mb-4">Latest releases</p>
               <h2 className="section-title">Latest releases from Boulai Discovery.</h2>
             </div>
-            <Button className="w-fit border border-border bg-transparent text-foreground hover:bg-foreground hover:text-background" asChild>
+            <Button className="w-fit border border-border bg-transparent text-foreground hover:bg-[#0B0E14] hover:text-[#E6E8EB]" asChild>
               <Link to="/product">Explore Product</Link>
             </Button>
           </div>
@@ -474,7 +474,7 @@ const Index = () => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {productModules.map((engine, index) => (
                 <FadeIn key={engine.name} delay={index * 0.08}>
-                  <article className="premium-panel h-full border-[#A9B0BC]/70 bg-[#A9B0BC] p-8 text-[#0B0E14]">
+                  <article className="premium-panel h-full border-[#A9B0BC]/70 bg-[#E6E8EB] p-8 text-[#0B0E14]">
                     <div className="flex items-start gap-5">
                       <img
                         src={engine.logo}
@@ -486,14 +486,14 @@ const Index = () => {
                         className="mt-0.5 h-8 w-8 shrink-0 select-none object-contain opacity-75 brightness-0"
                       />
                       <div>
-                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[#313844]/75">
+                        <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.2em] text-[#3A3F45]/75">
                           {engine.name} {engine.version}
                         </p>
                         <h3 className="card-title mb-4">{engine.title}</h3>
-                        <p className="text-sm leading-relaxed text-[#313844]/85">{engine.desc}</p>
+                        <p className="text-sm leading-relaxed text-[#3A3F45]/85">{engine.desc}</p>
                       </div>
                     </div>
-                    <div className="mt-8 grid gap-3 border-t border-[#0B0E14]/15 pt-5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#313844]/70">
+                    <div className="mt-8 grid gap-3 border-t border-[#0B0E14]/15 pt-5 text-[10px] font-medium uppercase tracking-[0.18em] text-[#3A3F45]/70">
                       <div className="flex items-center justify-between gap-4">
                         <span>Release</span>
                         <span>{engine.version}</span>

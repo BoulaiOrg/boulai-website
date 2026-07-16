@@ -70,7 +70,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button
             size="sm"
-            className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
+            className="h-10 border border-[#A9B0BC]/35 bg-transparent px-4 text-[11px] tracking-[0.2em] text-[#E6E8EB] hover:bg-[#E6E8EB] hover:text-[#0B0E14]"
             asChild
           >
             <Link to="/contact">Book a Demo</Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
             ))}
             <Button
               size="sm"
-              className="h-10 border border-white/[14%] bg-transparent px-4 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-[#0B0E14]"
+              className="h-10 border border-[#A9B0BC]/35 bg-transparent px-4 text-[11px] tracking-[0.2em] text-[#E6E8EB] hover:bg-[#E6E8EB] hover:text-[#0B0E14]"
               asChild
             >
               <Link to="/contact">Book a Demo</Link>
