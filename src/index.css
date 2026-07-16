@@ -213,6 +213,80 @@
     border-color: hsl(var(--primary) / 0.35);
   }
 
+  .vision-float-card {
+    animation: vision-card-float var(--float-duration, 9s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .vision-line-float {
+    animation: vision-line-float var(--line-duration, 11s) ease-in-out infinite;
+    animation-delay: var(--line-delay, 0s);
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+
+  .vision-line-float-soft {
+    opacity: 0.72;
+  }
+
+  .vision-map-shell {
+    transition:
+      width 700ms ease-out,
+      margin 700ms ease-out,
+      border-radius 700ms ease-out,
+      box-shadow 700ms ease-out;
+  }
+
+  @media (min-width: 768px) {
+    .vision-map-shell:hover,
+    .vision-map-shell:focus-within {
+      width: 100vw;
+      margin-left: calc((100% - 100vw) / 2);
+      margin-right: calc((100% - 100vw) / 2);
+      border-radius: 0;
+      box-shadow:
+        inset 0 0 0 1px rgb(255 255 255 / 0.08),
+        0 30px 110px rgb(0 0 0 / 0.2);
+    }
+  }
+
+}
+
+@keyframes vision-card-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(0deg);
+  }
+  28% {
+    transform: translate(-50%, -50%) translate3d(var(--float-x, 3px), calc(var(--float-y, 3px) * -0.72), 0)
+      rotate(var(--float-rotate, 2deg));
+  }
+  58% {
+    transform: translate(-50%, -50%) translate3d(calc(var(--float-x, 3px) * -0.5), var(--float-y, 3px), 0)
+      rotate(calc(var(--float-rotate, 2deg) * -0.85));
+  }
+}
+
+@keyframes vision-line-float {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: rotate(0deg);
+  }
+  48% {
+    opacity: 1;
+    transform: rotate(var(--line-rotate, 0.35deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vision-float-card,
+  .vision-line-float {
+    animation: none;
+  }
 }
 
 @keyframes causal-flow-dash {

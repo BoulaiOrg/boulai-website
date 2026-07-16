@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/FadeIn";
@@ -215,7 +215,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px]"
+            className="vision-map-shell group/vision relative mt-20 overflow-hidden rounded-[28px] bg-[#070A10] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.055)] md:rounded-[34px]"
           >
             <div className="relative min-h-[700px] py-10 md:min-h-[740px]">
               <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -228,10 +228,20 @@ const Index = () => {
                     y2={card.y}
                     stroke="rgba(255,255,255,0.085)"
                     strokeWidth={index % 3 === 0 ? "0.075" : "0.055"}
+                    className="vision-line-float"
+                    style={
+                      {
+                        "--line-rotate": `${index % 2 === 0 ? 0.42 : -0.34}deg`,
+                        "--line-duration": `${9.8 + (index % 4) * 0.7}s`,
+                        "--line-delay": `${index * -0.48}s`,
+                      } as CSSProperties
+                    }
                   />
                 ))}
                 {visionCards.map((card) => {
-                  const linked = visionCards.find((candidate) => candidate.theme === card.theme && candidate.title !== card.title);
+                  const linked = visionCards.find(
+                    (candidate) => candidate.theme === card.theme && candidate.title !== card.title,
+                  );
                   if (!linked) return null;
 
                   return (
@@ -243,6 +253,14 @@ const Index = () => {
                       y2={linked.y}
                       stroke="rgba(255,255,255,0.055)"
                       strokeWidth="0.045"
+                      className="vision-line-float vision-line-float-soft"
+                      style={
+                        {
+                          "--line-rotate": `${card.x > linked.x ? -0.5 : 0.5}deg`,
+                          "--line-duration": "12.6s",
+                          "--line-delay": `${card.x * -0.08}s`,
+                        } as CSSProperties
+                      }
                     />
                   );
                 })}
@@ -257,13 +275,21 @@ const Index = () => {
                       y2={linked.y}
                       stroke="rgba(255,255,255,0.035)"
                       strokeWidth="0.04"
+                      className="vision-line-float vision-line-float-soft"
+                      style={
+                        {
+                          "--line-rotate": `${index % 2 === 0 ? -0.26 : 0.26}deg`,
+                          "--line-duration": `${13 + index * 0.8}s`,
+                          "--line-delay": `${index * -0.6}s`,
+                        } as CSSProperties
+                      }
                     />
                   );
                 })}
               </svg>
 
               <div className="absolute inset-x-4 top-1/2 z-20 hidden -translate-y-1/2 text-center md:block">
-                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7">
+                <div className="mx-auto max-w-[530px] bg-[#070A10]/95 px-8 py-7 transition-transform duration-700 ease-out md:group-hover/vision:scale-[1.015]">
                   <p className="inverse-eyebrow mb-5">Boulai vision</p>
                   <h2 className="font-display text-[2.75rem] font-normal leading-[1.02] text-white md:text-[3.5rem]">
                     Scientific reasoning at scale.
@@ -280,15 +306,20 @@ const Index = () => {
                     key={card.title}
                     type="button"
                     onClick={() => setActiveVisionCard(card)}
-                    className="group absolute z-30 -translate-x-1/2 -translate-y-1/2 bg-transparent text-left transition duration-300 hover:scale-[1.04] focus:outline-none focus:ring-2 focus:ring-white/45"
+                    className="vision-float-card group absolute z-30 bg-transparent text-left focus:outline-none focus:ring-2 focus:ring-white/45"
                     style={{
                       left: `${card.x}%`,
                       top: `${card.y}%`,
                       width: index % 4 === 0 ? 64 : 58,
-                    }}
+                      "--float-x": `${index % 2 === 0 ? 4 : -3}px`,
+                      "--float-y": `${index % 3 === 0 ? 5 : -4}px`,
+                      "--float-rotate": `${index % 2 === 0 ? 2.4 : -2.1}deg`,
+                      "--float-duration": `${8.8 + (index % 5) * 0.55}s`,
+                      "--float-delay": `${index * -0.7}s`,
+                    } as CSSProperties}
                     aria-label={`Open ${card.title}`}
                   >
-                    <span className="block">
+                    <span className="block transition-transform duration-300 group-hover:scale-[1.06]">
                       <span className="block p-0.5 opacity-90 transition group-hover:opacity-100">
                         <img
                           src={card.image}
