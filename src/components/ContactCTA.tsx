@@ -6,9 +6,6 @@ const ContactCTA = () => (
   <section className="section-cta py-24">
     <div className="container mx-auto px-4 lg:px-8 text-center">
       <FadeIn>
-        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/[52%]">
-          Work with Boulai
-        </p>
         <h2 className="mb-4 font-display text-[1.86rem] font-normal leading-[1.12] text-white md:text-[2.46rem]">
           Bring us a scientific decision workflow.
         </h2>
