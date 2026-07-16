@@ -232,7 +232,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="section-hero pt-32 pb-16 text-white md:pt-40 md:pb-20">
+      <section className="section-hero pt-36 pb-20 text-white md:pt-48 md:pb-24 lg:pt-52">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-start">
             <motion.div
@@ -271,7 +271,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={`vision-map-shell relative mx-auto mt-20 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:rounded-[34px] ${
+            className={`vision-map-shell relative mx-auto mt-24 w-full overflow-hidden rounded-[28px] bg-[#1B2A41] text-white shadow-[inset_0_0_0_1px_rgba(169,176,188,0.28)] md:mt-32 md:rounded-[34px] ${
               isVisionMapExpanded ? "vision-map-shell-expanded" : ""
             }`}
           >
