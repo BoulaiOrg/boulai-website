@@ -110,8 +110,8 @@ const Index = () => {
               className="max-w-xl"
             >
               <p className="text-[1.08rem] font-light leading-[1.42] text-[#E6E8EB]/72 md:text-[1.2rem]">
-                Boulai is a research and product company building Scientific AI systems for biopharma and clinical
-                research teams: grounded in human causal intelligence, built to accelerate R&D.
+                Boulai is a research and product company building Scientific AI for biopharma and clinical research
+                teams: grounded in causal intelligence, built to accelerate R&D.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
