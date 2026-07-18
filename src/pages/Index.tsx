@@ -99,7 +99,7 @@ const Index = () => {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1 className="page-title max-w-4xl text-[#E6E8EB]">
-                Scientific AI for clinical decisions.
+                Scientific AI for clinical development decisions.
               </h1>
             </motion.div>
 

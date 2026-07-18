@@ -120,7 +120,7 @@ const Product = () => (
       <section className="section-deep pt-8 pb-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
-            <h2 className="section-title">A scientific workbench for evidence-backed clinical decisions.</h2>
+            <h2 className="section-title">A scientific workbench for evidence-backed clinical development decisions.</h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
               Boulai Discovery is not a dashboard or a generic AI chat layer. It is a modular causal analysis product
               for teams that need to decide which signals to trust, which patient groups or mechanisms deserve follow-up,
