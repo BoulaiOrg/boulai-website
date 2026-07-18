@@ -110,10 +110,9 @@ const Index = () => {
               className="max-w-xl"
             >
               <p className="text-[1.08rem] font-light leading-[1.42] text-[#E6E8EB]/72 md:text-[1.2rem]">
-                Boulai builds Scientific AI for biopharma: models and agents designed around the scientific method,
-                from data exploration and statistical analysis to hypothesis generation and causal theory testing.
-                Grounded in causal artificial intelligence, our systems extend what scientists can theorize, discover,
-                test, and decide.
+                Boulai builds Scientific AI for biopharma R&D: models and agents designed around the human scientific
+                method, from data exploration and statistical analysis to hypothesis generation and causal theory
+                testing. We are designing a new way of doing science.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
