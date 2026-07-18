@@ -90,13 +90,17 @@ const Product = () => (
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Why it matters</p>
               <h2 className="section-title">
-                Built for the cost of slow or fragile decisions.
+                Surface risk and opportunity before they become expensive.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                Clinical R&amp;D does not only lose money when a trial fails. It loses time when teams pursue weak
-                signals, over-trust subgroup patterns, miss mechanisms hidden in patient-level data, or wait too long
-                to decide what the evidence supports. Boulai Discovery helps teams inspect uncertainty earlier, before
-                it becomes an expensive commitment.
+                Clinical development still relies on analyses that are slow to assemble, difficult to reproduce, and
+                fragmented across tools. At the pace of modern R&amp;D, weak signals can survive too long while valuable
+                mechanisms, subgroups, and opportunities go unnoticed.
+              </p>
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+                Boulai Discovery brings causal AI into scientific workflows to uncover hidden relationships, generate
+                testable hypotheses, and stress-test them against data. Teams can identify potential risks and promising
+                opportunities earlier, with evidence they can trace, inspect, and defend.
               </p>
             </div>
 
