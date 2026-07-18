@@ -110,8 +110,10 @@ const Index = () => {
               className="max-w-xl"
             >
               <p className="text-[1.08rem] font-light leading-[1.42] text-[#E6E8EB]/72 md:text-[1.2rem]">
-                Boulai is a research and product company building Scientific AI for biopharma and clinical research
-                teams: grounded in causal intelligence, built to accelerate R&D.
+                Boulai builds Scientific AI for biopharma: models and agents designed around the scientific method,
+                from data exploration and statistical analysis to hypothesis generation and causal theory testing.
+                Grounded in causal artificial intelligence, our systems extend what scientists can theorize, discover,
+                test, and decide.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
@@ -239,6 +241,10 @@ const Index = () => {
                   Boulai translates frontier research in causal AI for science into focused products for R&D teams. We
                   sit between academia and industry, turning rigorous methods into workflows that make clinical and
                   discovery decisions more targeted, traceable, and faster.
+                </p>
+                <p className="mt-5 text-muted-foreground leading-relaxed text-lg">
+                  We combine causal discovery, causal machine learning, statistics, and econometrics within integrated
+                  scientific workflows—not as isolated analytical tools.
                 </p>
               </div>
               <div className="premium-panel p-8 md:p-10">
