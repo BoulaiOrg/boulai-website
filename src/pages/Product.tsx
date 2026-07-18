@@ -90,7 +90,7 @@ const Product = () => (
             <div className="max-w-3xl">
               <p className="eyebrow mb-4">Why it matters</p>
               <h2 className="section-title">
-                Surface risk and opportunity before they become expensive.
+                Identify risk and opportunity before they become expensive.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Clinical development still relies on analyses that are slow to assemble, difficult to reproduce, and
