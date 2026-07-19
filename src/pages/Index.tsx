@@ -110,9 +110,9 @@ const Index = () => {
               className="max-w-xl"
             >
               <p className="text-[1.08rem] font-light leading-[1.42] text-[#E6E8EB]/72 md:text-[1.2rem]">
-                Boulai builds Scientific AI for biopharma R&D: designed around the scientific method and human
-                reasoning, from data exploration to hypothesis generation and causal theory testing. A new way of
-                doing science with AI. Rigorous, auditable, and reproducible at scale.
+                Boulai builds Scientific AI to accelerate biopharma R&D, from data exploration to hypothesis generation
+                and causal theory testing. Rooted in the scientific method and causal intelligence. Rigorous, auditable,
+                reproducible at scale.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button className="bg-[#E6E8EB] text-[#0B0E14] hover:bg-[#A9B0BC]" size="lg" asChild>
